@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Sống Đẹp – Gương Bác Trong Thời Đại Số | HCM202</title>
+  <meta name="description"
+    content="Dự án HCM202 – Khám phá triết lý sống đẹp của Hồ Chí Minh dành cho thế hệ Gen Z trong kỷ nguyên số." />
+  <meta property="og:title" content="Sống Đẹp – Gương Bác Trong Thời Đại Số" />
+  <meta property="og:description"
+    content="Dự án HCM202 – Học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh dành cho sinh viên thời đại số." />
+  <meta property="og:type" content="website" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-fixed": "#ffe16d",
+            "inverse-on-surface": "#f5f1e3",
+            "surface-dim": "#dedacd",
+            "on-error-container": "#93000a",
+            "surface-bright": "#fdf9eb",
+            "inverse-primary": "#ffb4a9",
+            "primary-fixed": "#ffdad5",
+            "outline": "#916f6a",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#5d403b",
+            "primary-fixed-dim": "#ffb4a9",
+            "tertiary-fixed-dim": "#e9c400",
+            "on-secondary-fixed": "#3e0021",
+            "secondary-fixed": "#ffd9e4",
+            "on-tertiary-container": "#4c3f00",
+            "on-secondary-container": "#64003a",
+            "primary": "#b40006",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#930004",
+            "primary-container": "#da251d",
+            "on-primary-container": "#fff3f1",
+            "secondary": "#b3176d",
+            "on-tertiary-fixed": "#221b00",
+            "inverse-surface": "#323128",
+            "surface": "#fdf9eb",
+            "surface-container-highest": "#e6e2d5",
+            "tertiary": "#705d00",
+            "on-error": "#ffffff",
+            "surface-container": "#f2eee0",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#ffb0cd",
+            "background": "#fdf9eb",
+            "surface-container-high": "#ece8da",
+            "surface-variant": "#e6e2d5",
+            "secondary-container": "#ff5ba9",
+            "on-surface": "#1c1c14",
+            "outline-variant": "#e6bdb7",
+            "on-secondary-fixed-variant": "#8c0053",
+            "surface-tint": "#bf080b",
+            "on-primary-fixed": "#410001",
+            "surface-container-low": "#f8f4e6",
+            "on-tertiary-fixed-variant": "#544600",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#c9a900",
+            "on-background": "#1c1c14"
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem"
+          },
+          spacing: {
+            unit: "8px",
+            "max-width": "1200px",
+            "margin-desktop": "48px",
+            gutter: "20px",
+            "margin-mobile": "16px"
+          },
+          fontFamily: {
+            "body-md": ["Be Vietnam Pro"],
+            quote: ["Lora"],
+            "label-md": ["Be Vietnam Pro"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-xl": ["Lora"],
+            "headline-md": ["Lora"],
+            "headline-lg-mobile": ["Lora"],
+            "headline-lg": ["Lora"],
+            display: ["Lora", "serif"],
+            body: ["Be Vietnam Pro", "sans-serif"]
+          },
+          fontSize: {
+            "body-md": ["15px", { lineHeight: "1.6", fontWeight: "400" }],
+            quote: ["20px", { lineHeight: "1.5", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            "headline-xl": ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-md": ["21px", { lineHeight: "1.4", fontWeight: "600" }],
+            "headline-lg-mobile": ["23px", { lineHeight: "1.3", fontWeight: "700" }],
+            "headline-lg": ["26px", { lineHeight: "1.3", fontWeight: "700" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* ── NAV ── */
+    .nav-scrolled {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    /* ── HERO ── */
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(180, 0, 6, 0.08);
+      border: 1px solid rgba(180, 0, 6, 0.18);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #b40006;
+      text-transform: uppercase;
+      animation: fadeSlideDown 0.7s ease both;
+    }
+
+    @keyframes fadeSlideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-title {
+      animation: fadeSlideUp 0.8s 0.1s ease both;
+    }
+
+    .hero-sub {
+      animation: fadeSlideUp 0.8s 0.25s ease both;
+    }
+
+    .hero-ctas {
+      animation: fadeSlideUp 0.8s 0.4s ease both;
+    }
+
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* red shimmer on display text */
+    .text-shimmer {
+      background: linear-gradient(135deg, #b40006 0%, #da251d 40%, #ff6b35 70%, #b40006 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      from {
+        background-position: 0% center;
+      }
+
+      to {
+        background-position: 200% center;
+      }
+    }
+
+    /* ── QUOTE SECTION ── */
+    .quote-line {
+      width: 0;
+      height: 3px;
+      background: #b40006;
+      border-radius: 2px;
+      transition: width 1s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .quote-line.active {
+      width: 64px;
+    }
+
+    /* ── STATS ── */
+    .stat-num {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: #b40006;
+      line-height: 1;
+    }
+
+    /* ── NAV CARDS ── */
+    .page-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(180, 0, 6, 0.1);
+      background: #fff;
+      transition: transform 0.35s cubic-bezier(.4, 0, .2, 1),
+        box-shadow 0.35s cubic-bezier(.4, 0, .2, 1),
+        border-color 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 48px rgba(180, 0, 6, 0.12);
+      border-color: rgba(180, 0, 6, 0.3);
+    }
+
+    .page-card .card-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(180, 0, 6, 0.07);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .page-card:hover .card-icon-wrap {
+      background: rgba(180, 0, 6, 0.15);
+      transform: scale(1.08) rotate(-3deg);
+    }
+
+    .page-card .card-arrow {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0.4;
+    }
+
+    .page-card:hover .card-arrow {
+      transform: translateX(6px);
+      opacity: 1;
+    }
+
+    .page-card .card-bg-blob {
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(180, 0, 6, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      transition: transform 0.5s ease;
+    }
+
+    .page-card:hover .card-bg-blob {
+      transform: scale(1.5);
+    }
+
+    /* featured card */
+    .page-card.featured {
+      background: linear-gradient(135deg, #b40006 0%, #8b0004 100%);
+      border-color: transparent;
+      color: #fff3f1;
+    }
+
+    .page-card.featured .card-icon-wrap {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .page-card.featured:hover .card-icon-wrap {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .page-card.featured .card-bg-blob {
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+    }
+
+    /* ── SCROLL PROGRESS ── */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #b40006, #da251d);
+      z-index: 100;
+      transition: width 0.1s linear;
+      width: 0%;
+    }
+
+    /* ── REVEAL ANIMATION ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .reveal-delay-5 {
+      transition-delay: 0.5s;
+    }
+
+    /* ── JOURNEY STEPS ── */
+    .step-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid rgba(180, 0, 6, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lora', serif;
+      font-weight: 700;
+      color: #b40006;
+      font-size: 13px;
+      flex-shrink: 0;
+      transition: background 0.3s, border-color 0.3s, transform 0.3s;
+    }
+
+    .step-item:hover .step-dot {
+      background: #b40006;
+      color: #fff;
+      border-color: #b40006;
+      transform: scale(1.15);
+    }
+
+    .step-line {
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(180, 0, 6, 0.2), rgba(180, 0, 6, 0.05));
+      flex-grow: 1;
+      margin: 4px auto;
+    }
+  </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen">
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- ══════════════ NAV ══════════════ -->
+  <header id="main-header"
+    class="bg-surface/95 backdrop-blur-md border-b border-primary/10 fixed top-0 left-0 w-full z-50 flex items-center h-16 transition-all duration-300">
+    <nav class="flex justify-between items-center px-4 md:px-12 h-full max-w-[1200px] mx-auto w-full">
+      <a href="index.html"
+        class="text-headline-md font-headline-md text-primary tracking-tight flex items-center gap-2">
+        <span class="material-symbols-outlined fill-icon text-xl">local_florist</span>
+        Sống Đẹp
+      </a>
+      <div class="hidden md:flex items-center gap-1 text-label-md font-label-md h-full">
+        <a href="index.html" class="text-primary border-b-2 border-primary pb-0.5 font-bold px-3 py-2">Trang Chủ</a>
+        <a href="triet-ly.html"
+          class="text-on-surface-variant hover:text-primary px-3 py-2 rounded-lg hover:bg-surface-container transition-all">Triết
+          Lý</a>
+        <a href="tam-guong-bac.html"
+          class="text-on-surface-variant hover:text-primary px-3 py-2 rounded-lg hover:bg-surface-container transition-all">Câu
+          Chuyện</a>
+        <a href="ban-dang-song.html"
+          class="text-on-surface-variant hover:text-primary px-3 py-2 rounded-lg hover:bg-surface-container transition-all">Thử
+          Thách</a>
+        <a href="thuc-tien-hom-nay.html"
+          class="text-on-surface-variant hover:text-primary px-3 py-2 rounded-lg hover:bg-surface-container transition-all">Phân
+          Tích</a>
+        <a href="toi-chon-cach-song.html"
+          class="text-on-surface-variant hover:text-primary px-3 py-2 rounded-lg hover:bg-surface-container transition-all">Kết
+          Luận</a>
+        <a href="minh-bach-ai.html"
+          class="text-on-surface-variant hover:text-primary px-3 py-2 rounded-lg hover:bg-surface-container transition-all">Minh
+          Bạch</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="triet-ly.html"
+          class="hidden md:flex bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-all px-5 py-2 rounded-full text-label-md font-label-md items-center gap-2 shadow-sm">
+          <span class="material-symbols-outlined text-base">explore</span> Bắt Đầu
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden text-primary">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer"
+    class="fixed inset-0 z-50 bg-on-surface/20 backdrop-blur-sm hidden transition-all duration-300">
+    <div
+      class="fixed top-0 right-0 w-64 h-full bg-surface shadow-2xl p-6 flex flex-col gap-6 transform translate-x-full transition-transform duration-300"
+      id="mobile-drawer-content">
+      <div class="flex justify-between items-center pb-4 border-b border-primary/10">
+        <span class="text-xl font-display font-bold text-primary">Sống Đẹp</span>
+        <button id="mobile-menu-close" class="text-primary hover:rotate-90 transition-transform duration-200">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-3 text-sm font-semibold uppercase tracking-wider">
+        <a href="index.html" class="py-2 border-b border-primary/5 text-primary">Trang Chủ</a>
+        <a href="triet-ly.html" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Triết
+          Lý</a>
+        <a href="tam-guong-bac.html"
+          class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Câu Chuyện</a>
+        <a href="ban-dang-song.html"
+          class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Thử Thách</a>
+        <a href="thuc-tien-hom-nay.html"
+          class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Phân Tích</a>
+        <a href="toi-chon-cach-song.html"
+          class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Kết Luận</a>
+        <a href="minh-bach-ai.html" class="py-2 text-on-surface-variant hover:text-primary">Minh Bạch</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="pt-16">
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section id="hero"
+      class="relative min-h-[100vh] flex flex-col items-center justify-center overflow-hidden text-center px-6">
+      <!-- Background layered -->
+      <div class="absolute inset-0 bg-gradient-to-br from-[#fff8f7] via-[#fdf9eb] to-[#fff3e8]"></div>
+      <div class="absolute inset-0"
+        style="background-image: radial-gradient(circle at 20% 30%, rgba(180,0,6,0.06) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(218,37,29,0.04) 0%, transparent 50%);">
+      </div>
+      <!-- Animated dots canvas -->
+      <canvas id="hero-canvas"></canvas>
+      <!-- Decorative rings -->
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-primary/5 pointer-events-none">
+      </div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full border border-primary/3 pointer-events-none">
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 max-w-4xl mx-auto space-y-7 py-24">
+        <div class="hero-badge">
+          <span class="material-symbols-outlined fill-icon text-xs">school</span>
+          HCM202 · Tư tưởng Hồ Chí Minh
+        </div>
+
+        <h1 class="hero-title font-display font-bold leading-tight text-on-surface"
+          style="font-size: clamp(2.6rem, 7vw, 5.5rem);">
+          <span class="text-shimmer">Sống Đẹp</span><br>
+          <span
+            style="font-size: 0.55em; font-weight: 600; color: #5d403b; font-family: 'Be Vietnam Pro', sans-serif;">Gương
+            Bác Trong Thời Đại Số</span>
+        </h1>
+
+        <p class="hero-sub font-display italic text-on-surface-variant max-w-2xl mx-auto leading-relaxed"
+          style="font-size: clamp(1rem, 2.2vw, 1.25rem);">
+          "Ở đời và làm người phải như thế nào?"<br>
+          <span class="not-italic font-body text-sm text-on-surface/60 mt-1 block">— Câu hỏi trung tâm CQ9.5, Chương VI
+            · Giáo trình HCM202</span>
+        </p>
+
+        <div class="hero-ctas flex flex-wrap justify-center gap-4 pt-2">
+          <a href="triet-ly.html" id="cta-primary"
+            class="group inline-flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-semibold text-sm tracking-wider shadow-lg hover:shadow-primary/30 hover:scale-105 transition-all duration-300">
+            <span class="material-symbols-outlined text-lg">explore</span>
+            Bắt Đầu Hành Trình
+            <span
+              class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </a>
+          <a href="ban-dang-song.html"
+            class="group inline-flex items-center gap-2 border-2 border-primary text-primary bg-transparent px-8 py-4 rounded-full font-semibold text-sm tracking-wider hover:bg-primary/5 hover:scale-105 transition-all duration-300">
+            <span class="material-symbols-outlined text-lg">quiz</span>
+            Làm Bài Trắc Nghiệm
+          </a>
+        </div>
+
+        <!-- Stats strip -->
+        <div class="hero-ctas flex flex-wrap justify-center gap-8 pt-6 border-t border-primary/10 mt-8">
+          <div class="text-center">
+            <div class="stat-num" data-count="5">0</div>
+            <div class="text-xs text-on-surface-variant font-semibold uppercase tracking-wider mt-1">Câu chuyện lịch sử
+            </div>
+          </div>
+          <div class="w-px bg-primary/15 hidden md:block"></div>
+          <div class="text-center">
+            <div class="stat-num" data-count="10">0</div>
+            <div class="text-xs text-on-surface-variant font-semibold uppercase tracking-wider mt-1">Tình huống thực tế
+            </div>
+          </div>
+          <div class="w-px bg-primary/15 hidden md:block"></div>
+          <div class="text-center">
+            <div class="stat-num" data-count="6">0</div>
+            <div class="text-xs text-on-surface-variant font-semibold uppercase tracking-wider mt-1">Chương nội dung
+            </div>
+          </div>
+          <div class="w-px bg-primary/15 hidden md:block"></div>
+          <div class="text-center">
+            <div class="stat-num" data-count="29">0</div>
+            <div class="text-xs text-on-surface-variant font-semibold uppercase tracking-wider mt-1">Ngoại ngữ Bác tự
+              học</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-50 animate-bounce">
+        <span class="text-xs font-semibold tracking-wider text-on-surface-variant uppercase">Khám phá</span>
+        <span class="material-symbols-outlined text-2xl text-primary">keyboard_arrow_down</span>
+      </div>
+    </section>
+
+    <!-- ══════════════ QUOTE BANNER ══════════════ -->
+    <section class="py-20 px-6 bg-primary relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10"
+        style="background-image: radial-gradient(circle at 10% 50%, rgba(255,255,255,0.3) 0%, transparent 40%), radial-gradient(circle at 90% 50%, rgba(255,255,255,0.2) 0%, transparent 40%);">
+      </div>
+      <div
+        class="absolute left-8 top-1/2 -translate-y-1/2 text-white/5 font-display font-bold pointer-events-none select-none"
+        style="font-size: 15rem; line-height:1;">"</div>
+      <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
+        <p class="font-display italic text-white leading-relaxed" style="font-size: clamp(1.2rem, 3vw, 1.7rem);">
+          "Muốn hướng dẫn nhân dân, mình phải làm mực thước cho người ta bắt chước."
+        </p>
+        <div class="mt-6 flex justify-center">
+          <div class="quote-line active" id="quote-divider"></div>
+        </div>
+        <p class="mt-4 text-white/70 text-sm font-semibold uppercase tracking-wider">— Hồ Chí Minh, Sửa đổi lối làm việc
+          (1947)</p>
+      </div>
+    </section>
+
+    <!-- ══════════════ HÀNH TRÌNH 6 BƯỚC ══════════════ -->
+    <section class="py-24 px-6 max-w-[1200px] mx-auto">
+      <div class="text-center mb-16 reveal">
+        <span class="hero-badge mb-4 inline-flex">Lộ trình khám phá</span>
+        <h2 class="font-display font-bold text-on-surface mt-3" style="font-size: clamp(1.8rem, 4vw, 2.8rem);">
+          Hành Trình <span class="text-primary">6 Chương</span>
+        </h2>
+        <p class="text-on-surface-variant mt-3 max-w-xl mx-auto">Từ triết lý đạo đức đến hành động thực tiễn — mỗi
+          chương là một bước tiến trong hành trình sống đẹp.</p>
+      </div>
+
+      <!-- Journey grid: 3 left steps + image + 3 right steps -->
+      <div class="grid grid-cols-1 md:grid-cols-[1fr_200px_1fr] gap-6 items-center">
+
+        <!-- Left steps -->
+        <div class="flex flex-col gap-4">
+          <a href="triet-ly.html"
+            class="step-item reveal reveal-delay-1 flex items-start gap-4 p-5 rounded-2xl bg-surface-container-lowest border border-primary/8 hover:border-primary/25 hover:shadow-md transition-all group">
+            <div class="step-dot">01</div>
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                Triết Lý Đạo Đức</h3>
+              <p class="text-sm text-on-surface-variant mt-1">Cần, Kiệm, Liêm, Chính, Chí công vô tư — nền tảng con
+                người.</p>
+            </div>
+          </a>
+          <a href="tam-guong-bac.html"
+            class="step-item reveal reveal-delay-2 flex items-start gap-4 p-5 rounded-2xl bg-surface-container-lowest border border-primary/8 hover:border-primary/25 hover:shadow-md transition-all group">
+            <div class="step-dot">02</div>
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                Tấm Gương Bác Hồ</h3>
+              <p class="text-sm text-on-surface-variant mt-1">5 câu chuyện lịch sử về đạo đức và nhân cách Hồ Chí Minh.
+              </p>
+            </div>
+          </a>
+          <a href="ban-dang-song.html"
+            class="step-item reveal reveal-delay-3 flex items-start gap-4 p-5 rounded-2xl bg-surface-container-lowest border border-primary/8 hover:border-primary/25 hover:shadow-md transition-all group">
+            <div class="step-dot">03</div>
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                Bạn Đang Sống Thế Nào?</h3>
+              <p class="text-sm text-on-surface-variant mt-1">Trắc nghiệm 10 tình huống thực tế trong kỷ nguyên AI.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Center image -->
+        <div class="reveal hidden md:flex flex-col items-center justify-center gap-3">
+          <div class="relative w-[180px] h-[180px] rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
+            <img src="images/Bac-Ho.jpg" alt="Bác Hồ" class="w-full h-full object-cover object-top">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+          </div>
+          <div class="w-px flex-grow bg-gradient-to-b from-primary/20 to-transparent min-h-[40px]"></div>
+          <div class="text-center">
+            <div class="text-xs font-bold uppercase tracking-wider text-primary/60">CQ9.5</div>
+            <div class="font-display text-sm font-semibold text-on-surface mt-1">Sống đẹp<br>trong thời đại số</div>
+          </div>
+        </div>
+
+        <!-- Right steps -->
+        <div class="flex flex-col gap-4">
+          <a href="thuc-tien-hom-nay.html"
+            class="step-item reveal reveal-delay-1 flex items-start gap-4 p-5 rounded-2xl bg-surface-container-lowest border border-primary/8 hover:border-primary/25 hover:shadow-md transition-all group">
+            <div class="step-dot">04</div>
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                Thực Tiễn Hôm Nay</h3>
+              <p class="text-sm text-on-surface-variant mt-1">Phân tích đạo đức học thuật, mạng xã hội và chống tham
+                nhũng vặt.</p>
+            </div>
+          </a>
+          <a href="toi-chon-cach-song.html"
+            class="step-item reveal reveal-delay-2 flex items-start gap-4 p-5 rounded-2xl bg-surface-container-lowest border border-primary/8 hover:border-primary/25 hover:shadow-md transition-all group">
+            <div class="step-dot">05</div>
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                Tôi Chọn Cách Sống</h3>
+              <p class="text-sm text-on-surface-variant mt-1">Tuyên ngôn thế hệ trẻ — cam kết sống có trách nhiệm.</p>
+            </div>
+          </a>
+          <a href="minh-bach-ai.html"
+            class="step-item reveal reveal-delay-3 flex items-start gap-4 p-5 rounded-2xl bg-surface-container-lowest border border-primary/8 hover:border-primary/25 hover:shadow-md transition-all group">
+            <div class="step-dot">06</div>
+            <div>
+              <h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+                Minh Bạch Công Nghệ AI</h3>
+              <p class="text-sm text-on-surface-variant mt-1">Báo cáo ứng dụng AI trong nghiên cứu và phát triển dự án.
+              </p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════ FEATURED CARDS ══════════════ -->
+    <section class="py-16 px-6 bg-surface-container/40">
+      <div class="max-w-[1200px] mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h2 class="font-display font-bold text-on-surface" style="font-size: clamp(1.6rem, 3.5vw, 2.4rem);">
+            Khám Phá Ngay
+          </h2>
+          <p class="text-on-surface-variant mt-2">Chọn chủ đề bạn muốn tìm hiểu đầu tiên</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+          <!-- Featured: Triết lý -->
+          <a href="triet-ly.html"
+            class="page-card featured reveal reveal-delay-1 p-7 col-span-1 sm:col-span-2 lg:col-span-1">
+            <div class="card-bg-blob"></div>
+            <div class="card-icon-wrap mb-5">
+              <span class="material-symbols-outlined text-2xl text-white">account_balance</span>
+            </div>
+            <h3 class="text-xl font-display font-bold text-white mb-2">Triết Lý Đạo Đức</h3>
+            <p class="text-white/70 text-sm leading-relaxed mb-5 flex-grow">Năm chuẩn mực đạo đức cốt lõi: Cần, Kiệm,
+              Liêm, Chính, Chí công vô tư. Nền tảng của con người xã hội chủ nghĩa.</p>
+            <span class="inline-flex items-center gap-1 text-sm font-bold text-white tracking-wider uppercase">
+              Khám Phá <span class="material-symbols-outlined text-base card-arrow">arrow_forward</span>
+            </span>
+          </a>
+
+          <!-- Câu chuyện -->
+          <a href="tam-guong-bac.html" class="page-card reveal reveal-delay-2 p-7">
+            <div class="card-bg-blob"></div>
+            <div class="card-icon-wrap mb-5">
+              <span class="material-symbols-outlined text-2xl text-primary">auto_stories</span>
+            </div>
+            <h3 class="text-xl font-display font-bold text-on-surface mb-2">Tấm Gương Bác Hồ</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-grow">5 câu chuyện cảm động về đạo đức
+              và nhân cách Hồ Chí Minh từ 1911 đến 1969.</p>
+            <span class="inline-flex items-center gap-1 text-sm font-bold text-primary tracking-wider uppercase">
+              Đọc Ngay <span class="material-symbols-outlined text-base card-arrow">arrow_forward</span>
+            </span>
+          </a>
+
+          <!-- Thử thách -->
+          <a href="ban-dang-song.html" class="page-card reveal reveal-delay-3 p-7">
+            <div class="card-bg-blob"></div>
+            <div class="card-icon-wrap mb-5">
+              <span class="material-symbols-outlined text-2xl text-primary">psychology</span>
+            </div>
+            <h3 class="text-xl font-display font-bold text-on-surface mb-2">Bạn Đang Sống Thế Nào?</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-grow">Bài trắc nghiệm tương tác với 10
+              tình huống thực tế trong kỷ nguyên AI và mạng xã hội.</p>
+            <span class="inline-flex items-center gap-1 text-sm font-bold text-primary tracking-wider uppercase">
+              Làm Ngay <span class="material-symbols-outlined text-base card-arrow">arrow_forward</span>
+            </span>
+          </a>
+
+          <!-- Phân tích -->
+          <a href="thuc-tien-hom-nay.html" class="page-card reveal reveal-delay-4 p-7">
+            <div class="card-bg-blob"></div>
+            <div class="card-icon-wrap mb-5">
+              <span class="material-symbols-outlined text-2xl text-primary">public</span>
+            </div>
+            <h3 class="text-xl font-display font-bold text-on-surface mb-2">Thực Tiễn Hôm Nay</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-grow">Phân tích đạo đức học thuật, mạng
+              xã hội, làm việc nhóm và chống tham nhũng vặt.</p>
+            <span class="inline-flex items-center gap-1 text-sm font-bold text-primary tracking-wider uppercase">
+              Tìm Hiểu <span class="material-symbols-outlined text-base card-arrow">arrow_forward</span>
+            </span>
+          </a>
+
+          <!-- Kết luận -->
+          <a href="toi-chon-cach-song.html" class="page-card reveal reveal-delay-5 p-7">
+            <div class="card-bg-blob"></div>
+            <div class="card-icon-wrap mb-5">
+              <span class="material-symbols-outlined text-2xl text-primary">edit_note</span>
+            </div>
+            <h3 class="text-xl font-display font-bold text-on-surface mb-2">Tôi Chọn Cách Sống</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-grow">Tuyên ngôn thế hệ trẻ: cam kết
+              sống đẹp, sống có trách nhiệm trong thời đại số.</p>
+            <span class="inline-flex items-center gap-1 text-sm font-bold text-primary tracking-wider uppercase">
+              Cam Kết <span class="material-symbols-outlined text-base card-arrow">arrow_forward</span>
+            </span>
+          </a>
+
+          <!-- Minh bạch -->
+          <a href="minh-bach-ai.html" class="page-card reveal reveal-delay-1 p-7">
+            <div class="card-bg-blob"></div>
+            <div class="card-icon-wrap mb-5">
+              <span class="material-symbols-outlined text-2xl text-primary">policy</span>
+            </div>
+            <h3 class="text-xl font-display font-bold text-on-surface mb-2">Minh Bạch Công Nghệ AI</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed mb-5 flex-grow">Báo cáo minh bạch việc ứng dụng AI
+              trong nghiên cứu, thiết kế và phát triển dự án.</p>
+            <span class="inline-flex items-center gap-1 text-sm font-bold text-primary tracking-wider uppercase">
+              Xem Báo Cáo <span class="material-symbols-outlined text-base card-arrow">arrow_forward</span>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ CTA BOTTOM ══════════════ -->
+    <section class="py-24 px-6 text-center">
+      <div class="max-w-2xl mx-auto reveal">
+        <div class="inline-flex w-16 h-16 rounded-full bg-primary/8 items-center justify-center mb-6">
+          <span class="material-symbols-outlined fill-icon text-3xl text-primary">local_florist</span>
+        </div>
+        <h2 class="font-display font-bold text-on-surface mb-4" style="font-size: clamp(1.5rem, 3.5vw, 2.2rem);">
+          Sẵn sàng bắt đầu hành trình?
+        </h2>
+        <p class="text-on-surface-variant mb-8">Khám phá triết lý sống đẹp của Hồ Chí Minh và tìm ra câu trả lời của
+          chính bạn cho câu hỏi muôn thuở.</p>
+        <a href="triet-ly.html"
+          class="inline-flex items-center gap-2 bg-primary text-on-primary px-10 py-4 rounded-full font-bold text-sm tracking-wider shadow-xl hover:shadow-primary/25 hover:scale-105 transition-all duration-300">
+          <span class="material-symbols-outlined">explore</span>
+          Bắt Đầu Từ Triết Lý
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer
+    class="w-full py-12 px-12 flex flex-col md:flex-row justify-between items-center gap-5 bg-surface-container-high border-t border-outline-variant">
+    <div class="flex flex-col gap-2">
+      <span class="text-headline-md font-headline-md text-primary flex items-center gap-2">
+        <span class="material-symbols-outlined fill-icon text-lg">local_florist</span>Sống Đẹp
+      </span>
+      <p class="text-body-md font-body-md text-on-surface">© 2024 Sống Đẹp – Gương Bác Trong Thời Đại Số. Dự án HCM202
+        Đại học Chính quy.</p>
+    </div>
+
+  </footer>
+
+  <script>
+    // ── Scroll progress bar ──
+    window.addEventListener('scroll', () => {
+      const el = document.getElementById('scroll-progress');
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      if (el) el.style.width = pct + '%';
+      document.getElementById('main-header')?.classList.toggle('nav-scrolled', window.scrollY > 20);
+    });
+
+    // ── Animated counter ──
+    function animateCount(el, target, duration = 1200) {
+      let start = null;
+      const step = (ts) => {
+        if (!start) start = ts;
+        const progress = Math.min((ts - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+    const statObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const target = parseInt(e.target.dataset.count, 10);
+          animateCount(e.target, target);
+          statObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => statObserver.observe(el));
+
+    // ── Reveal on scroll ──
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── Canvas floating particles ──
+    (function () {
+      const canvas = document.getElementById('hero-canvas');
+      const ctx = canvas.getContext('2d');
+      let W, H, particles = [];
+      function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+      for (let i = 0; i < 40; i++) {
+        particles.push({
+          x: Math.random() * W, y: Math.random() * H,
+          r: Math.random() * 3 + 1,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          a: Math.random() * 0.25 + 0.05
+        });
+      }
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(180,0,6,${p.a})`;
+          ctx.fill();
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1;
+          if (p.y < 0 || p.y > H) p.vy *= -1;
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    // ── Mobile menu ──
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const mobileDrawerContent = document.getElementById('mobile-drawer-content');
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.remove('hidden');
+        setTimeout(() => mobileDrawerContent.classList.remove('translate-x-full'), 10);
+      });
+    }
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', () => {
+        mobileDrawerContent.classList.add('translate-x-full');
+        setTimeout(() => mobileDrawer.classList.add('hidden'), 300);
+      });
+      mobileDrawer.addEventListener('click', (e) => {
+        if (e.target === mobileDrawer) {
+          mobileDrawerContent.classList.add('translate-x-full');
+          setTimeout(() => mobileDrawer.classList.add('hidden'), 300);
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Bạn Đang Sống Thế Nào? - Sống Đẹp</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <script id="tailwind-config">
+                tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                                extend: {
+                                        "colors": {
+                                                "tertiary-fixed": "#ffe16d",
+                                                "inverse-on-surface": "#f5f1e3",
+                                                "surface-dim": "#dedacd",
+                                                "on-error-container": "#93000a",
+                                                "surface-bright": "#fdf9eb",
+                                                "inverse-primary": "#ffb4a9",
+                                                "primary-fixed": "#ffdad5",
+                                                "outline": "#916f6a",
+                                                "on-tertiary": "#ffffff",
+                                                "on-surface-variant": "#5d403b",
+                                                "primary-fixed-dim": "#ffb4a9",
+                                                "tertiary-fixed-dim": "#e9c400",
+                                                "on-secondary-fixed": "#3e0021",
+                                                "secondary-fixed": "#ffd9e4",
+                                                "on-tertiary-container": "#4c3f00",
+                                                "on-secondary-container": "#64003a",
+                                                "primary": "#b40006",
+                                                "error-container": "#ffdad6",
+                                                "surface-container-lowest": "#ffffff",
+                                                "on-primary": "#ffffff",
+                                                "on-primary-fixed-variant": "#930004",
+                                                "primary-container": "#da251d",
+                                                "on-primary-container": "#fff3f1",
+                                                "secondary": "#b3176d",
+                                                "on-tertiary-fixed": "#221b00",
+                                                "inverse-surface": "#323128",
+                                                "surface": "#fdf9eb",
+                                                "surface-container-highest": "#e6e2d5",
+                                                "tertiary": "#705d00",
+                                                "on-error": "#ffffff",
+                                                "surface-container": "#f2eee0",
+                                                "error": "#ba1a1a",
+                                                "secondary-fixed-dim": "#ffb0cd",
+                                                "background": "#fdf9eb",
+                                                "surface-container-high": "#ece8da",
+                                                "surface-variant": "#e6e2d5",
+                                                "secondary-container": "#ff5ba9",
+                                                "on-surface": "#1c1c14",
+                                                "outline-variant": "#e6bdb7",
+                                                "on-secondary-fixed-variant": "#8c0053",
+                                                "surface-tint": "#bf080b",
+                                                "on-primary-fixed": "#410001",
+                                                "surface-container-low": "#f8f4e6",
+                                                "on-tertiary-fixed-variant": "#544600",
+                                                "on-secondary": "#ffffff",
+                                                "tertiary-container": "#c9a900",
+                                                "on-background": "#1c1c14"
+                                        },
+                                        "borderRadius": {
+                                                "DEFAULT": "0.125rem",
+                                                "lg": "0.25rem",
+                                                "xl": "0.5rem",
+                                                "full": "0.75rem"
+                                        },
+                                        "spacing": {
+                                                "unit": "8px",
+                                                "max-width": "1200px",
+                                                "margin-desktop": "48px",
+                                                "gutter": "20px",
+                                                "margin-mobile": "16px"
+                                        },
+                                        "fontFamily": {
+                                                "body-md": [
+                                                        "Be Vietnam Pro"
+                                                ],
+                                                "quote": [
+                                                        "Lora"
+                                                ],
+                                                "label-md": [
+                                                        "Be Vietnam Pro"
+                                                ],
+                                                "body-lg": [
+                                                        "Be Vietnam Pro"
+                                                ],
+                                                "headline-xl": [
+                                                        "Lora"
+                                                ],
+                                                "headline-md": [
+                                                        "Lora"
+                                                ],
+                                                "headline-lg-mobile": [
+                                                        "Lora"
+                                                ],
+                                                "headline-lg": [
+                                                        "Lora"
+                                                ]
+                                        },
+                                        "fontSize": {
+                                                "body-md": [
+                                                        "15px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "quote": [
+                                                        "20px",
+                                                        {
+                                                                "lineHeight": "1.5",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "label-md": [
+                                                        "13px",
+                                                        {
+                                                                "lineHeight": "1.2",
+                                                                "letterSpacing": "0.05em",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "body-lg": [
+                                                        "16px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "headline-xl": [
+                                                        "40px",
+                                                        {
+                                                                "lineHeight": "1.2",
+                                                                "letterSpacing": "-0.02em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "headline-md": [
+                                                        "21px",
+                                                        {
+                                                                "lineHeight": "1.4",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "headline-lg-mobile": [
+                                                        "23px",
+                                                        {
+                                                                "lineHeight": "1.3",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "headline-lg": [
+                                                        "26px",
+                                                        {
+                                                                "lineHeight": "1.3",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ]
+                                        }
+                                },
+                        },
+                }
+        </script>
+        <style>
+                .nav-scrolled {
+                        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+                }
+
+                #scroll-progress {
+                        position: fixed; top: 0; left: 0; height: 3px;
+                        background: linear-gradient(90deg, #b40006, #da251d);
+                        z-index: 100; transition: width 0.1s linear; width: 0%;
+                }
+
+                .reveal {
+                        opacity: 0; transform: translateY(32px);
+                        transition: opacity 0.7s ease, transform 0.7s ease;
+                }
+                .reveal.visible { opacity: 1; transform: translateY(0); }
+
+                .animate-fade-in {
+                        animation: fadeInUp 0.5s ease both;
+                }
+                @keyframes fadeInUp {
+                        from { opacity: 0; transform: translateY(20px); }
+                        to { opacity: 1; transform: translateY(0); }
+                }
+
+                .quiz-option input:checked+div {
+                        border-color: #da251d;
+                        background-color: #fff3f1;
+                        box-shadow: 0 0 0 1px #da251d, 0 4px 12px rgba(218, 37, 29, 0.08);
+                }
+
+                .quiz-option input:checked+div .check-icon {
+                        opacity: 1;
+                        transform: scale(1);
+                }
+
+                .quiz-option input:checked+div .radio-dot {
+                        background-color: #da251d;
+                        box-shadow: 0 0 0 2px #fff, 0 0 0 4px #da251d;
+                }
+
+                .quiz-option {
+                        transition: transform 0.2s ease, opacity 0.2s ease;
+                }
+                .quiz-option:hover {
+                        transform: translateX(4px);
+                }
+        </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col relative">
+        <!-- Scroll progress bar -->
+        <div id="scroll-progress"></div>
+        <!-- TopNavBar -->
+        <header
+                class="bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md border-b border-primary/10 shadow-sm fixed top-0 left-0 w-full z-50 flex items-center h-16 transition-all duration-300">
+                <nav
+                        class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-full max-w-max-width mx-auto w-full">
+                        <a href="index.html"
+                                class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">Sống
+                                Đẹp</a>
+
+                        <!-- Desktop Nav Links -->
+                        <div class="hidden md:flex items-center gap-4 lg:gap-6 text-label-md font-label-md h-full">
+                                <a href="index.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Trang
+                                        Chủ</a>
+                                <a href="triet-ly.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Triết
+                                        Lý</a>
+                                <a href="tam-guong-bac.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Câu
+                                        Chuyện</a>
+                                <a href="ban-dang-song.html"
+                                        class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-bold text-label-md font-label-md transition-all duration-200 hover:scale-[1.02]">Thử
+                                        Thách</a>
+                                <a href="thuc-tien-hom-nay.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Phân
+                                        Tích</a>
+                                <a href="toi-chon-cach-song.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Kết
+                                        Luận</a>
+                                <a href="minh-bach-ai.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Minh
+                                        Bạch</a>
+                        </div>
+
+                        <!-- CTA Button (Next Step) & Mobile Trigger -->
+                        <div class="flex items-center gap-4">
+                                <a href="thuc-tien-hom-nay.html"
+                                        class="hidden md:flex bg-primary-container text-on-primary-container hover:bg-surface-tint transition-all px-4 py-2 rounded-lg text-label-md font-label-md items-center justify-center font-semibold">Tiếp
+                                        Theo</a>
+                                <button id="mobile-menu-btn"
+                                        class="md:hidden text-primary hover:scale-110 transition-transform duration-200">
+                                        <span class="material-symbols-outlined text-3xl">menu</span>
+                                </button>
+                        </div>
+                </nav>
+        </header>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer"
+                class="fixed inset-0 z-50 bg-on-surface/20 backdrop-blur-sm hidden transition-all duration-300">
+                <div class="fixed top-0 right-0 w-64 h-full bg-surface shadow-2xl p-6 flex flex-col gap-6 transform translate-x-full transition-transform duration-300"
+                        id="mobile-drawer-content">
+                        <div class="flex justify-between items-center pb-4 border-b border-primary/10">
+                                <span class="text-xl font-display font-bold text-primary">Sống Đẹp</span>
+                                <button id="mobile-menu-close"
+                                        class="text-primary hover:rotate-90 transition-transform duration-200">
+                                        <span class="material-symbols-outlined text-2xl">close</span>
+                                </button>
+                        </div>
+                        <nav class="flex flex-col gap-4 text-sm font-semibold uppercase tracking-wider">
+                                <a href="index.html"
+                                        class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Trang
+                                        Chủ</a>
+                                <a href="triet-ly.html"
+                                        class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Triết
+                                        Lý</a>
+                                <a href="tam-guong-bac.html"
+                                        class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Câu
+                                        Chuyện</a>
+                                <a href="ban-dang-song.html" class="py-2 border-b border-primary/5 text-primary">Thử
+                                        Thách</a>
+                                <a href="thuc-tien-hom-nay.html"
+                                        class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Phân
+                                        Tích</a>
+                                <a href="toi-chon-cach-song.html"
+                                        class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Kết
+                                        Luận</a>
+                                <a href="minh-bach-ai.html" class="py-2 text-on-surface-variant hover:text-primary">Minh
+                                        Bạch</a>
+                        </nav>
+                </div>
+        </div>
+        <main id="quiz-main-container"
+                class="flex-grow pt-24 pb-20 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto w-full">
+                <!-- Injected dynamically by JS -->
+        </main>
+
+        <!-- Footer (Generated from JSON) -->
+        <footer
+                class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-high dark:bg-surface-dim border-t border-outline-variant mt-auto">
+                <div class="flex flex-col gap-2">
+                        <span class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim">Sống
+                                Đẹp</span>
+                        <p class="text-body-md font-body-md text-on-surface dark:text-on-surface-variant">© 2024 Sống
+                                Đẹp – Gương Bác Trong Thời Đại Số. Dự án Đại học Chính quy.</p>
+                </div>
+        </footer>
+
+        <script>
+                const quizQuestions = [
+                        {
+                                title: "Sử dụng AI cho bài tập lớn",
+                                desc: "Hạn chót nộp tiểu luận môn Triết đang đến gần. Bạn chưa viết được chữ nào. ChatGPT có thể giúp bạn tạo ra một dàn ý hoàn chỉnh và thậm chí viết luôn cả bài chỉ trong vài phút.",
+                                options: [
+                                        { key: "a", title: "A. Sao chép và dán toàn bộ bài AI", desc: "Dùng AI viết 100% bài rồi nộp thẳng mà không tự kiểm chứng hay chỉnh sửa.", status: "unaligned" },
+                                        { key: "b", title: "B. Dùng AI làm dàn ý & tự nghiên cứu viết bài", desc: "Tham khảo ý tưởng cấu trúc từ AI, sau đó tự nghiên cứu tài liệu và tự viết bài. Có trích dẫn nguồn AI đầy đủ.", status: "aligned" },
+                                        { key: "c", title: "C. Thức trắng đêm tự viết hoàn toàn", desc: "Kiên quyết không dùng AI dù bài viết có thể không kịp tiến độ.", status: "neutral" }
+                                ],
+                                standard: "Liêm - Chính",
+                                category: ["Liêm", "Chính"],
+                                feedbackTitle: "Đạo đức học thuật trong kỷ nguyên số",
+                                feedback: "Bác Hồ dạy chữ <strong>\"Liêm\"</strong> (trong sạch) và <strong>\"Chính\"</strong> (ngay thẳng, trực tính). Sử dụng AI như một công cụ hỗ trợ tư duy là tốt, nhưng để AI làm thay 100% và nộp như công sức tự viết là gian lận học thuật."
+                        },
+                        {
+                                title: "Thành viên nhóm lười biếng",
+                                desc: "Trong nhóm làm bài tập lớn có một thành viên lười biếng, không đóng góp gì. Đến ngày nộp bài thuyết trình, trưởng nhóm hỏi ý kiến bạn về việc ghi tên bạn ấy để lấy điểm.",
+                                options: [
+                                        { key: "a", title: "A. Làm thay hết và vẫn giữ tên bạn ấy", desc: "Làm hộ phần việc của bạn đó và vẫn ghi tên đầy đủ để tránh xích mích bè phái.", status: "unaligned" },
+                                        { key: "b", title: "B. Góp ý thẳng thắn và báo cáo giáo viên", desc: "Trao đổi chân thành giúp bạn nhận ra lỗi, nếu bạn không thay đổi sẽ kiến nghị trừ điểm/gạch tên để công bằng.", status: "aligned" },
+                                        { key: "c", title: "C. Mặc kệ phần việc của bạn ấy", desc: "Chỉ hoàn thành đúng phần việc của mình, không quan tâm nhóm đạt kết quả ra sao.", status: "neutral" }
+                                ],
+                                standard: "Chí công vô tư",
+                                category: ["Chí công vô tư"],
+                                feedbackTitle: "Trách nhiệm tập thể & Sự công bằng",
+                                feedback: "Đạo đức <strong>\"Chí công vô tư\"</strong> đòi hỏi sự công bằng, đặt lợi ích tập thể lên trên sự cả nể cá nhân. Bao che cái sai chỉ làm bạn lười biếng thêm và gây bất công cho cả nhóm."
+                        },
+                        {
+                                title: "Tin tức sai lệch trên mạng xã hội",
+                                desc: "Bạn phát hiện một bài viết chia sẻ thông tin sai lệch về lịch sử đất nước hoặc về trường học trên mạng xã hội, thu hút hàng ngàn lượt chia sẻ bình luận tiêu cực.",
+                                options: [
+                                        { key: "a", title: "A. Lướt qua coi như không thấy", desc: "Im lặng cho qua vì ngại lên tiếng tranh luận hoặc sợ bị công kích cá nhân.", status: "neutral" },
+                                        { key: "b", title: "B. Phản hồi văn minh kèm dẫn chứng", desc: "Bình luận lịch sự, cung cấp tài liệu kiểm chứng chính xác để giúp mọi người hiểu đúng sự thật.", status: "aligned" },
+                                        { key: "c", title: "C. Vào hùa bình luận chỉ trích tiêu cực", desc: "Bình luận công kích, chế giễu theo đám đông mà không cần kiểm chứng nguồn tin.", status: "unaligned" }
+                                ],
+                                standard: "Chính",
+                                category: ["Chính"],
+                                feedbackTitle: "Chính trực số trên mạng xã hội",
+                                feedback: "Đạo đức <strong>\"Chính\"</strong> (thẳng thắn, chính trực) yêu cầu người trẻ dũng cảm bảo vệ lẽ phải. Lên tiếng bảo vệ sự thật trên mạng xã hội bằng thái độ ôn hòa và tri thức chuẩn xác là biểu hiện của lối sống đẹp."
+                        },
+                        {
+                                title: "Cơ hội gian lận thi cử",
+                                desc: "Trong phòng thi học kỳ, giám thị đi ra ngoài giải quyết công việc đột xuất. Các bạn xung quanh đang mở tài liệu chép bài. Bạn gặp một câu khó chưa thể hoàn thành.",
+                                options: [
+                                        { key: "a", title: "A. Mở tài liệu chép bài ngay", desc: "Tận dụng cơ hội vàng để lấy điểm cao vì ai cũng làm thế cả.", status: "unaligned" },
+                                        { key: "b", title: "B. Quyết tâm tự lực làm bài", desc: "Tự giác làm bài bằng năng lực thực chất, chấp nhận điểm số phản ánh đúng học lực của mình.", status: "aligned" },
+                                        { key: "c", title: "C. Liếc nhìn bài của bạn bên cạnh", desc: "Nhìn ké bài của bạn bên cạnh chứ bản thân kiên quyết không tự mở tài liệu phao.", status: "neutral" }
+                                ],
+                                standard: "Liêm",
+                                category: ["Liêm"],
+                                feedbackTitle: "Lòng tự trọng của người học",
+                                feedback: "Chữ <strong>\"Liêm\"</strong> của Bác dạy là luôn giữ lòng trong sạch, không tham lam lợi ích không chính đáng. Điểm số gian lận là hư danh, tự rèn luyện bằng năng lực thực chất mới xây dựng lòng tự trọng vững bền."
+                        },
+                        {
+                                title: "Sống ảo để thu hút tương tác",
+                                desc: "Để tăng lượt theo dõi và nhận được sự ngưỡng mộ trên trang cá nhân, bạn nảy ra ý định dùng app ghép ảnh sang chảnh, thuê xe chụp ảnh giả vờ đi nghỉ dưỡng xa hoa.",
+                                options: [
+                                        { key: "a", title: "A. Đăng ảnh sống ảo phô trương", desc: "Tạo dựng hình tượng giàu có ảo để thỏa mãn tâm lý thích khoe khoang.", status: "unaligned" },
+                                        { key: "b", title: "B. Chia sẻ hình ảnh chân thực", desc: "Đăng những khoảnh khắc học tập, lao động, hoạt động tình nguyện thực tế, giản dị của bản thân.", status: "aligned" },
+                                        { key: "c", title: "C. Không đăng tải bất cứ điều gì", desc: "Giữ kín hoàn toàn cuộc sống cá nhân để tránh phô trương hoặc bị bàn tán.", status: "neutral" }
+                                ],
+                                standard: "Chính - Kiệm",
+                                category: ["Chính", "Kiệm"],
+                                feedbackTitle: "Sống thật & Thực chất",
+                                feedback: "Bác dạy chữ <strong>\"Chính\"</strong> (chân thật) và chữ <strong>\"Kiệm\"</strong> (giản dị, không lãng phí của cải tâm sức vào hư vinh). Sống thật đem lại sự bình yên nội tâm, phô trương ảo chỉ tạo ra áp lực dối trá."
+                        },
+                        {
+                                title: "Trách nhiệm thực hiện deadline",
+                                desc: "Bạn hứa với nhóm làm bài tập lớn sẽ hoàn thành phần slide bài thuyết trình vào tối nay, nhưng bạn mải đi chơi với bạn bè và quên mất nhiệm vụ.",
+                                options: [
+                                        { key: "a", title: "A. Nói dối hỏng máy tính", desc: "Đổ lỗi cho hoàn cảnh như hỏng laptop, mất điện để cả nhóm thông cảm cho sự chậm trễ.", status: "unaligned" },
+                                        { key: "b", title: "B. Nhận lỗi chân thành và làm bù xuyên đêm", desc: "Xin lỗi cả nhóm công khai và chủ động thức xuyên đêm hoàn thành slide để kịp tiến độ.", status: "aligned" },
+                                        { key: "c", title: "C. Im lặng lảng tránh tin nhắn", desc: "Không trả lời tin nhắn của nhóm, đợi đến sáng mai lên lớp rồi giải thích sau.", status: "neutral" }
+                                ],
+                                standard: "Cần - Chính",
+                                category: ["Cần", "Chính"],
+                                feedbackTitle: "Giữ chữ tín và chịu trách nhiệm",
+                                feedback: "Chữ <strong>\"Cần\"</strong> (chăm chỉ, trách nhiệm) và <strong>\"Chính\"</strong> (thành thật) đòi hỏi chúng ta phải có trách nhiệm trước lời hứa. Nhận lỗi chân thành và nỗ lực khắc phục là bước đầu của đạo đức tự giác."
+                        },
+                        {
+                                title: "Nhận công lao thuyết trình bài tập",
+                                desc: "Bạn đại diện cả nhóm thuyết trình bài tập lớn rất xuất sắc và đạt điểm tuyệt đối. Thầy cô khen ngợi bạn nồng nhiệt trước toàn bộ lớp học.",
+                                options: [
+                                        { key: "a", title: "A. Nhận hết lời khen về mình", desc: "Im lặng tận hưởng sự ngưỡng mộ để mọi người nghĩ mình là người gánh đội.", status: "unaligned" },
+                                        { key: "b", title: "B. Tuyên dương đóng góp của cả nhóm", desc: "Trân trọng cảm ơn thầy cô và chủ động liệt kê, tri ân sự đóng góp thầm lặng của từng thành viên trong nhóm.", status: "aligned" },
+                                        { key: "c", title: "C. Nhắc qua loa về nhóm", desc: "Nói chung chung là cả nhóm cùng làm nhưng nhấn mạnh ý tưởng thuyết trình là của mình.", status: "neutral" }
+                                ],
+                                standard: "Chí công vô tư",
+                                category: ["Chí công vô tư"],
+                                feedbackTitle: "Khiêm tốn & Chí công vô tư",
+                                feedback: "Tinh thần <strong>\"Chí công vô tư\"</strong> yêu cầu người trẻ luôn đặt lợi ích và công lao của tập thể lên trên cái tôi cá nhân. Tôn trọng công sức đồng đội là chất keo kết dính sự đoàn kết vững chắc."
+                        },
+                        {
+                                title: "Bạn thân quay cóp bị kỷ luật",
+                                desc: "Bạn thân của bạn bị phát hiện quay cóp tài liệu trong phòng thi học kỳ và đang đối mặt với kỷ luật. Bạn ấy nhờ bạn viết đơn làm chứng giảm nhẹ sai sự thật để cứu bạn.",
+                                options: [
+                                        { key: "a", title: "A. Viết đơn bao che sai sự thật", desc: "Giúp bạn che giấu hành vi gian lận vì tình bạn thân thiết lâu năm.", status: "unaligned" },
+                                        { key: "b", title: "B. Từ chối văn minh và khuyên bạn sửa sai", desc: "Giải thích chân thành lý do từ chối và khuyên bạn nên trung thực nhận lỗi để rèn luyện lại từ đầu.", status: "aligned" },
+                                        { key: "c", title: "C. Lấy lý do bận để tránh mặt", desc: "Tránh mặt để không phải giúp đỡ và cũng không làm mất lòng bạn thân.", status: "neutral" }
+                                ],
+                                standard: "Liêm - Chính",
+                                category: ["Liêm", "Chính"],
+                                feedbackTitle: "Tình bạn chân chính & Lẽ phải",
+                                feedback: "Giúp đỡ bạn bè không đồng nghĩa với bao che lỗi lầm. Đạo đức <strong>\"Chính\"</strong> yêu cầu tính chân thật, không làm chứng gian dối vì tình cảm cá nhân. Khuyên bạn thẳng thắn sửa lỗi mới là tình bạn bền vững."
+                        },
+                        {
+                                title: "Tiết kiệm tài nguyên công cộng",
+                                desc: "Sau giờ tự học muộn ở phòng học tự quản của nhà trường, bạn nhận ra hệ thống điều hòa và đèn điện vẫn đang bật sáng trưng dù không còn ai xung quanh.",
+                                options: [
+                                        { key: "a", title: "A. Bỏ đi thẳng về phòng", desc: "Không quan tâm vì đó là tài sản của nhà trường, sẽ có lao công đi tắt sau.", status: "unaligned" },
+                                        { key: "b", title: "B. Chủ động tắt hết thiết bị rồi về", desc: "Dành ra 2 phút kiểm tra và tắt toàn bộ đèn điện, điều hòa trước khi đóng cửa về phòng.", status: "aligned" },
+                                        { key: "c", title: "C. Chỉ tắt đèn ở bàn học của mình", desc: "Tắt đèn bàn học của mình rồi về, để mặc đèn phòng học lớn và điều hòa chạy liên tục.", status: "neutral" }
+                                ],
+                                standard: "Kiệm",
+                                category: ["Kiệm"],
+                                feedbackTitle: "Tiết kiệm của công",
+                                feedback: "Bác Hồ dạy chữ <strong>\"Kiệm\"</strong> (tiết kiệm) nhấn mạnh việc giữ gìn và tiết kiệm của công. Bảo vệ và tiết kiệm tài nguyên trường học chính là thể hiện trách nhiệm công dân từ việc nhỏ nhất."
+                        },
+                        {
+                                title: "Thái độ học tập trên giảng đường",
+                                desc: "Bạn đến giảng đường học môn chuyên ngành nhưng không chuẩn bị bài trước, trong giờ học chỉ lướt mạng xã hội và nói chuyện riêng, chờ cuối giờ ký tên điểm danh chuyên cần.",
+                                options: [
+                                        { key: "a", title: "A. Duy trì cách học đối phó lấy điểm", desc: "Học đối phó chỉ để lấy điểm chuyên cần và lấy bằng tốt nghiệp.", status: "unaligned" },
+                                        { key: "b", title: "B. Thay đổi thái độ học nghiêm túc", desc: "Chủ động cất điện thoại, tập trung nghe giảng, tích cực tương tác phát biểu và ghi chép bài đầy đủ.", status: "aligned" },
+                                        { key: "c", title: "C. Lần sau cúp học trực tiếp", desc: "Nghỉ học ở nhà làm việc riêng vì lên lớp học cũng không tập trung được.", status: "neutral" }
+                                ],
+                                standard: "Cần",
+                                category: ["Cần"],
+                                feedbackTitle: "Chăm học thực chất",
+                                feedback: "Bác dạy chữ <strong>\"Cần\"</strong> đi đôi với hiệu quả học tập, lao động thực chất. Đi học mà lười tư duy, đối phó điểm danh là lãng phí tiền của gia đình và thời gian quý báu của bản thân."
+                        }
+                ];
+
+                let currentQuestionIndex = 0;
+                let userAnswers = [];
+                let alignedScore = 0;
+                let hasSelected = false;
+                let isShowingFeedback = false;
+
+                let scoreBreakdown = {
+                        "Cần": 0,
+                        "Kiệm": 0,
+                        "Liêm": 0,
+                        "Chính": 0,
+                        "Chí công vô tư": 0
+                };
+
+                const quizContainer = document.getElementById('quiz-main-container');
+
+                window.addEventListener('scroll', () => {
+                        const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+                        document.getElementById('scroll-progress').style.width = pct + '%';
+                });
+
+                const revealObserver = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(e) {
+                                if (e.isIntersecting) {
+                                        e.target.classList.add('visible');
+                                        revealObserver.unobserve(e.target);
+                                }
+                        });
+                }, { threshold: 0.12 });
+                document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+                function initQuiz() {
+                        currentQuestionIndex = 0;
+                        userAnswers = [];
+                        alignedScore = 0;
+                        hasSelected = false;
+                        isShowingFeedback = false;
+                        scoreBreakdown = {
+                                "Cần": 0,
+                                "Kiệm": 0,
+                                "Liêm": 0,
+                                "Chính": 0,
+                                "Chí công vô tư": 0
+                        };
+                        renderQuestion();
+                }
+
+                function renderQuestion() {
+                        const question = quizQuestions[currentQuestionIndex];
+                        const progressPercent = Math.round(((currentQuestionIndex) / quizQuestions.length) * 100);
+
+                        let optionsHtml = '';
+                        question.options.forEach((opt, idx) => {
+                                optionsHtml += `
+      <label class="quiz-option block cursor-pointer group">
+        <input class="hidden" name="quiz-opt" type="radio" value="${opt.key}" onclick="handleOptionSelect('${opt.key}')" ${userAnswers[currentQuestionIndex] === opt.key ? 'checked' : ''}/>
+        <div class="border-2 border-primary/10 rounded-xl p-4 transition-all duration-200 hover:border-primary/40 flex items-start gap-4 bg-surface-container-lowest shadow-sm">
+          <div class="w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center shrink-0 mt-0.5"><div class="radio-dot w-3 h-3 rounded-full bg-transparent transition-all duration-300"></div></div>
+          <div>
+            <span class="text-body-md font-body-md text-on-surface block font-bold mb-1">${opt.title}</span>
+            <span class="text-label-md font-label-md text-on-surface-variant">${opt.desc}</span>
+          </div>
+        </div>
+      </label>
+    `;
+                        });
+
+                        quizContainer.innerHTML = `
+    <div class="text-center mb-12 animate-fade-in">
+      <h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary mb-4">Bạn Đang Sống Thế Nào?</h1>
+      <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">Thử thách bản thân với những tình huống thực tế trong kỷ nguyên số. Lựa chọn của bạn phản ánh những chuẩn mực đạo đức Hồ Chí Minh.</p>
+    </div>
+
+    <!-- Quiz Progress -->
+    <div class="mb-8 max-w-3xl mx-auto">
+      <div class="flex justify-between text-label-md font-label-md text-on-surface-variant mb-2">
+        <span>Câu hỏi ${currentQuestionIndex + 1} / ${quizQuestions.length}</span>
+        <span>${progressPercent}%</span>
+      </div>
+      <div class="w-full bg-surface-container-highest rounded-full h-2">
+        <div class="bg-primary h-2 rounded-full transition-all duration-500" style="width: ${progressPercent}%"></div>
+      </div>
+    </div>
+
+    <!-- Quiz Card -->
+    <div class="max-w-3xl mx-auto bg-surface-container-lowest border border-primary/10 rounded-xl shadow-sm p-6 md:p-8 relative overflow-hidden">
+      <!-- Decorative subtle corner -->
+      <div class="absolute top-0 right-0 w-16 h-16 bg-primary-fixed opacity-20 rounded-bl-full"></div>
+      <div class="mb-8 relative z-10">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-primary-container text-on-primary border border-primary/20 shadow-sm">
+            <span class="material-symbols-outlined text-2xl">history_edu</span>
+          </div>
+          <span class="text-label-md font-label-md text-primary uppercase tracking-widest bg-primary/5 px-3 py-1 rounded-full">Câu hỏi 0${currentQuestionIndex + 1}</span>
+        </div>
+        <h2 class="text-headline-md font-headline-md text-on-surface mb-2">${question.title}</h2>
+        <p class="text-body-md font-body-md text-on-surface-variant">${question.desc}</p>
+      </div>
+      
+      <div id="options-container" class="space-y-4 mb-8">
+        ${optionsHtml}
+      </div>
+      
+      <div class="flex justify-between border-t border-surface-variant pt-6 items-center">
+        <span class="text-label-md font-label-md text-on-surface-variant">Chuẩn mực: <strong class="text-primary">${question.standard}</strong></span>
+        <button id="next-btn" onclick="handleNextClick()" ${hasSelected ? '' : 'disabled'} class="bg-primary-container text-on-primary-container disabled:opacity-50 disabled:cursor-not-allowed hover:bg-primary hover:text-on-primary transition-all px-8 py-4 rounded-full text-label-md font-label-md flex items-center gap-2 shadow-lg hover:shadow-primary/20 font-bold">
+          Tiếp tục
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </button>
+      </div>
+
+      <!-- Feedback Container (Hidden by default) -->
+      <div id="feedback-panel" class="hidden mt-6 bg-surface-container-high rounded-xl p-6 border-l-4 border-primary/80 animate-fade-in">
+        <div class="flex items-center gap-2 text-primary mb-2">
+          <span class="material-symbols-outlined">balance</span>
+          <h3 class="text-headline-md font-headline-md" id="feedback-title-text">${question.feedbackTitle}</h3>
+        </div>
+        <p class="text-body-md font-body-md text-on-surface-variant" id="feedback-desc-text">${question.feedback}</p>
+      </div>
+    </div>
+  `;
+                }
+
+                function handleOptionSelect(key) {
+                        userAnswers[currentQuestionIndex] = key;
+                        hasSelected = true;
+                        document.getElementById('next-btn').disabled = false;
+                }
+
+                function handleNextClick() {
+                        const question = quizQuestions[currentQuestionIndex];
+                        const userChoice = userAnswers[currentQuestionIndex];
+
+                        if (!isShowingFeedback) {
+                                // Show Feedback Panel
+                                const feedbackPanel = document.getElementById('feedback-panel');
+                                const selectedOption = question.options.find(o => o.key === userChoice);
+
+                                // Animate checking
+                                if (selectedOption.status === 'aligned') {
+                                        document.getElementById('feedback-title-text').innerText = "Lựa Chọn Đúng Đắn: " + question.feedbackTitle;
+                                        feedbackPanel.className = "mt-6 bg-surface-container-high rounded-xl p-6 border-l-4 border-primary-container animate-fade-in";
+                                } else {
+                                        document.getElementById('feedback-title-text').innerText = "Soi chiếu chuẩn mực: " + question.feedbackTitle;
+                                        feedbackPanel.className = "mt-6 bg-surface-container-high rounded-xl p-6 border-l-4 border-outline-variant animate-fade-in";
+                                }
+
+                                feedbackPanel.classList.remove('hidden');
+                                isShowingFeedback = true;
+
+                                // Change Button Text
+                                const nextBtn = document.getElementById('next-btn');
+                                if (currentQuestionIndex === quizQuestions.length - 1) {
+                                        nextBtn.innerHTML = `Xem Kết Quả <span class="material-symbols-outlined text-[18px]">workspace_premium</span>`;
+                                } else {
+                                        nextBtn.innerHTML = `Tiếp Theo <span class="material-symbols-outlined text-[18px]">chevron_right</span>`;
+                                }
+                        } else {
+                                // Save points
+                                const selectedOption = question.options.find(o => o.key === userChoice);
+                                if (selectedOption.status === 'aligned') {
+                                        alignedScore++;
+                                        question.category.forEach(cat => {
+                                                scoreBreakdown[cat]++;
+                                        });
+                                }
+
+                                // Go to next question or show results
+                                if (currentQuestionIndex < quizQuestions.length - 1) {
+                                        currentQuestionIndex++;
+                                        hasSelected = false;
+                                        isShowingFeedback = false;
+                                        renderQuestion();
+                                } else {
+                                        showResults();
+                                }
+                        }
+                }
+
+                function showResults() {
+                        let resultTitle = "";
+                        let resultDescription = "";
+
+                        if (alignedScore >= 8) {
+                                resultTitle = "Mực Thước Vững Vàng";
+                                resultDescription = "Bạn thể hiện sự hiểu biết sâu sắc và cam kết mạnh mẽ đối với các chuẩn mực Cần, Kiệm, Liêm, Chính của Bác. Bạn chính là tấm gương sáng mà sinh viên thời đại số cần hướng tới, luôn hành động trung thực, liêm chính và trách nhiệm vì cộng đồng.";
+                        } else if (alignedScore >= 5) {
+                                resultTitle = "Đang Rèn Luyện";
+                                resultDescription = "Bạn có ý thức tốt về các giá trị đạo đức nhưng đôi lúc vẫn còn bị cám dỗ bởi những thói quen đối phó trong học tập hay mạng xã hội. Hãy tiếp tục soi chiếu tấm gương của Bác mỗi ngày để rèn luyện chữ Cần, chữ Chính thật vững chắc nhé!";
+                        } else {
+                                resultTitle = "Cần Cố Gắng";
+                                resultDescription = "Các quyết định của bạn cho thấy bạn đang gặp nhiều thử thách trong việc cân bằng giữa lợi ích cá nhân và các chuẩn mực liêm chính học thuật. Đừng nản chí! Hành trình tự rèn luyện luôn bắt đầu từ việc nhận thức được cái sai để chủ động sửa mình.";
+                        }
+
+                        function renderStandardPill(name, current, max) {
+                                const percent = Math.round((current / max) * 100);
+                                return `
+      <div class="bg-surface-container-low border border-primary/5 rounded-xl p-4 flex flex-col items-center justify-center">
+        <span class="text-label-md font-label-md text-on-surface mb-1 font-bold text-center">${name}</span>
+        <span class="text-body-md font-body-md text-primary-container font-semibold mb-2">${current}/${max}</span>
+        <div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+          <div class="bg-primary h-full transition-all duration-500" style="width: ${percent}%"></div>
+        </div>
+      </div>
+    `;
+                        }
+
+                        quizContainer.innerHTML = `
+    <div class="text-center mb-12 animate-fade-in">
+      <h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary mb-4">Kết Quả Đánh Giá</h1>
+      <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">Chúc mừng bạn đã hoàn thành bộ thử thách 10 tình huống thực tế dành cho sinh viên trong kỷ nguyên số.</p>
+    </div>
+
+    <div class="max-w-3xl mx-auto bg-surface-container-lowest border border-primary/10 rounded-2xl shadow-xl p-6 md:p-8 relative overflow-hidden animate-fade-in">
+      <!-- Decorative background shapes -->
+      <div class="absolute -top-12 -right-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-12 -left-12 w-48 h-48 bg-tertiary-container/5 rounded-full blur-3xl"></div>
+
+      <div class="relative z-10 text-center space-y-6">
+        <div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-primary/10 text-primary border-4 border-primary/20 shadow-md">
+          <span class="text-3xl font-display font-bold">${alignedScore}/10</span>
+        </div>
+        
+        <h2 class="text-headline-md font-headline-md text-on-surface">
+          Bản Lĩnh Đạo Đức: <span class="text-primary-container font-bold">${resultTitle}</span>
+        </h2>
+        <p class="text-body-md font-body-md text-on-surface-variant max-w-xl mx-auto leading-relaxed">
+          ${resultDescription}
+        </p>
+        
+        <div class="border-t border-b border-primary/10 py-6 my-8">
+          <h3 class="text-label-md font-label-md text-primary uppercase tracking-wider mb-6 font-bold">Đánh giá theo chuẩn mực đạo đức HCM</h3>
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            ${renderStandardPill("Cần", scoreBreakdown["Cần"], 2)}
+            ${renderStandardPill("Kiệm", scoreBreakdown["Kiệm"], 2)}
+            ${renderStandardPill("Liêm", scoreBreakdown["Liêm"], 3)}
+            ${renderStandardPill("Chính", scoreBreakdown["Chính"], 5)}
+            ${renderStandardPill("Chí công vô tư", scoreBreakdown["Chí công vô tư"], 2)}
+          </div>
+        </div>
+
+        <blockquote class="text-quote font-quote text-on-surface-variant italic py-4 border-l-4 border-primary px-6 bg-surface-container-low rounded-r-lg max-w-xl mx-auto text-left relative">
+          "Ở đời và làm người phải như thế nào? Cần, Kiệm, Liêm, Chính, Chí công vô tư!"
+          <span class="block text-right text-label-md font-label-md text-primary mt-2 font-bold">— Chủ tịch Hồ Chí Minh</span>
+        </blockquote>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4 pt-6">
+          <button onclick="initQuiz()" class="border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold text-sm tracking-wider hover:bg-primary/5 transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-lg">replay</span> Thử Thách Lại
+          </button>
+          <a href="thuc-tien-hom-nay.html" class="bg-primary text-on-primary px-8 py-4 rounded-full font-semibold text-sm tracking-wider hover:bg-surface-tint transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/20">
+            Phân Tích Thực Tiễn <span class="material-symbols-outlined text-lg">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+                }
+
+                // Mobile drawer triggers
+                window.addEventListener('scroll', () => {
+                        const n = document.querySelector('header');
+                        n?.classList.toggle('nav-scrolled', window.scrollY > 20);
+                });
+
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenuClose = document.getElementById('mobile-menu-close');
+                const mobileDrawer = document.getElementById('mobile-drawer');
+                const mobileDrawerContent = document.getElementById('mobile-drawer-content');
+
+                if (mobileMenuBtn && mobileDrawer && mobileDrawerContent) {
+                        mobileMenuBtn.addEventListener('click', () => {
+                                mobileDrawer.classList.remove('hidden');
+                                setTimeout(() => {
+                                        mobileDrawerContent.classList.remove('translate-x-full');
+                                }, 10);
+                        });
+                }
+
+                if (mobileMenuClose && mobileDrawer && mobileDrawerContent) {
+                        mobileMenuClose.addEventListener('click', () => {
+                                mobileDrawerContent.classList.add('translate-x-full');
+                                setTimeout(() => {
+                                        mobileDrawer.classList.add('hidden');
+                                }, 300);
+                        });
+
+                        mobileDrawer.addEventListener('click', (e) => {
+                                if (e.target === mobileDrawer) {
+                                        mobileDrawerContent.classList.add('translate-x-full');
+                                        setTimeout(() => {
+                                                mobileDrawer.classList.add('hidden');
+                                        }, 300);
+                                }
+                        });
+                }
+
+                // Start Quiz initially
+                initQuiz();
+        </script>
+</body>
+
+</html>

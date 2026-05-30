@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Sống Đẹp - Triết Lý Đạo Đức</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+        <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap"
+                rel="stylesheet" />
+        <!-- Material Symbols -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script id="tailwind-config">
+                tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                                extend: {
+                                        "colors": {
+                                                "tertiary-fixed": "#ffe16d",
+                                                "inverse-on-surface": "#f5f1e3",
+                                                "surface-dim": "#dedacd",
+                                                "on-error-container": "#93000a",
+                                                "surface-bright": "#fdf9eb",
+                                                "inverse-primary": "#ffb4a9",
+                                                "primary-fixed": "#ffdad5",
+                                                "outline": "#916f6a",
+                                                "on-tertiary": "#ffffff",
+                                                "on-surface-variant": "#5d403b",
+                                                "primary-fixed-dim": "#ffb4a9",
+                                                "tertiary-fixed-dim": "#e9c400",
+                                                "on-secondary-fixed": "#3e0021",
+                                                "secondary-fixed": "#ffd9e4",
+                                                "on-tertiary-container": "#4c3f00",
+                                                "on-secondary-container": "#64003a",
+                                                "primary": "#b40006",
+                                                "error-container": "#ffdad6",
+                                                "surface-container-lowest": "#ffffff",
+                                                "on-primary": "#ffffff",
+                                                "on-primary-fixed-variant": "#930004",
+                                                "primary-container": "#da251d",
+                                                "on-primary-container": "#fff3f1",
+                                                "secondary": "#b3176d",
+                                                "on-tertiary-fixed": "#221b00",
+                                                "inverse-surface": "#323128",
+                                                "surface": "#fdf9eb",
+                                                "surface-container-highest": "#e6e2d5",
+                                                "tertiary": "#705d00",
+                                                "on-error": "#ffffff",
+                                                "surface-container": "#f2eee0",
+                                                "error": "#ba1a1a",
+                                                "secondary-fixed-dim": "#ffb0cd",
+                                                "background": "#fdf9eb",
+                                                "surface-container-high": "#ece8da",
+                                                "surface-variant": "#e6e2d5",
+                                                "secondary-container": "#ff5ba9",
+                                                "on-surface": "#1c1c14",
+                                                "outline-variant": "#e6bdb7",
+                                                "on-secondary-fixed-variant": "#8c0053",
+                                                "surface-tint": "#bf080b",
+                                                "on-primary-fixed": "#410001",
+                                                "surface-container-low": "#f8f4e6",
+                                                "on-tertiary-fixed-variant": "#544600",
+                                                "on-secondary": "#ffffff",
+                                                "tertiary-container": "#c9a900",
+                                                "on-background": "#1c1c14"
+                                        },
+                                        "borderRadius": {
+                                                "DEFAULT": "0.125rem",
+                                                "lg": "0.25rem",
+                                                "xl": "0.5rem",
+                                                "full": "0.75rem"
+                                        },
+                                        "spacing": {
+                                                "unit": "8px",
+                                                "max-width": "1200px",
+                                                "margin-desktop": "48px",
+                                                "gutter": "20px",
+                                                "margin-mobile": "16px"
+                                        },
+                                        "fontFamily": {
+                                                "body-md": [
+                                                        "Be Vietnam Pro"
+                                                ],
+                                                "quote": [
+                                                        "Lora"
+                                                ],
+                                                "label-md": [
+                                                        "Be Vietnam Pro"
+                                                ],
+                                                "body-lg": [
+                                                        "Be Vietnam Pro"
+                                                ],
+                                                "headline-xl": [
+                                                        "Lora"
+                                                ],
+                                                "headline-md": [
+                                                        "Lora"
+                                                ],
+                                                "headline-lg-mobile": [
+                                                        "Lora"
+                                                ],
+                                                "headline-lg": [
+                                                        "Lora"
+                                                ]
+                                        },
+                                        "fontSize": {
+                                                "body-md": [
+                                                        "15px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "quote": [
+                                                        "20px",
+                                                        {
+                                                                "lineHeight": "1.5",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "label-md": [
+                                                        "13px",
+                                                        {
+                                                                "lineHeight": "1.2",
+                                                                "letterSpacing": "0.05em",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "body-lg": [
+                                                        "16px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "headline-xl": [
+                                                        "40px",
+                                                        {
+                                                                "lineHeight": "1.2",
+                                                                "letterSpacing": "-0.02em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "headline-md": [
+                                                        "21px",
+                                                        {
+                                                                "lineHeight": "1.4",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "headline-lg-mobile": [
+                                                        "23px",
+                                                        {
+                                                                "lineHeight": "1.3",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "headline-lg": [
+                                                        "26px",
+                                                        {
+                                                                "lineHeight": "1.3",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ]
+                                        }
+                                },
+                        },
+                }
+        </script>
+        </script>
+        <style>
+                .material-symbols-outlined {
+                        font-variation-settings:
+                                'FILL' 0,
+                                'wght' 400,
+                                'GRAD' 0,
+                                'opsz' 24
+                }
+
+                .material-symbols-outlined.fill-icon {
+                        font-variation-settings:
+                                'FILL' 1,
+                                'wght' 400,
+                                'GRAD' 0,
+                                'opsz' 24
+                }
+
+                .nav-scrolled {
+                        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+                }
+
+                #scroll-progress {
+                        position: fixed; top: 0; left: 0; height: 3px;
+                        background: linear-gradient(90deg, #b40006, #da251d);
+                        z-index: 100; transition: width 0.1s linear; width: 0%;
+                }
+
+                .reveal {
+                        opacity: 0; transform: translateY(32px);
+                        transition: opacity 0.7s ease, transform 0.7s ease;
+                }
+                .reveal.visible { opacity: 1; transform: translateY(0); }
+                .reveal-delay-1 { transition-delay: 0.1s; }
+                .reveal-delay-2 { transition-delay: 0.2s; }
+                .reveal-delay-3 { transition-delay: 0.3s; }
+                .reveal-delay-4 { transition-delay: 0.4s; }
+                .reveal-delay-5 { transition-delay: 0.5s; }
+
+                .hero-fade-in { animation: heroUp 0.8s ease both; }
+                .hero-fade-in-d1 { animation-delay: 0.15s; }
+                .hero-fade-in-d2 { animation-delay: 0.3s; }
+                .hero-fade-in-d3 { animation-delay: 0.45s; }
+                @keyframes heroUp {
+                        from { opacity: 0; transform: translateY(24px); }
+                        to { opacity: 1; transform: translateY(0); }
+                }
+        </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body-md antialiased pt-16">
+        <!-- Scroll progress bar -->
+        <div id="scroll-progress"></div>
+        <!-- TopNavBar -->
+        <header
+                class="bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md border-b border-primary/10 shadow-sm fixed top-0 left-0 w-full z-50 flex items-center h-16 transition-all duration-300">
+                <nav
+                        class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-full max-w-max-width mx-auto w-full">
+                        <a href="index.html"
+                                class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">Sống
+                                Đẹp</a>
+
+                        <!-- Desktop Nav Links -->
+                        <div class="hidden md:flex items-center gap-4 lg:gap-6 text-label-md font-label-md h-full">
+                                <a href="index.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Trang
+                                        Chủ</a>
+                                <a href="triet-ly.html"
+                                        class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-bold text-label-md font-label-md transition-all duration-200 hover:scale-[1.02]">Triết
+                                        Lý</a>
+                                <a href="tam-guong-bac.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Câu
+                                        Chuyện</a>
+                                <a href="ban-dang-song.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Thử
+                                        Thách</a>
+                                <a href="thuc-tien-hom-nay.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Phân
+                                        Tích</a>
+                                <a href="toi-chon-cach-song.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Kết
+                                        Luận</a>
+                                <a href="minh-bach-ai.html"
+                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Minh
+                                        Bạch</a>
+                        </div>
+
+                        <!-- CTA Button (Next Step) & Mobile Trigger -->
+                        <div class="flex items-center gap-4">
+                                <a href="tam-guong-bac.html"
+                                        class="hidden md:flex bg-primary-container text-on-primary-container hover:bg-surface-tint transition-all px-4 py-2 rounded-lg text-label-md font-label-md items-center justify-center font-semibold">Tiếp
+                                        Theo</a>
+                                <button id="mobile-menu-btn"
+                                        class="md:hidden text-primary hover:scale-110 transition-transform duration-200">
+                                        <span class="material-symbols-outlined text-3xl">menu</span>
+                                </button>
+                        </div>
+                </nav>
+        </header>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer"
+                class="fixed inset-0 z-50 bg-on-surface/20 backdrop-blur-sm hidden transition-all duration-300">
+                <div class="fixed top-0 right-0 w-64 h-full bg-surface shadow-2xl p-6 flex flex-col gap-6 transform translate-x-full transition-transform duration-300"
+                        id="mobile-drawer-content">
+                        <div class="flex justify-between items-center pb-4 border-b border-primary/10">
+                                <span class="text-xl font-display font-bold text-primary">HCM202</span>
+                                <button id="mobile-menu-close"
+                                        class="text-primary hover:rotate-90 transition-transform duration-200">
+                                        <span class="material-symbols-outlined text-2xl">close</span>
+                                </button>
+                        </div>
+                        <nav class="flex flex-col gap-4 text-sm font-semibold uppercase tracking-wider">
+                                <a href="index.html"
+                                        class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Trang
+                                        Chủ</a>
+                                <a href="triet-ly.html" class="py-2 border-b border-primary/5 text-primary">Triết Lý</a>
+                                <a href="tam-guong-bac.html"
+                                        class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Câu
+                                        Chuyện</a>
+                                <a href="ban-dang-song.html"
+                                        class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Thử
+                                        Thách</a>
+                                <a href="thuc-tien-hom-nay.html"
+                                        class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Phân
+                                        Tích</a>
+                                <a href="toi-chon-cach-song.html"
+                                        class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Kết
+                                        Luận</a>
+                                <a href="minh-bach-ai.html" class="py-2 text-on-surface-variant hover:text-primary">Minh
+                                        Bạch</a>
+                        </nav>
+                </div>
+        </div>
+        <main>
+                <!-- Hero Section: The Root -->
+                <section
+                        class="relative py-24 md:py-32 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto flex flex-col items-center justify-center min-h-[716px] text-center">
+                        <div class="max-w-4xl space-y-8 relative z-10">
+                                <div
+                                        class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-container/10 text-primary-container mb-6 hero-fade-in">
+                                        <span class="material-symbols-outlined text-4xl"
+                                                data-icon="nature">nature</span>
+                                </div>
+                                <h1
+                                        class="text-headline-lg-mobile md:text-headline-xl font-headline-lg-mobile md:font-headline-xl text-on-surface mb-6 hero-fade-in hero-fade-in-d1">
+                                        Đạo đức là <span class="text-primary-container">Cái Gốc</span> của người Cách
+                                        mạng
+                                </h1>
+                                <blockquote
+                                        class="text-quote font-quote text-on-surface-variant italic relative inline-block px-8 hero-fade-in hero-fade-in-d2">
+                                        <span
+                                                class="material-symbols-outlined absolute top-0 left-0 text-outline-variant text-4xl opacity-50 transform -translate-x-4 -translate-y-4">format_quote</span>
+                                        "Cũng như sông thì có nguồn mới có nước, không có nguồn thì sông cạn. Cây phải
+                                        có gốc, không có gốc thì cây héo. Người cách mạng phải có đạo đức, không có đạo
+                                        đức thì dù tài giỏi mấy cũng không lãnh đạo được nhân dân."
+                                        <span
+                                                class="material-symbols-outlined absolute bottom-0 right-0 text-outline-variant text-4xl opacity-50 transform translate-x-4 translate-y-4 rotate-180">format_quote</span>
+                                </blockquote>
+                                <p
+                                        class="text-body-md font-body-md text-outline mt-8 uppercase tracking-widest text-sm">
+                                        — Hồ Chí Minh —
+                                </p>
+                        </div>
+                        <!-- Decorative subtle scroll indicator -->
+                        <div
+                                class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50 text-primary-container">
+                                <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                        </div>
+                </section>
+                <!-- Infographic Section: 5 Standards (Bento Grid) -->
+                <section
+                        class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest border-y border-outline-variant/30">
+                        <div class="max-w-max-width mx-auto">
+                                <div class="text-center mb-16 reveal">
+                                        <h2 class="text-headline-md font-headline-md text-primary-container mb-4">Năm
+                                                Chuẩn Mực Đạo Đức Cốt Lõi</h2>
+                                        <p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mx-auto">
+                                                Hệ thống giá trị định hình nhân cách người cán bộ, đảng viên và là kim
+                                                chỉ nam cho thế hệ trẻ ngày nay.</p>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                                        <!-- Cần -->
+                                        <div
+                                                class="bg-surface border border-primary-container/10 rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(218,37,29,0.08)] flex flex-col h-full group reveal reveal-delay-1">
+                                                <div
+                                                        class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center mb-6 group-hover:bg-primary-container/10 transition-colors">
+                                                        <span class="material-symbols-outlined text-outline group-hover:text-primary-container"
+                                                                data-icon="construction">construction</span>
+                                                </div>
+                                                <h3 class="text-headline-md font-headline-md text-on-surface mb-3">Cần
+                                                </h3>
+                                                <p
+                                                        class="text-body-md font-body-md text-on-surface-variant flex-grow mb-6">
+                                                        Lao động cần cù, siêng năng, lao động có kế hoạch, sáng tạo và
+                                                        có năng suất cao. Không lười biếng, không ỷ lại.</p>
+                                                <div
+                                                        class="bg-surface-container p-4 rounded-lg border-l-2 border-tertiary-container">
+                                                        <p
+                                                                class="text-label-md font-label-md text-tertiary uppercase mb-1">
+                                                                Góc sinh viên</p>
+                                                        <p class="text-body-md font-body-md text-on-surface text-sm">
+                                                                Chăm chỉ học tập, nghiên cứu khoa học, tích cực tham gia
+                                                                hoạt động ngoại khóa để phát triển toàn diện.</p>
+                                                </div>
+                                        </div>
+                                        <!-- Kiệm -->
+                                        <div
+                                                class="bg-surface border border-primary-container/10 rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(218,37,29,0.08)] flex flex-col h-full group reveal reveal-delay-2">
+                                                <div
+                                                        class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center mb-6 group-hover:bg-primary-container/10 transition-colors">
+                                                        <span class="material-symbols-outlined text-outline group-hover:text-primary-container"
+                                                                data-icon="nest_eco_leaf">nest_eco_leaf</span>
+                                                </div>
+                                                <h3 class="text-headline-md font-headline-md text-on-surface mb-3">Kiệm
+                                                </h3>
+                                                <p
+                                                        class="text-body-md font-body-md text-on-surface-variant flex-grow mb-6">
+                                                        Tiết kiệm thời gian, công sức, của cải của nước, của dân. Không
+                                                        xa xỉ, không hoang phí, không phô trương hình thức.</p>
+                                                <div
+                                                        class="bg-surface-container p-4 rounded-lg border-l-2 border-tertiary-container">
+                                                        <p
+                                                                class="text-label-md font-label-md text-tertiary uppercase mb-1">
+                                                                Góc sinh viên</p>
+                                                        <p class="text-body-md font-body-md text-on-surface text-sm">
+                                                                Quản lý tài chính cá nhân hợp lý, bảo vệ tài sản chung
+                                                                của trường lớp, quý trọng thời gian thanh xuân.</p>
+                                                </div>
+                                        </div>
+                                        <!-- Liêm -->
+                                        <div
+                                                class="bg-surface border border-primary-container/10 rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(218,37,29,0.08)] flex flex-col h-full group reveal reveal-delay-3">
+                                                <div
+                                                        class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center mb-6 group-hover:bg-primary-container/10 transition-colors">
+                                                        <span class="material-symbols-outlined text-outline group-hover:text-primary-container"
+                                                                data-icon="balance">balance</span>
+                                                </div>
+                                                <h3 class="text-headline-md font-headline-md text-on-surface mb-3">Liêm
+                                                </h3>
+                                                <p
+                                                        class="text-body-md font-body-md text-on-surface-variant flex-grow mb-6">
+                                                        Luôn tôn trọng giữ gìn của công và của dân. Không xâm phạm một
+                                                        đồng xu, hạt thóc của Nhà nước, của nhân dân.</p>
+                                                <div
+                                                        class="bg-surface-container p-4 rounded-lg border-l-2 border-tertiary-container">
+                                                        <p
+                                                                class="text-label-md font-label-md text-tertiary uppercase mb-1">
+                                                                Góc sinh viên</p>
+                                                        <p class="text-body-md font-body-md text-on-surface text-sm">
+                                                                Trung thực trong thi cử, không gian lận học thuật, sống
+                                                                ngay thẳng, tự trọng trong các mối quan hệ.</p>
+                                                </div>
+                                        </div>
+                                        <!-- Chính -->
+                                        <div
+                                                class="bg-surface border border-primary-container/10 rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_24px_rgba(218,37,29,0.08)] flex flex-col h-full group md:col-span-2 lg:col-span-1 reveal reveal-delay-4">
+                                                <div
+                                                        class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center mb-6 group-hover:bg-primary-container/10 transition-colors">
+                                                        <span class="material-symbols-outlined text-outline group-hover:text-primary-container"
+                                                                data-icon="gavel">gavel</span>
+                                                </div>
+                                                <h3 class="text-headline-md font-headline-md text-on-surface mb-3">Chính
+                                                </h3>
+                                                <p
+                                                        class="text-body-md font-body-md text-on-surface-variant flex-grow mb-6">
+                                                        Không tà, nghĩa là thẳng thắn, đứng đắn. Đối với mình, đối với
+                                                        người, đối với việc đều phải ngay thẳng, đúng mực.</p>
+                                                <div
+                                                        class="bg-surface-container p-4 rounded-lg border-l-2 border-tertiary-container">
+                                                        <p
+                                                                class="text-label-md font-label-md text-tertiary uppercase mb-1">
+                                                                Góc sinh viên</p>
+                                                        <p class="text-body-md font-body-md text-on-surface text-sm">Bảo
+                                                                vệ lẽ phải, dũng cảm nhận lỗi khi làm sai, kiên quyết
+                                                                chống lại các hành vi tiêu cực trong học đường.</p>
+                                                </div>
+                                        </div>
+                                        <!-- Chí công vô tư -->
+                                        <div
+                                                class="bg-primary-container text-on-primary-container border border-primary/20 rounded-xl p-8 transition-all duration-300 hover:-translate-y-1 shadow-[0_8px_24px_rgba(218,37,29,0.15)] flex flex-col h-full md:col-span-2 lg:col-span-2 relative overflow-hidden reveal reveal-delay-5">
+                                                <!-- Decorative background element -->
+                                                <div class="absolute -right-8 -bottom-8 opacity-10">
+                                                        <span class="material-symbols-outlined text-[200px]"
+                                                                data-icon="public">public</span>
+                                                </div>
+                                                <div class="relative z-10 flex flex-col h-full">
+                                                        <div
+                                                                class="w-12 h-12 bg-on-primary-container/20 rounded-full flex items-center justify-center mb-6">
+                                                                <span class="material-symbols-outlined text-on-primary-container"
+                                                                        data-icon="diversity_3">diversity_3</span>
+                                                        </div>
+                                                        <h3 class="text-headline-md font-headline-md mb-3">Chí công vô
+                                                                tư</h3>
+                                                        <p class="text-body-lg font-body-lg flex-grow mb-6 max-w-2xl">
+                                                                Đặt lợi ích của Đảng, của Tổ quốc, của nhân dân lên trên
+                                                                hết, trước hết. Quét sạch chủ nghĩa cá nhân, nâng cao
+                                                                đạo đức cách mạng.</p>
+                                                        <div
+                                                                class="bg-on-primary-container/10 backdrop-blur-sm p-5 rounded-lg border-l-2 border-tertiary-fixed max-w-2xl">
+                                                                <p
+                                                                        class="text-label-md font-label-md text-tertiary-fixed uppercase mb-2">
+                                                                        Góc sinh viên - Áp dụng thực tiễn</p>
+                                                                <p class="text-body-md font-body-md text-sm">Sẵn sàng
+                                                                        cống hiến sức trẻ cho cộng đồng thông qua các
+                                                                        chiến dịch tình nguyện Mùa Hè Xanh, Xuân Tình
+                                                                        Nguyện. Làm việc nhóm vì mục tiêu chung, không
+                                                                        đặt nặng cái tôi cá nhân gây mất đoàn kết.</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- Conclusion Section: Đức - Tài -->
+                <section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface relative overflow-hidden">
+                        <!-- Decorative Lotus Corner (CSS based placeholder for motif) -->
+                        <div
+                                class="absolute top-0 left-0 w-32 h-32 border-t-4 border-l-4 border-primary-container/20 opacity-50 m-8 rounded-tl-3xl">
+                        </div>
+                        <div
+                                class="absolute bottom-0 right-0 w-32 h-32 border-b-4 border-r-4 border-primary-container/20 opacity-50 m-8 rounded-br-3xl">
+                        </div>
+                        <div class="max-w-3xl mx-auto text-center relative z-10 reveal">
+                                <h2 class="text-label-md font-label-md text-tertiary uppercase tracking-widest mb-6">Mối
+                                        Quan Hệ Biện Chứng</h2>
+                                <div
+                                        class="bg-surface-container-lowest p-8 md:p-12 rounded-2xl shadow-sm border border-outline-variant/50 relative">
+                                        <span
+                                                class="material-symbols-outlined absolute top-4 right-4 text-primary-container/20 text-6xl rotate-12">auto_stories</span>
+                                        <h3
+                                                class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary-container mb-8">
+                                                Đức và Tài
+                                        </h3>
+                                        <p class="text-quote font-quote text-on-surface leading-relaxed mb-8">
+                                                "Có tài mà không có đức là người vô dụng, có đức mà không có tài thì làm
+                                                việc gì cũng khó."
+                                        </p>
+                                        <div class="w-16 h-1 bg-tertiary-container mx-auto rounded-full mb-8"></div>
+                                        <p class="text-body-md font-body-md text-on-surface-variant">
+                                                Đạo đức là gốc rễ, là nền tảng định hướng cho tài năng phát huy đúng
+                                                đắn. Tài năng là công cụ, là phương tiện để thực hiện những lý tưởng đạo
+                                                đức cao đẹp. Sinh viên thời đại số cần trau dồi cả hai yếu tố này để trở
+                                                thành công dân toàn cầu có trách nhiệm.
+                                        </p>
+                                </div>
+                        </div>
+                </section>
+        </main>
+        <!-- Footer -->
+        <footer
+                class="bg-surface-container-high dark:bg-surface-dim border-t border-outline-variant w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter transition-opacity duration-300">
+                <div
+                        class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim text-center md:text-left mb-6 md:mb-0">
+                        HCM202
+                        <p
+                                class="text-body-md font-body-md text-on-surface dark:text-on-surface-variant text-sm mt-2 font-normal">
+                                © 2024 HCM202 – Gương Bác Trong Thời Đại Số. Dự án Đại học Chính quy.
+                        </p>
+                </div>
+        </footer>
+        <script>
+                window.addEventListener('scroll', () => {
+                        const n = document.querySelector('header');
+                        n?.classList.toggle('nav-scrolled', window.scrollY > 20);
+                        const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+                        document.getElementById('scroll-progress').style.width = pct + '%';
+                });
+
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenuClose = document.getElementById('mobile-menu-close');
+                const mobileDrawer = document.getElementById('mobile-drawer');
+                const mobileDrawerContent = document.getElementById('mobile-drawer-content');
+
+                if (mobileMenuBtn && mobileDrawer && mobileDrawerContent) {
+                        mobileMenuBtn.addEventListener('click', () => {
+                                mobileDrawer.classList.remove('hidden');
+                                setTimeout(() => {
+                                        mobileDrawerContent.classList.remove('translate-x-full');
+                                }, 10);
+                        });
+                }
+
+                if (mobileMenuClose && mobileDrawer && mobileDrawerContent) {
+                        mobileMenuClose.addEventListener('click', () => {
+                                mobileDrawerContent.classList.add('translate-x-full');
+                                setTimeout(() => {
+                                        mobileDrawer.classList.add('hidden');
+                                }, 300);
+                        });
+
+                        mobileDrawer.addEventListener('click', (e) => {
+                                if (e.target === mobileDrawer) {
+                                        mobileDrawerContent.classList.add('translate-x-full');
+                                        setTimeout(() => {
+                                                mobileDrawer.classList.add('hidden');
+                                        }, 300);
+                                }
+                        });
+                }
+
+                const revealObserver = new IntersectionObserver(function(entries) {
+                        entries.forEach(function(e) {
+                                if (e.isIntersecting) {
+                                        e.target.classList.add('visible');
+                                        revealObserver.unobserve(e.target);
+                                }
+                        });
+                }, { threshold: 0.12 });
+                document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+        </script>
+</body>
+
+</html>

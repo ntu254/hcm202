@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Sống Đẹp - Tấm Gương Bác Hồ</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed": "#ffe16d",
+            "inverse-on-surface": "#f5f1e3",
+            "surface-dim": "#dedacd",
+            "on-error-container": "#93000a",
+            "surface-bright": "#fdf9eb",
+            "inverse-primary": "#ffb4a9",
+            "primary-fixed": "#ffdad5",
+            "outline": "#916f6a",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#5d403b",
+            "primary-fixed-dim": "#ffb4a9",
+            "tertiary-fixed-dim": "#e9c400",
+            "on-secondary-fixed": "#3e0021",
+            "secondary-fixed": "#ffd9e4",
+            "on-tertiary-container": "#4c3f00",
+            "on-secondary-container": "#64003a",
+            "primary": "#b40006",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#930004",
+            "primary-container": "#da251d",
+            "on-primary-container": "#fff3f1",
+            "secondary": "#b3176d",
+            "on-tertiary-fixed": "#221b00",
+            "inverse-surface": "#323128",
+            "surface": "#fdf9eb",
+            "surface-container-highest": "#e6e2d5",
+            "tertiary": "#705d00",
+            "on-error": "#ffffff",
+            "surface-container": "#f2eee0",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#ffb0cd",
+            "background": "#fdf9eb",
+            "surface-container-high": "#ece8da",
+            "surface-variant": "#e6e2d5",
+            "secondary-container": "#ff5ba9",
+            "on-surface": "#1c1c14",
+            "outline-variant": "#e6bdb7",
+            "on-secondary-fixed-variant": "#8c0053",
+            "surface-tint": "#bf080b",
+            "on-primary-fixed": "#410001",
+            "surface-container-low": "#f8f4e6",
+            "on-tertiary-fixed-variant": "#544600",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#c9a900",
+            "on-background": "#1c1c14"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "unit": "8px",
+            "max-width": "1200px",
+            "margin-desktop": "48px",
+            "gutter": "20px",
+            "margin-mobile": "16px"
+          },
+          "fontFamily": {
+            "body-md": ["Be Vietnam Pro"],
+            "quote": ["Lora"],
+            "label-md": ["Be Vietnam Pro"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-xl": ["Lora"],
+            "headline-md": ["Lora"],
+            "headline-lg-mobile": ["Lora"],
+            "headline-lg": ["Lora"]
+          },
+          "fontSize": {
+            "body-md": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "quote": ["20px", { "lineHeight": "1.5", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-md": ["21px", { "lineHeight": "1.4", "fontWeight": "600" }],
+            "headline-lg-mobile": ["23px", { "lineHeight": "1.3", "fontWeight": "700" }],
+            "headline-lg": ["26px", { "lineHeight": "1.3", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+
+    .nav-scrolled {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .paper-texture {
+      background-color: theme('colors.surface');
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.02);
+      position: relative;
+    }
+
+    .paper-texture::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .content-layer {
+      position: relative;
+      z-index: 10;
+    }
+
+    .story-card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(218, 37, 29, 0.12);
+    }
+
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: linear-gradient(90deg, #b40006, #da251d);
+      z-index: 100; transition: width 0.1s linear; width: 0%;
+    }
+
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    .hero-fade-in { animation: heroUp 0.8s ease both; }
+    .hero-fade-in-d1 { animation-delay: 0.15s; }
+    .hero-fade-in-d2 { animation-delay: 0.3s; }
+    @keyframes heroUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- TopNavBar -->
+  <header
+    class="bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md border-b border-primary/10 shadow-sm fixed top-0 left-0 w-full z-50 flex items-center h-16 transition-all duration-300">
+    <nav
+      class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-full max-w-max-width mx-auto w-full">
+      <a href="index.html"
+        class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">Sống Đẹp</a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden md:flex items-center gap-4 lg:gap-6 text-label-md font-label-md h-full">
+        <a href="index.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Trang
+          Chủ</a>
+        <a href="triet-ly.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Triết
+          Lý</a>
+        <a href="tam-guong-bac.html"
+          class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-bold text-label-md font-label-md transition-all duration-200 hover:scale-[1.02]">Câu
+          Chuyện</a>
+        <a href="ban-dang-song.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Thử
+          Thách</a>
+        <a href="thuc-tien-hom-nay.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Phân
+          Tích</a>
+        <a href="toi-chon-cach-song.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Kết
+          Luận</a>
+        <a href="minh-bach-ai.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Minh
+          Bạch</a>
+      </div>
+
+      <!-- CTA Button (Next Step) & Mobile Trigger -->
+      <div class="flex items-center gap-4">
+        <a href="ban-dang-song.html"
+          class="hidden md:flex bg-primary-container text-on-primary-container hover:bg-surface-tint transition-all px-4 py-2 rounded-lg text-label-md font-label-md items-center justify-center font-semibold">Tiếp
+          Theo</a>
+        <button id="mobile-menu-btn" class="md:hidden text-primary hover:scale-110 transition-transform duration-200">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer"
+    class="fixed inset-0 z-50 bg-on-surface/20 backdrop-blur-sm hidden transition-all duration-300">
+    <div
+      class="fixed top-0 right-0 w-64 h-full bg-surface shadow-2xl p-6 flex flex-col gap-6 transform translate-x-full transition-transform duration-300"
+      id="mobile-drawer-content">
+      <div class="flex justify-between items-center pb-4 border-b border-primary/10">
+        <span class="text-xl font-display font-bold text-primary">Sống Đẹp</span>
+        <button id="mobile-menu-close" class="text-primary hover:rotate-90 transition-transform duration-200">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-4 text-sm font-semibold uppercase tracking-wider">
+        <a href="index.html" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Trang
+          Chủ</a>
+        <a href="triet-ly.html" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Triết
+          Lý</a>
+        <a href="tam-guong-bac.html" class="py-2 border-b border-primary/5 text-primary">Câu Chuyện</a>
+        <a href="ban-dang-song.html"
+          class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Thử Thách</a>
+        <a href="thuc-tien-hom-nay.html"
+          class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Phân Tích</a>
+        <a href="toi-chon-cach-song.html"
+          class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Kết Luận</a>
+        <a href="minh-bach-ai.html" class="py-2 text-on-surface-variant hover:text-primary">Minh Bạch</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main
+    class="flex-grow pt-24 pb-20 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto w-full content-layer">
+
+    <!-- Header Section -->
+    <section
+      class="mb-16 text-center max-w-full mx-auto relative rounded-2xl overflow-hidden min-h-[500px] flex flex-col justify-center items-center px-6 py-20">
+      <div class="absolute inset-0 z-0">
+        <img alt="Vietnamese study corner" class="w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvQu39sbW9kNCDIHwlCrhzkvmWL7CGkf0FWg52q1Asvt1v4CVfei6aU2qOcpzBt8bNniUZVFUt_X0L_YR2PzW8ncJhZuhxdLQSUVZExNV8cFo2pyMZCI0ETDnLq3iUAd8Yd4f4RhSgt41ZNDSP7-WrRUMIPhl56i7imR-7XJdUZNhC4jHvjM-jcfvD0hJgK3OcQyasBIbJyoSLmbnbBvDLo0J8nza39rCSzd6AAT2DQgJxYDZ6cN341_xlH80KLFzuyBsbUCpaV083">
+        <div class="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/60 to-surface"></div>
+      </div>
+      <h1 class="font-headline-xl text-headline-xl text-primary mb-6 relative z-10 hero-fade-in">Tấm Gương Bác Hồ</h1>
+      <p class="font-body-lg text-body-lg relative z-10 max-w-2xl mx-auto font-semibold text-on-surface hero-fade-in hero-fade-in-d1">
+        Những câu chuyện giản dị về Bác không chỉ là lịch sử, mà là những bài học sống động về đạo đức, phong cách sống
+        cho thế hệ trẻ hôm nay. Mỗi kỷ vật, mỗi hành động đều ẩn chứa một triết lý sâu sắc.
+      </p>
+      <div class="mt-8 flex justify-center items-center gap-4 text-primary relative z-10 hero-fade-in hero-fade-in-d2">
+        <span class="w-12 h-px bg-primary/30"></span>
+        <span class="material-symbols-outlined fill-icon text-2xl">local_florist</span>
+        <span class="w-12 h-px bg-primary/30"></span>
+      </div>
+    </section>
+
+    <!-- Bento Grid Gallery -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+
+      <!-- Card 1: Kiệm – ảnh 800x588 (1.36:1), layout ngang -->
+      <article
+        class="col-span-1 md:col-span-8 bg-surface-container-lowest rounded-xl border border-primary/10 overflow-hidden story-card-hover transition-all duration-300 group paper-texture flex flex-col reveal reveal-delay-1">
+        <!-- Ảnh chiếm full width, tỷ lệ đúng gốc 800:588 -->
+        <div class="relative overflow-hidden bg-surface-variant" style="aspect-ratio: 800 / 588;">
+          <img alt="Đôi dép cao su"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            src="https://img.vietcetera.com/uploads/images/03-nov-2025/image2.jpg">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-6">
+            <span
+              class="text-surface-bright font-label-md text-label-md bg-primary/90 px-3 py-1 rounded-DEFAULT backdrop-blur-sm">Bài
+              học về Kiệm</span>
+          </div>
+        </div>
+        <div class="p-6 flex-grow flex flex-col justify-between content-layer">
+          <div>
+            <div class="flex items-center gap-2 text-primary/60 mb-2">
+              <span class="material-symbols-outlined text-sm">history_edu</span>
+              <span class="font-label-md text-label-md uppercase tracking-wider">Câu chuyện 01</span>
+            </div>
+            <h2
+              class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">
+              Đôi dép cao su</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-4 leading-relaxed">
+              Đôi dép cao su của Bác ra đời năm <strong>1947</strong>, được chế tạo từ chiếc lốp ô tô quân sự của thực
+              dân Pháp bị bộ đội ta thu giữ tại chiến dịch Việt Bắc. Đôi dép đã đi cùng Bác qua bao chặng đường kháng
+              chiến đến hòa bình, mòn vẹt gót được vá đi vá lại nhiều lần. Trong chuyến thăm ngoại giao Ấn Độ năm
+              <strong>1958</strong>, khi các phóng viên quốc tế vây quanh chụp ảnh đôi dép giản dị, Bác đã ôn tồn bảo:
+              <em>"Đất nước tôi còn nghèo, nhân dân tôi còn khổ, tôi đi dép này là đã tốt lắm rồi."</em>
+            </p>
+          </div>
+          <div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-tertiary-fixed-dim">
+            <h3 class="font-label-md text-label-md text-on-surface mb-1 flex items-center gap-2">
+              <span class="material-symbols-outlined text-tertiary text-lg">lightbulb</span>
+              Bài học cho Gen Z
+            </h3>
+            <p class="font-body-md text-sm text-on-surface-variant">Sống tối giản thực chất, thực hiện tiêu dùng có ý
+              thức, tránh xa thói quen hoang phí vật chất và hư vinh ảo trên không gian số.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Chí công vô tư -->
+      <article
+        class="col-span-1 md:col-span-4 bg-surface-container-lowest rounded-xl border border-primary/10 overflow-hidden story-card-hover transition-all duration-300 group paper-texture flex flex-col reveal reveal-delay-2">
+        <div class="h-56 bg-surface-variant relative overflow-hidden">
+          <img alt="Bữa cơm đạm bạc"
+            class="w-full h-full object-cover grayscale mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-700"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuADsj1XUdRqGXJ6aep2aZNUGtT6107Te66S2bKzC7HN1l8ZbYY9v72P2o6YfORW8l25FZkMoW0SaVzIVSLJgACkdH7dpliW5Gf_WwVxvSJf5XAkK3BZV1XV7SAw_uOlWgkOQJER_iYBAIaFPJmfYoGrch55W3NyXYGGRGldAWEtwtL0CeC2aGogB8twASlSShd4RXfhsCU0ArR796tvmNUrgFOah4ZHdKMkGkJx2L0piSdiWmd-tSbCpAxACUfuieiTiJtUcrOcgoGD">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+            <span
+              class="text-surface-bright font-label-md text-label-md bg-primary/90 px-3 py-1 rounded-DEFAULT backdrop-blur-sm">Chí
+              công vô tư</span>
+          </div>
+        </div>
+        <div class="p-6 flex-grow flex flex-col justify-between content-layer">
+          <div>
+            <div class="flex items-center gap-2 text-primary/60 mb-2">
+              <span class="material-symbols-outlined text-sm">history_edu</span>
+              <span class="font-label-md text-label-md uppercase tracking-wider">Câu chuyện 02</span>
+            </div>
+            <h2
+              class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">
+              Bữa cơm đạm bạc</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-4 leading-relaxed">
+              Tại Phủ Chủ tịch, bữa cơm hằng ngày của vị Chủ tịch nước thường chỉ có vài món bình dân: bát canh cua, quả
+              cà pháo, khúc cá kho tộ. Đồng chí Vũ Kỳ (thư ký riêng của Bác) kể lại rằng: Bác không bao giờ để lãng phí
+              dù chỉ một hạt cơm. Bác dặn: <em>"Ăn món nào phải hết món đó, cơm thừa phải được đậy lịm sạch sẽ để bữa
+                sau ăn tiếp. Người dân ngoài kia còn đang thiếu thốn, mình làm Chủ tịch mà ăn uống xa hoa là có lỗi với
+                dân."</em>
+            </p>
+          </div>
+          <div class="bg-surface-container-low p-3 rounded-lg border-l-4 border-secondary-fixed-dim mt-auto">
+            <p class="font-body-md text-sm text-on-surface-variant"><strong class="text-on-surface">Bài học:</strong>
+              Chí công vô tư – quét sạch chủ nghĩa cá nhân ích kỷ, đặt lợi ích tập thể lên trên ham muốn thụ hưởng cá
+              nhân.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Cần – ảnh ngang 628x450, layout dọc giống Card 2 -->
+      <article
+        class="col-span-1 md:col-span-8 bg-surface-container-lowest rounded-xl border border-primary/10 overflow-hidden story-card-hover transition-all duration-300 group paper-texture flex flex-col reveal reveal-delay-3">
+        <!-- Container giữ đúng tỷ lệ gốc 628:450 ≈ 1.396:1 -->
+        <div class="relative overflow-hidden bg-surface-variant" style="aspect-ratio: 628 / 450;">
+          <img alt="Tự học ngoại ngữ - Bác Hồ"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            src="images/Bac-Ho.jpg">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-6">
+            <span
+              class="text-surface-bright font-label-md text-label-md bg-primary/90 px-3 py-1 rounded-DEFAULT backdrop-blur-sm">Bài
+              học về Cần</span>
+          </div>
+        </div>
+        <div class="p-6 flex-grow flex flex-col justify-between content-layer">
+          <div>
+            <div class="flex items-center gap-2 text-primary/60 mb-2">
+              <span class="material-symbols-outlined text-sm">history_edu</span>
+              <span class="font-label-md text-label-md uppercase tracking-wider">Câu chuyện 03</span>
+            </div>
+            <h2
+              class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">
+              Tự học ngoại ngữ</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-4 leading-relaxed">
+              Năm <strong>1911</strong>, trên con tàu Đô đốc Latouche-Tréville ra đi tìm đường cứu nước, người thanh
+              niên Nguyễn Tất Thành phải làm công việc phụ bếp cực kỳ vất vả từ sáng sớm tới đêm khuya. Tuy vậy, Bác vẫn
+              tranh thủ mọi thời gian để tự học tiếng Pháp và tiếng Anh. Bác viết các từ mới lên cánh tay hoặc mu bàn
+              tay để nhẩm đọc khi chùi sàn hay rửa bát. Nhờ sự kiên trì bền bỉ ấy, Bác đã làm chủ được 29 ngoại ngữ mà
+              không cần trường lớp chính quy hay người hướng dẫn.
+            </p>
+          </div>
+          <div class="bg-surface-container-low p-3 rounded-lg border-l-4 border-primary">
+            <p class="font-body-md text-sm text-on-surface-variant"><strong class="text-on-surface">Bài học:</strong>
+              Khát vọng vươn lên và tinh thần tự học suốt đời, học tập chủ động để kiến tạo năng lực thực chất.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Liêm Chính – ảnh 1280x720 (16:9), layout dọc full-width -->
+      <article
+        class="col-span-1 md:col-span-12 bg-surface-container-lowest rounded-xl border border-primary/10 overflow-hidden story-card-hover transition-all duration-300 group paper-texture flex flex-col reveal reveal-delay-4">
+        <!-- Ảnh 16:9 full-width, đúng tỷ lệ gốc -->
+        <div class="relative overflow-hidden bg-surface-variant" style="aspect-ratio: 16 / 9;">
+          <img alt="Thăm dân nghèo"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            src="https://i.ytimg.com/vi/_mWm0PvUxt4/maxresdefault.jpg">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-6">
+            <span
+              class="text-surface-bright font-label-md text-label-md bg-primary/90 px-3 py-1 rounded-DEFAULT backdrop-blur-sm">Liêm
+              - Chính</span>
+          </div>
+        </div>
+        <!-- Content bên dưới ảnh -->
+        <div class="p-8 flex flex-col md:flex-row gap-8 content-layer">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 text-primary/60 mb-2">
+              <span class="material-symbols-outlined text-sm">history_edu</span>
+              <span class="font-label-md text-label-md uppercase tracking-wider">Câu chuyện 04</span>
+            </div>
+            <h2
+              class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-primary transition-colors">
+              Thăm dân nghèo đêm 30 Tết</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Đêm giao thừa Tết Nhâm Dần <strong>1962</strong>, Bác Hồ bí mật đến thăm gia đình chị Tín gánh nước thuê
+              đơn thân ở ngõ hẻm Hà Nội mà không báo trước để tránh sự phô trương của cán bộ địa phương. Nhìn thấy
+              cảnh nhà dột nát, không có bánh chưng, Bác đã ôm lấy chị Tín và xúc động rơi nước mắt. Bác dặn dò cán bộ
+              đi cùng: <em>"Một gia đình như thế này mà cán bộ địa phương không biết, để họ khổ cực trong ngày Tết là
+                chúng ta chưa làm tròn trách nhiệm. Phải lo cho dân từ việc nhỏ nhất."</em>
+            </p>
+          </div>
+          <div class="md:w-80 flex-shrink-0">
+            <div
+              class="bg-surface-container-low p-4 rounded-lg border-l-4 border-outline h-full flex flex-col justify-center">
+              <h3 class="font-label-md text-label-md text-on-surface mb-2 flex items-center gap-2">
+                <span class="material-symbols-outlined text-outline text-lg">favorite</span>
+                Bài học cho Gen Z
+              </h3>
+              <p class="font-body-md text-sm text-on-surface-variant">Thấu cảm sâu sắc, làm việc tốt trong thầm lặng,
+                liêm chính từ những hành vi nhỏ mà không cần ai kiểm soát hay tung hô.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5: Di chúc -->
+      <article
+        class="col-span-1 md:col-span-12 bg-surface-container-lowest rounded-xl border border-primary/20 overflow-hidden story-card-hover transition-all duration-300 group mt-4 relative paper-texture reveal reveal-delay-5">
+        <div class="absolute right-0 top-0 w-1/2 h-full opacity-5 pointer-events-none"
+          style="background-image: radial-gradient(circle at center, #b40006 2px, transparent 2px); background-size: 20px 20px;">
+        </div>
+        <div class="flex flex-col md:flex-row h-full">
+          <div
+            class="w-full md:w-1/3 p-8 md:p-12 flex flex-col justify-center bg-primary/5 content-layer border-r border-primary/10">
+            <div class="flex items-center gap-2 text-primary mb-4">
+              <span class="material-symbols-outlined text-xl">auto_stories</span>
+              <span class="font-label-md text-label-md uppercase tracking-wider">Lời dặn dò cuối cùng</span>
+            </div>
+            <h2 class="font-headline-xl text-headline-xl text-primary mb-4">Di chúc</h2>
+            <span
+              class="inline-block bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-full self-start shadow-md mb-6">Lý
+              tưởng sống</span>
+          </div>
+          <div class="w-full md:w-2/3 p-8 md:p-12 flex flex-col justify-center content-layer">
+            <div class="mb-8 relative">
+              <span
+                class="material-symbols-outlined absolute -top-4 -left-6 text-primary/20 text-4xl transform -scale-x-100">format_quote</span>
+              <p class="font-quote text-quote text-on-surface-variant italic relative z-10 leading-relaxed mb-6">
+                "Đoàn viên và thanh niên ta nói chung là tốt, mọi việc đều hăng hái xung phong, không ngại khó khăn, có
+                chí tiến thủ. Đảng cần phải chăm lo giáo dục đạo đức cách mạng cho họ, đào tạo họ thành những người thừa
+                kế xây dựng chủ nghĩa xã hội vừa "hồng" vừa "chuyên"." (Di chúc lịch sử, 1969)
+              </p>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Bản Di chúc (1969) là kết tinh của một đời cống hiến vĩ đại, phản ánh tư tưởng chăm lo đào tạo thế hệ
+                trẻ. Bác xem thanh niên là lực lượng xung phong đi đầu, có vai trò quyết định đến tương lai dân tộc, do
+                đó cần rèn luyện cả tài năng chuyên môn lẫn phẩm chất chính trị để gánh vác trách nhiệm quốc gia.
+              </p>
+            </div>
+            <div
+              class="bg-surface-bright border border-primary/20 p-6 rounded-xl shadow-[0_8px_24px_rgba(218,37,29,0.05)] relative overflow-hidden">
+              <span
+                class="material-symbols-outlined absolute -right-4 -bottom-4 text-primary/5 text-9xl">local_florist</span>
+              <h3 class="font-headline-md text-headline-md text-primary mb-3 relative z-10">Kim chỉ nam cho thế hệ trẻ
+              </h3>
+              <div class="flex flex-col sm:flex-row gap-6 relative z-10">
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="material-symbols-outlined text-tertiary-container text-sm fill-icon">star</span>
+                    <h4 class="font-label-md text-label-md text-on-surface">Vừa "Hồng"</h4>
+                  </div>
+                  <p class="font-body-md text-sm text-on-surface-variant">Rèn luyện lý tưởng cách mạng, đạo đức liêm
+                    khiết trong sạch, bản lĩnh chính trị vững vàng trước cám dỗ.</p>
+                </div>
+                <div class="w-px bg-outline-variant/50 hidden sm:block"></div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="material-symbols-outlined text-tertiary-container text-sm fill-icon">star</span>
+                    <h4 class="font-label-md text-label-md text-on-surface">Vừa "Chuyên"</h4>
+                  </div>
+                  <p class="font-body-md text-sm text-on-surface-variant">Không ngừng nâng cao trình độ tri thức, làm
+                    chủ công nghệ tiên tiến để sẵn sàng hội nhập toàn cầu.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer
+    class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-high dark:bg-surface-dim border-t border-outline-variant flat no shadows transition-opacity duration-300">
+    <div class="flex flex-col gap-2">
+      <span class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim">Sống Đẹp</span>
+      <p class="text-body-md font-body-md text-on-surface dark:text-on-surface-variant">© 2024 Sống Đẹp – Gương Bác
+        Trong Thời Đại Số. Dự án Đại học Chính quy.</p>
+    </div>
+
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelector('header')?.classList.toggle('nav-scrolled', window.scrollY > 20);
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      document.getElementById('scroll-progress').style.width = pct + '%';
+    });
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const mobileDrawerContent = document.getElementById('mobile-drawer-content');
+
+    if (mobileMenuBtn && mobileDrawer && mobileDrawerContent) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.remove('hidden');
+        setTimeout(() => {
+          mobileDrawerContent.classList.remove('translate-x-full');
+        }, 10);
+      });
+    }
+
+    if (mobileMenuClose && mobileDrawer && mobileDrawerContent) {
+      mobileMenuClose.addEventListener('click', () => {
+        mobileDrawerContent.classList.add('translate-x-full');
+        setTimeout(() => {
+          mobileDrawer.classList.add('hidden');
+        }, 300);
+      });
+
+      mobileDrawer.addEventListener('click', (e) => {
+        if (e.target === mobileDrawer) {
+          mobileDrawerContent.classList.add('translate-x-full');
+          setTimeout(() => {
+            mobileDrawer.classList.add('hidden');
+          }, 300);
+        }
+      });
+    }
+
+    const revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+  </script>
+</body>
+
+</html>

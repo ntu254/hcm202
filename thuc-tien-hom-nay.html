@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Sống Đẹp - Thực Tiễn Hôm Nay</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-fixed": "#ffe16d",
+            "inverse-on-surface": "#f5f1e3",
+            "surface-dim": "#dedacd",
+            "on-error-container": "#93000a",
+            "surface-bright": "#fdf9eb",
+            "inverse-primary": "#ffb4a9",
+            "primary-fixed": "#ffdad5",
+            "outline": "#916f6a",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#5d403b",
+            "primary-fixed-dim": "#ffb4a9",
+            "tertiary-fixed-dim": "#e9c400",
+            "on-secondary-fixed": "#3e0021",
+            "secondary-fixed": "#ffd9e4",
+            "on-tertiary-container": "#4c3f00",
+            "on-secondary-container": "#64003a",
+            "primary": "#b40006",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#930004",
+            "primary-container": "#da251d",
+            "on-primary-container": "#fff3f1",
+            "secondary": "#b3176d",
+            "on-tertiary-fixed": "#221b00",
+            "inverse-surface": "#323128",
+            "surface": "#fdf9eb",
+            "surface-container-highest": "#e6e2d5",
+            "tertiary": "#705d00",
+            "on-error": "#ffffff",
+            "surface-container": "#f2eee0",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#ffb0cd",
+            "background": "#fdf9eb",
+            "surface-container-high": "#ece8da",
+            "surface-variant": "#e6e2d5",
+            "secondary-container": "#ff5ba9",
+            "on-surface": "#1c1c14",
+            "outline-variant": "#e6bdb7",
+            "on-secondary-fixed-variant": "#8c0053",
+            "surface-tint": "#bf080b",
+            "on-primary-fixed": "#410001",
+            "surface-container-low": "#f8f4e6",
+            "on-tertiary-fixed-variant": "#544600",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#c9a900",
+            "on-background": "#1c1c14"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "unit": "8px",
+            "max-width": "1200px",
+            "margin-desktop": "48px",
+            "gutter": "20px",
+            "margin-mobile": "16px"
+          },
+          fontFamily: {
+            "body-md": ["Be Vietnam Pro"],
+            "quote": ["Lora"],
+            "label-md": ["Be Vietnam Pro"],
+            "body-lg": ["Be Vietnam Pro"],
+            "headline-xl": ["Lora"],
+            "headline-md": ["Lora"],
+            "headline-lg-mobile": ["Lora"],
+            "headline-lg": ["Lora"]
+          },
+          fontSize: {
+            "body-md": ["15px", { lineHeight: "1.6", fontWeight: "400" }],
+            "quote": ["20px", { lineHeight: "1.5", fontWeight: "400" }],
+            "label-md": ["13px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            "headline-xl": ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-md": ["21px", { lineHeight: "1.4", fontWeight: "600" }],
+            "headline-lg-mobile": ["23px", { lineHeight: "1.3", fontWeight: "700" }],
+            "headline-lg": ["26px", { lineHeight: "1.3", fontWeight: "700" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .nav-scrolled {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    #scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px;
+      background: linear-gradient(90deg, #b40006, #da251d);
+      z-index: 100; transition: width 0.1s linear; width: 0%;
+    }
+
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    .hero-fade-in { animation: heroUp 0.8s ease both; }
+    .hero-fade-in-d1 { animation-delay: 0.15s; }
+    .hero-fade-in-d2 { animation-delay: 0.3s; }
+    @keyframes heroUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tab-btn.active {
+      background: #da251d;
+      color: #fff3f1;
+      box-shadow: 0 2px 8px rgba(218,37,29,0.25);
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeInUp 0.35s ease both; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .poll-option { cursor: pointer; transition: all 0.25s ease; }
+    .poll-option:hover { transform: translateX(4px); }
+    .poll-option.selected {
+      border-color: #da251d;
+      background: #fff3f1;
+      box-shadow: 0 0 0 1px #da251d;
+    }
+    .poll-option .poll-dot {
+      width: 18px; height: 18px;
+      border: 2px solid #e6bdb7;
+      border-radius: 50%;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+    }
+    .poll-option.selected .poll-dot {
+      border-color: #da251d;
+      background: #da251d;
+      box-shadow: inset 0 0 0 3px #fff;
+    }
+
+    .stat-num {
+      font-family: 'Lora', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: #b40006;
+      line-height: 1;
+    }
+
+    .gimkit-frame {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 1rem;
+    }
+
+    .commit-card {
+      animation: fadeInUp 0.4s ease both;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md antialiased pt-[64px]">
+  <!-- Scroll progress bar -->
+  <div id="scroll-progress"></div>
+  <!-- TopNavBar -->
+  <header
+    class="bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md border-b border-primary/10 shadow-sm fixed top-0 left-0 w-full z-50 flex items-center h-16 transition-all duration-300">
+    <nav
+      class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-full max-w-max-width mx-auto w-full">
+      <a href="index.html"
+        class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">Sống Đẹp</a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden md:flex items-center gap-4 lg:gap-6 text-label-md font-label-md h-full">
+        <a href="index.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Trang
+          Chủ</a>
+        <a href="triet-ly.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Triết
+          Lý</a>
+        <a href="tam-guong-bac.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Câu
+          Chuyện</a>
+        <a href="ban-dang-song.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Thử
+          Thách</a>
+        <a href="thuc-tien-hom-nay.html"
+          class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-bold text-label-md font-label-md transition-all duration-200 hover:scale-[1.02]">Phân
+          Tích</a>
+        <a href="toi-chon-cach-song.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Kết
+          Luận</a>
+        <a href="minh-bach-ai.html"
+          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Minh
+          Bạch</a>
+      </div>
+
+      <!-- CTA Button (Next Step) & Mobile Trigger -->
+      <div class="flex items-center gap-4">
+        <a href="toi-chon-cach-song.html"
+          class="hidden md:flex bg-primary-container text-on-primary-container hover:bg-surface-tint transition-all px-4 py-2 rounded-lg text-label-md font-label-md items-center justify-center font-semibold">Tiếp
+          Theo</a>
+        <button id="mobile-menu-btn" class="md:hidden text-primary hover:scale-110 transition-transform duration-200">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer"
+    class="fixed inset-0 z-50 bg-on-surface/20 backdrop-blur-sm hidden transition-all duration-300">
+    <div
+      class="fixed top-0 right-0 w-64 h-full bg-surface shadow-2xl p-6 flex flex-col gap-6 transform translate-x-full transition-transform duration-300"
+      id="mobile-drawer-content">
+      <div class="flex justify-between items-center pb-4 border-b border-primary/10">
+        <span class="text-xl font-display font-bold text-primary">Sống Đẹp</span>
+        <button id="mobile-menu-close" class="text-primary hover:rotate-90 transition-transform duration-200">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-4 text-sm font-semibold uppercase tracking-wider">
+        <a href="index.html" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Trang
+          Chủ</a>
+        <a href="triet-ly.html" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Triết
+          Lý</a>
+        <a href="tam-guong-bac.html"
+          class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Câu Chuyện</a>
+        <a href="ban-dang-song.html"
+          class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Thử Thách</a>
+        <a href="thuc-tien-hom-nay.html" class="py-2 border-b border-primary/5 text-primary">Phân Tích</a>
+        <a href="toi-chon-cach-song.html"
+          class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Kết Luận</a>
+        <a href="minh-bach-ai.html" class="py-2 text-on-surface-variant hover:text-primary">Minh Bạch</a>
+      </nav>
+    </div>
+  </div>
+  <!-- Main Content -->
+  <main class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-[80px]">
+    <!-- Header -->
+    <header class="text-center mb-[80px] py-16">
+      <h1
+        class="text-headline-lg-mobile md:text-headline-xl font-headline-lg-mobile md:font-headline-xl text-primary mb-4 hero-fade-in">
+        Thực Tiễn Hôm Nay</h1>
+      <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 hero-fade-in hero-fade-in-d1">Phân tích các vấn đề đạo đức
+        sinh viên đương đại dưới góc nhìn tư tưởng Hồ Chí Minh.</p>
+      <div class="max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-xl border border-primary/10 hero-fade-in hero-fade-in-d2">
+        <img alt="Đạo đức và công nghệ số Gen Z" class="w-full h-auto object-cover" src="images/thuc_tien_hero.png" />
+      </div>
+    </header>
+    <!-- Stats Strip -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 reveal">
+      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center">
+        <div class="stat-num" data-count="73">0</div>
+        <div class="text-label-md font-label-md text-on-surface-variant mt-1">Triệu người dùng MXH</div>
+      </div>
+      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center">
+        <div class="stat-num" data-count="65">0</div>
+        <div class="text-label-md font-label-md text-on-surface-variant mt-1">% SV từng gian lận</div>
+      </div>
+      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center">
+        <div class="stat-num" data-count="29">0</div>
+        <div class="text-label-md font-label-md text-on-surface-variant mt-1">Ngoại ngữ Bác tự học</div>
+      </div>
+      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center">
+        <div class="stat-num" data-count="170">0</div>
+        <div class="text-label-md font-label-md text-on-surface-variant mt-1">Cán bộ xử lý (2021-24)</div>
+      </div>
+    </div>
+
+    <!-- Interactive Tabbed Analysis Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+      <!-- Card 1: Academic Ethics -->
+      <div class="bg-surface-container-lowest rounded-xl border border-primary/10 shadow-sm overflow-hidden reveal reveal-delay-1" data-card="1">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-primary text-3xl">school</span>
+            <h2 class="text-headline-md font-headline-md text-on-surface">Đạo Đức Học Thuật &amp; AI</h2>
+          </div>
+          <!-- Tabs -->
+          <div class="flex gap-2 mb-4 border-b border-primary/10 pb-3">
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all active" onclick="switchTab(1, 'status', this)">Thực Trạng</button>
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all" onclick="switchTab(1, 'lesson', this)">Bài Học</button>
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all" onclick="switchTab(1, 'action', this)">Hành Động</button>
+          </div>
+          <!-- Tab Contents -->
+          <div class="tab-content active" id="tab-1-status">
+            <p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">Sinh viên lạm dụng AI viết hộ 100% tiểu luận, báo cáo rồi nộp thẳng mà không kiểm chứng. Ranh giới giữa "công cụ hỗ trợ" và "gian lận tinh vi" trở nên mờ nhạt, làm cùn mòn năng lực tự học và tư duy độc lập.</p>
+          </div>
+          <div class="tab-content" id="tab-1-lesson">
+            <div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-primary">
+              <p class="text-body-md font-body-md text-on-surface leading-relaxed">Bác dạy chữ <strong>"Liêm - Chính"</strong> yêu cầu trung thực trong học tập. <strong>Nghị quyết 29-NQ/TW (2013)</strong> nhấn mạnh mục tiêu <em>"chuyển mạnh từ trang bị kiến thức sang phát triển toàn diện năng lực và phẩm chất người học"</em>. Sản phẩm nộp đi phải là thực chất trí tuệ của bản thân.</p>
+            </div>
+          </div>
+          <div class="tab-content" id="tab-1-action">
+            <ul class="space-y-2 text-body-md font-body-md text-on-surface-variant">
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Dùng AI để brainstorm, không copy-paste</li>
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Trích dẫn nguồn AI nếu dùng tham khảo</li>
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Tự viết 100% bài luận bằng năng lực mình</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Quick Poll -->
+        <div class="bg-surface-container/60 px-6 py-4 border-t border-primary/5">
+          <p class="text-label-md font-label-md text-on-surface font-semibold mb-2">Bạn đã từng dùng AI viết bài?</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 1)"><span class="poll-dot"></span>Chưa bao giờ</span>
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 1)"><span class="poll-dot"></span>Thỉnh thoảng</span>
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 1)"><span class="poll-dot"></span>Thường xuyên</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Social Media -->
+      <div class="bg-surface-container-lowest rounded-xl border border-primary/10 shadow-sm overflow-hidden reveal reveal-delay-2" data-card="2">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-primary text-3xl">public</span>
+            <h2 class="text-headline-md font-headline-md text-on-surface">"Sống Ảo" Trên MXH</h2>
+          </div>
+          <div class="flex gap-2 mb-4 border-b border-primary/10 pb-3">
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all active" onclick="switchTab(2, 'status', this)">Thực Trạng</button>
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all" onclick="switchTab(2, 'lesson', this)">Bài Học</button>
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all" onclick="switchTab(2, 'action', this)">Hành Động</button>
+          </div>
+          <div class="tab-content active" id="tab-2-status">
+            <p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">Việt Nam có <strong>72,7 triệu</strong> người dùng MXH tích cực (We Are Social 2024). Nhiều Gen Z rơi vào FOMO, xây dựng vỏ bọc hào nhoáng ảo để thu hút lượt thả tim, đánh mất sự chân thật ngoài đời thực.</p>
+          </div>
+          <div class="tab-content" id="tab-2-lesson">
+            <div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-primary">
+              <p class="text-body-md font-body-md text-on-surface leading-relaxed">Bác Hồ là biểu tượng vĩ đại của sự chân thực và giản dị: đi dép cao su, mặc áo nâu sồng. Bác dạy <strong>"Chính"</strong> (chân thật) và <strong>"Kiệm"</strong> (không xa xỉ hoang phí). Sống thật đem lại bình yên nội tâm hơn trăm ngàn like ảo.</p>
+            </div>
+          </div>
+          <div class="tab-content" id="tab-2-action">
+            <ul class="space-y-2 text-body-md font-body-md text-on-surface-variant">
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Giới hạn thời gian MXH mỗi ngày</li>
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Đăng nội dung thật, giá trị thay vì phô trương</li>
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Fact-check trước khi share bất kỳ tin gì</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-surface-container/60 px-6 py-4 border-t border-primary/5">
+          <p class="text-label-md font-label-md text-on-surface font-semibold mb-2">Bạn có cảm thấy áp lực từ MXH?</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 2)"><span class="poll-dot"></span>Có, thường xuyên</span>
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 2)"><span class="poll-dot"></span>Thỉnh thoảng</span>
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 2)"><span class="poll-dot"></span>Không hề</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Teamwork -->
+      <div class="bg-surface-container-lowest rounded-xl border border-primary/10 shadow-sm overflow-hidden reveal reveal-delay-1" data-card="3">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-primary text-3xl">groups</span>
+            <h2 class="text-headline-md font-headline-md text-on-surface">Làm Việc Nhóm &amp; Cá Nhân</h2>
+          </div>
+          <div class="flex gap-2 mb-4 border-b border-primary/10 pb-3">
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all active" onclick="switchTab(3, 'status', this)">Thực Trạng</button>
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all" onclick="switchTab(3, 'lesson', this)">Bài Học</button>
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all" onclick="switchTab(3, 'action', this)">Hành Động</button>
+          </div>
+          <div class="tab-content active" id="tab-3-status">
+            <p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">"Free-riding" (dựa dẫm, không làm mà muốn hưởng điểm), đùn đẩy trách nhiệm, tranh giành công trạng diễn ra phổ biến trong bài tập nhóm. Cái tôi quá lớn và bệnh ngại cống hiến cản trở sức mạnh hợp tác.</p>
+          </div>
+          <div class="tab-content" id="tab-3-lesson">
+            <div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-primary">
+              <p class="text-body-md font-body-md text-on-surface leading-relaxed">Bác phê phán: <em>"Chủ nghĩa cá nhân là giặc nội xâm, là mẹ đẻ ra muôn vàn thói hư tật xấu"</em>. <strong>Văn kiện Đại hội XIII (2021)</strong> yêu cầu xây dựng hệ giá trị con người trách nhiệm, hòa đồng. Đặt lợi ích nhóm lên trên hết là <strong>Chí công vô tư</strong>.</p>
+            </div>
+          </div>
+          <div class="tab-content" id="tab-3-action">
+            <ul class="space-y-2 text-body-md font-body-md text-on-surface-variant">
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Phân công rõ ràng, cam kết deadline</li>
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Góp ý thẳng thắn, tôn trọng đồng đội</li>
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Chia sẻ công trạng công bằng</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-surface-container/60 px-6 py-4 border-t border-primary/5">
+          <p class="text-label-md font-label-md text-on-surface font-semibold mb-2">Bạn thường đóng vai nào trong nhóm?</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 3)"><span class="poll-dot"></span>Leader</span>
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 3)"><span class="poll-dot"></span>Thành viên</span>
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 3)"><span class="poll-dot"></span>Người quan sát</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Anti-corruption -->
+      <div class="bg-surface-container-lowest rounded-xl border border-primary/10 shadow-sm overflow-hidden reveal reveal-delay-2" data-card="4">
+        <div class="p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-primary text-3xl">balance</span>
+            <h2 class="text-headline-md font-headline-md text-on-surface">Chống Tham Nhũng Vặt</h2>
+          </div>
+          <div class="flex gap-2 mb-4 border-b border-primary/10 pb-3">
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all active" onclick="switchTab(4, 'status', this)">Thực Trạng</button>
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all" onclick="switchTab(4, 'lesson', this)">Bài Học</button>
+            <button class="tab-btn text-label-md font-label-md px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant transition-all" onclick="switchTab(4, 'action', this)">Hành Động</button>
+          </div>
+          <div class="tab-content active" id="tab-4-status">
+            <p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">Nhiều sinh viên thỏa hiệp với gian dối nhỏ: mua điểm, giấy tờ giả, đi cửa sau. Dung túng cho cái sai nhỏ nhặt là bước đệm hình thành tham nhũng lớn khi làm cán bộ sau này.</p>
+          </div>
+          <div class="tab-content" id="tab-4-lesson">
+            <div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-primary">
+              <p class="text-body-md font-body-md text-on-surface leading-relaxed">Bác dạy: <em>"Một vết nhơ nhỏ không gột rửa sẽ làm bẩn cả tấm áo đẹp"</em>. Chiến dịch chống tham nhũng (2021-2024) xử lý hơn 170 cán bộ cấp cao là bài học nhãn tiền. Chữ <strong>"Liêm - Chính"</strong> bảo vệ lòng tự trọng từ ghế nhà trường.</p>
+            </div>
+          </div>
+          <div class="tab-content" id="tab-4-action">
+            <ul class="space-y-2 text-body-md font-body-md text-on-surface-variant">
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Tuyệt đối trung thực trong thi cử, điểm số</li>
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Báo cáo hành vi tiêu cực trong trường</li>
+              <li class="flex items-start gap-2"><span class="material-symbols-outlined text-primary text-base flex-shrink-0">check_circle</span>Giữ gìn của công, không tham lam vật chất</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-surface-container/60 px-6 py-4 border-t border-primary/5">
+          <p class="text-label-md font-label-md text-on-surface font-semibold mb-2">Bạn đã từng chứng kiến tiêu cực?</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 4)"><span class="poll-dot"></span>Chưa từng</span>
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 4)"><span class="poll-dot"></span>Một vài lần</span>
+            <span class="poll-option inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md text-on-surface-variant" onclick="selectPoll(this, 4)"><span class="poll-dot"></span>Khá phổ biến</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gimkit Game Section -->
+    <section class="mb-16 reveal">
+      <div class="text-center mb-8">
+        <span class="inline-flex items-center gap-2 bg-primary/10 text-primary text-label-md font-label-md px-4 py-1.5 rounded-full mb-4">
+          <span class="material-symbols-outlined text-base">sports_esports</span>Trò Chơi Tương Tác
+        </span>
+        <h2 class="text-headline-lg font-headline-lg text-on-surface mb-3">Thử Thách Cùng Gimkit</h2>
+        <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">Củng cố kiến thức về Cần, Kiệm, Liêm, Chính, Chí công vô tư qua trò chơi nhập mã trực tiếp. Mở link và nhập mã để chơi cùng lớp!</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-2xl border border-primary/10 shadow-xl overflow-hidden">
+        <div class="bg-primary/5 px-6 py-3 border-b border-primary/10 flex items-center justify-between flex-wrap gap-3">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">sports_esports</span>
+            <span class="text-headline-md font-headline-md text-on-surface">Gimkit — Sống Đẹp</span>
+          </div>
+          <a href="https://www.gimkit.com/view/6a1a8d71d7dc3837933db0ae" target="_blank" class="inline-flex items-center gap-1 bg-primary text-on-primary text-label-md font-label-md px-5 py-2 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-all shadow-md">
+            <span class="material-symbols-outlined text-base">open_in_new</span>Mở Trang Game
+          </a>
+        </div>
+        <div class="relative" style="padding-bottom: 56.25%;">
+          <iframe class="gimkit-frame absolute inset-0 w-full h-full" src="https://www.gimkit.com/view/6a1a8d71d7dc3837933db0ae" allow="clipboard-read; clipboard-write" loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Commitment Section -->
+    <section class="mb-16 reveal">
+      <div class="max-w-3xl mx-auto bg-surface-container-lowest rounded-2xl border border-primary/10 shadow-sm p-8 md:p-10 relative overflow-hidden">
+        <div class="absolute -top-12 -right-12 w-36 h-36 bg-primary/5 rounded-full blur-3xl"></div>
+        <div class="relative z-10 text-center mb-8">
+          <span class="material-symbols-outlined text-primary text-4xl mb-3">edit_note</span>
+          <h2 class="text-headline-md font-headline-md text-on-surface mb-2">Cam Kết Cá Nhân</h2>
+          <p class="text-body-md font-body-md text-on-surface-variant">Viết một điều bạn sẽ thay đổi hôm nay để sống đẹp hơn theo gương Bác.</p>
+        </div>
+        <div class="flex gap-3 max-w-xl mx-auto mb-6">
+          <input type="text" id="commit-input" placeholder="VD: Tôi sẽ không gian lận trong kỳ thi tới..." class="flex-1 bg-surface border border-primary/20 rounded-xl px-5 py-3 text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+          <button onclick="addCommitment()" class="bg-primary text-on-primary px-6 py-3 rounded-xl text-label-md font-label-md hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center gap-2 shadow-md whitespace-nowrap">
+            <span class="material-symbols-outlined text-base">add</span>Cam Kết
+          </button>
+        </div>
+        <div id="commit-list" class="space-y-3 max-w-xl mx-auto"></div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer
+    class="bg-surface-container-high dark:bg-surface-dim border-t border-outline-variant w-full py-12 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter transition-opacity duration-300">
+    <div class="text-body-md font-body-md text-on-surface dark:text-on-surface-variant text-center md:text-left">
+      © 2024 Sống Đẹp – Gương Bác Trong Thời Đại Số. Dự án Đại học Chính quy.
+    </div>
+
+    <div class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim hidden md:block">Sống Đẹp
+    </div>
+  </footer>
+  <script>
+    window.addEventListener('scroll', () => {
+      const n = document.querySelector('nav');
+      n?.classList.toggle('nav-scrolled', window.scrollY > 20);
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      document.getElementById('scroll-progress').style.width = pct + '%';
+    });
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const mobileDrawerContent = document.getElementById('mobile-drawer-content');
+
+    if (mobileMenuBtn && mobileDrawer && mobileDrawerContent) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileDrawer.classList.remove('hidden');
+        setTimeout(() => {
+          mobileDrawerContent.classList.remove('translate-x-full');
+        }, 10);
+      });
+    }
+
+    if (mobileMenuClose && mobileDrawer && mobileDrawerContent) {
+      mobileMenuClose.addEventListener('click', () => {
+        mobileDrawerContent.classList.add('translate-x-full');
+        setTimeout(() => {
+          mobileDrawer.classList.add('hidden');
+        }, 300);
+      });
+
+      mobileDrawer.addEventListener('click', (e) => {
+        if (e.target === mobileDrawer) {
+          mobileDrawerContent.classList.add('translate-x-full');
+          setTimeout(() => {
+            mobileDrawer.classList.add('hidden');
+          }, 300);
+        }
+      });
+    }
+
+    // ── Reveal Observer ──
+    const revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+    // ── Tab Switching ──
+    function switchTab(card, tab, btn) {
+      if (!btn) btn = event.target;
+      document.querySelectorAll('[data-card="' + card + '"] .tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelectorAll('[data-card="' + card + '"] .tab-content').forEach(function(c) { c.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('tab-' + card + '-' + tab).classList.add('active');
+    }
+
+    // ── Poll Selection ──
+    function selectPoll(el, card) {
+      document.querySelectorAll('[data-card="' + card + '"] .poll-option').forEach(function(p) { p.classList.remove('selected'); });
+      el.classList.add('selected');
+    }
+
+    // ── Stat Counter ──
+    function animateCount(el, target, duration) {
+      if (!duration) duration = 1200;
+      var start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    var statObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          var target = parseInt(e.target.dataset.count, 10);
+          animateCount(e.target, target);
+          statObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(function(el) { statObserver.observe(el); });
+
+    // ── Personal Commitment ──
+    var commitments = [];
+    function addCommitment() {
+      var input = document.getElementById('commit-input');
+      var text = input.value.trim();
+      if (!text) return;
+      commitments.push(text);
+      input.value = '';
+      renderCommitments();
+    }
+    function renderCommitments() {
+      var list = document.getElementById('commit-list');
+      if (commitments.length === 0) {
+        list.innerHTML = '<p class="text-body-md font-body-md text-on-surface-variant/50 text-center italic">Chưa có cam kết nào. Hãy viết điều bạn sẽ thay đổi!</p>';
+        return;
+      }
+      var html = '';
+      commitments.forEach(function(c, i) {
+        html += '<div class="commit-card flex items-start gap-3 bg-surface-container-low p-4 rounded-xl border border-primary/5"><span class="material-symbols-outlined text-primary flex-shrink-0">favorite</span><p class="text-body-md font-body-md text-on-surface flex-1">' + c + '</p><button onclick="removeCommitment(' + i + ')" class="text-on-surface-variant/40 hover:text-primary transition-colors flex-shrink-0"><span class="material-symbols-outlined text-lg">close</span></button></div>';
+      });
+      list.innerHTML = html;
+    }
+    function removeCommitment(i) {
+      commitments.splice(i, 1);
+      renderCommitments();
+    }
+    document.getElementById('commit-input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') addCommitment();
+    });
+    renderCommitments();
+  </script>
+</body>
+
+</html>
