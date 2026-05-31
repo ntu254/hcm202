@@ -947,7 +947,7 @@
       document.getElementById('arena-high-score').innerText = `Điểm cao: ${storedHighScore}`;
       
       // Load saved sheet URL if any, or default to the user's Google Sheet URL
-      const SHEET_URL = "https://script.google.com/macros/s/AKfycbzw91HWuyZGlyhx_t463fvsHOlK-pPawAyVICJJnwnvK2ZO3ZTlVJOGaDsS6S0Ka-EFCQ/exec";
+      const SHEET_URL = "https://script.google.com/macros/s/AKfycbwQ60vKNbLoiOM7Rzi_uR72cjQUMIbbekv-BZKnFWBWivmjQGqqkaj0ajy5_mSyIpWZUQ/exec";
       // Luôn dùng URL mới nhất, ghi đè bất kỳ URL cũ nào đã lưu trong localStorage
       localStorage.setItem('arena_sheet_url', SHEET_URL);
       let savedUrl = SHEET_URL;
@@ -1022,54 +1022,52 @@
 
     function fetchLeaderboardFromSheet() {
       const url = localStorage.getItem('arena_sheet_url');
-      if (!url) return;
+      if (!url || url === 'none') return;
       
-      // Indicate loading in both elements
+      // Hiển thị trạng thái loading
       const modalListEl = document.getElementById('arena-modal-leaderboard-list');
       const endListEl = document.getElementById('arena-end-leaderboard-list');
       const loadingHtml = `<div class="text-center py-4 text-xs text-on-surface-variant/60 italic animate-pulse">Đang đồng bộ bảng vàng trực tuyến...</div>`;
       if (modalListEl) modalListEl.innerHTML = loadingHtml;
       if (endListEl) endListEl.innerHTML = loadingHtml;
       
-      // Append cache buster to bypass cached redirect/sign-in pages or stale responses
+      // Dùng JSONP để đọc dữ liệu — vượt CORS hoàn toàn
+      const cbName = 'gsReadCb_' + Date.now();
       const separator = url.includes('?') ? '&' : '?';
-      const fetchUrl = `${url}${separator}_cb=${new Date().getTime()}`;
+      const fetchUrl = `${url}${separator}callback=${cbName}&_cb=${Date.now()}`;
       
-      fetch(fetchUrl)
-        .then(res => {
-          if (!res.ok) throw new Error("Mã trạng thái phản hồi không hợp lệ: " + res.status);
-          return res.json();
-        })
-        .then(data => {
-          if (Array.isArray(data)) {
-            // Map the top scores from Google Sheet
-            arenaLeaderboard = data.map(item => ({
-              name: item.name,
-              score: parseInt(item.score, 10) || 0,
-              isUser: false
-            }));
-            
-            // Re-save to local cache
-            localStorage.setItem('arena_leaderboard', JSON.stringify(arenaLeaderboard));
-            drawLeaderboard();
-            
-            // Restore connection status to connected if successful
-            updateConnectionStatus(true);
-          } else {
-            throw new Error("Dữ liệu trả về không phải là mảng");
-          }
-        })
-        .catch(err => {
-          console.error("Lỗi tải bảng vàng live:", err);
-          // Fallback to local storage
-          arenaLeaderboard = getLocalLeaderboard();
+      window[cbName] = function(data) {
+        const scriptEl = document.getElementById('jsonp-read-script');
+        if (scriptEl) scriptEl.remove();
+        delete window[cbName];
+        
+        if (Array.isArray(data)) {
+          arenaLeaderboard = data.map(item => ({
+            name: item.name,
+            score: parseInt(item.score, 10) || 0,
+            isUser: false
+          }));
+          localStorage.setItem('arena_leaderboard', JSON.stringify(arenaLeaderboard));
           drawLeaderboard();
-          
-          const text = document.getElementById('arena-status-text');
-          text.innerText = "Chế độ: Trực tuyến (Mất kết nối!)";
-          const dot = document.getElementById('arena-status-dot');
-          dot.className = "w-2.5 h-2.5 rounded-full inline-block bg-rose-500 animate-pulse";
-        });
+          updateConnectionStatus(true);
+        }
+      };
+      
+      const script = document.createElement('script');
+      script.id = 'jsonp-read-script';
+      script.src = fetchUrl;
+      script.onerror = function() {
+        delete window[cbName];
+        script.remove();
+        console.error('Lỗi tải bảng vàng live qua JSONP');
+        arenaLeaderboard = getLocalLeaderboard();
+        drawLeaderboard();
+        const text = document.getElementById('arena-status-text');
+        if (text) text.innerText = 'Chế độ: Trực tuyến (Mất kết nối!)';
+        const dot = document.getElementById('arena-status-dot');
+        if (dot) dot.className = 'w-2.5 h-2.5 rounded-full inline-block bg-rose-500 animate-pulse';
+      };
+      document.head.appendChild(script);
     }
 
     function startArenaGame() {
@@ -1280,37 +1278,48 @@
       
       const sheetUrl = localStorage.getItem('arena_sheet_url');
       if (sheetUrl) {
-        // Online mode: Push score to Google Sheets via GET (bypasses CORS perfectly)
-        const separator = sheetUrl.includes('?') ? '&' : '?';
-        const submitUrl = `${sheetUrl}${separator}name=${encodeURIComponent(name)}&score=${arenaScore}&_cb=${new Date().getTime()}`;
-        
-        // Show loading state
+        // Online mode: Gửi điểm qua JSONP (script tag) — cách duy nhất vượt CORS với Google Apps Script
         const saveContainer = document.getElementById('arena-save-name-container');
         saveContainer.innerHTML = `<span class="text-xs text-primary font-semibold animate-pulse py-2">Đang gửi điểm lên Google Sheets...</span>`;
         
-        fetch(submitUrl, { method: 'GET', mode: 'no-cors' })
-          .then(() => {
-            // Local push for immediate display
-            arenaLeaderboard.push({ name: name, score: arenaScore, isUser: true });
-            localStorage.setItem('arena_leaderboard', JSON.stringify(arenaLeaderboard));
-            
-            // Show save completed
-            saveContainer.innerHTML = `<span class="text-xs text-emerald-600 font-bold py-2">Đã lưu điểm trực tuyến thành công!</span>`;
-            
-            // Sync from Sheets again after 1.5s delay
-            setTimeout(() => {
-              fetchLeaderboardFromSheet();
-              document.getElementById('arena-save-name-container').classList.add('hidden');
-            }, 1500);
-          })
-          .catch(err => {
-            console.error("Lỗi gửi điểm trực tuyến:", err);
-            // Fallback to local
-            arenaLeaderboard.push({ name: name, score: arenaScore, isUser: true });
-            localStorage.setItem('arena_leaderboard', JSON.stringify(arenaLeaderboard));
+        const cbName = 'gsCb_' + Date.now();
+        const separator = sheetUrl.includes('?') ? '&' : '?';
+        const submitUrl = `${sheetUrl}${separator}name=${encodeURIComponent(name)}&score=${arenaScore}&callback=${cbName}`;
+        
+        window[cbName] = function(response) {
+          // Dọn script tag và callback
+          const scriptEl = document.getElementById('jsonp-submit-script');
+          if (scriptEl) scriptEl.remove();
+          delete window[cbName];
+          
+          // Lưu local và cập nhật UI
+          arenaLeaderboard.push({ name: name, score: arenaScore, isUser: true });
+          localStorage.setItem('arena_leaderboard', JSON.stringify(arenaLeaderboard));
+          saveContainer.innerHTML = `<span class="text-xs text-emerald-600 font-bold py-2">✅ Đã lưu điểm trực tuyến thành công!</span>`;
+          
+          setTimeout(() => {
+            fetchLeaderboardFromSheet();
+            document.getElementById('arena-save-name-container').classList.add('hidden');
+          }, 1500);
+        };
+        
+        // Tạo script tag để gửi request — không bị chặn CORS
+        const script = document.createElement('script');
+        script.id = 'jsonp-submit-script';
+        script.src = submitUrl;
+        script.onerror = function() {
+          delete window[cbName];
+          script.remove();
+          // Fallback local
+          arenaLeaderboard.push({ name: name, score: arenaScore, isUser: true });
+          localStorage.setItem('arena_leaderboard', JSON.stringify(arenaLeaderboard));
+          saveContainer.innerHTML = `<span class="text-xs text-rose-500 font-bold py-2">Lưu offline (không kết nối được Sheets)</span>`;
+          setTimeout(() => {
             drawLeaderboard();
             document.getElementById('arena-save-name-container').classList.add('hidden');
-          });
+          }, 1500);
+        };
+        document.head.appendChild(script);
       } else {
         // Offline local mode
         arenaLeaderboard.push({ name: name, score: arenaScore, isUser: true });
