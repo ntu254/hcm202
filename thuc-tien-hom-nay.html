@@ -947,11 +947,10 @@
       document.getElementById('arena-high-score').innerText = `Điểm cao: ${storedHighScore}`;
       
       // Load saved sheet URL if any, or default to the user's Google Sheet URL
-      let savedUrl = localStorage.getItem('arena_sheet_url');
-      if (savedUrl === null) {
-        savedUrl = "https://script.google.com/macros/s/AKfycbwBE2AQfSYY5XS1Ysrz3SVrWkjsD6fhzYPPY8NKtSVkO_Q8RTWva9ymGj3pwNPJpjLeAw/exec";
-        localStorage.setItem('arena_sheet_url', savedUrl);
-      }
+      const SHEET_URL = "https://script.google.com/macros/s/AKfycbzw91HWuyZGlyhx_t463fvsHOlK-pPawAyVICJJnwnvK2ZO3ZTlVJOGaDsS6S0Ka-EFCQ/exec";
+      // Luôn dùng URL mới nhất, ghi đè bất kỳ URL cũ nào đã lưu trong localStorage
+      localStorage.setItem('arena_sheet_url', SHEET_URL);
+      let savedUrl = SHEET_URL;
       
       if (savedUrl && savedUrl !== "none") {
         document.getElementById('arena-sheet-url').value = savedUrl;
