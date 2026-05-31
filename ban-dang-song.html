@@ -246,8 +246,6 @@
                                 <a href="ban-dang-song.html"
                                         class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-bold text-label-md font-label-md transition-all duration-200 hover:scale-[1.02]">Thử
                                         Thách</a>
-                                <a href="thuc-tien-hom-nay.html#game"
-                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02] flex items-center gap-1"><span class="material-symbols-outlined text-base">sports_esports</span>Trò Chơi</a>
                                 <a href="thuc-tien-hom-nay.html"
                                         class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Phân
                                         Tích</a>
@@ -296,7 +294,6 @@
                                         Chuyện</a>
                                 <a href="ban-dang-song.html" class="py-2 border-b border-primary/5 text-primary">Thử
                                         Thách</a>
-                                <a href="thuc-tien-hom-nay.html#game" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary flex items-center gap-1"><span class="material-symbols-outlined text-base">sports_esports</span>Trò Chơi</a>
                                 <a href="thuc-tien-hom-nay.html"
                                         class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Phân
                                         Tích</a>
@@ -665,6 +662,35 @@
     `;
                         }
 
+                        let certHtml = "";
+                        if (alignedScore >= 8) {
+                                certHtml = `
+        <div class="mt-8 p-6 bg-surface-container rounded-xl border border-primary/10 text-center animate-fade-in relative z-20">
+          <span class="material-symbols-outlined text-primary text-4xl mb-2">workspace_premium</span>
+          <h3 class="text-headline-md font-headline-md text-on-surface mb-2 font-bold">🎖️ Nhận Chứng Chỉ "Vừa Hồng Vừa Chuyên" Kỹ Thuật Số</h3>
+          <p class="text-body-md font-body-md text-on-surface-variant mb-4">Chúc mừng bạn đã đạt danh hiệu cao quý "Mực Thước Vững Vàng"! Hãy nhập họ tên để hệ thống tự động vẽ một tấm chứng nhận mang họa tiết Trống đồng Đông Sơn sang trọng vinh danh thành tích này.</p>
+          
+          <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+            <input type="text" id="cert-name" placeholder="Họ và tên của bạn..." class="flex-1 bg-surface border border-primary/20 rounded-xl px-4 py-3 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+            <button onclick="generateCertificate()" class="bg-primary text-on-primary hover:bg-surface-tint transition-all px-6 py-3 rounded-xl text-label-md font-label-md flex items-center justify-center gap-2 shadow-md whitespace-nowrap font-bold">
+               Tạo Chứng Chỉ
+            </button>
+          </div>
+          
+          <div id="cert-display-container" class="hidden mt-6">
+            <div class="overflow-x-auto rounded-xl border border-primary/20 shadow-lg bg-surface max-w-full p-2">
+               <canvas id="cert-canvas" width="800" height="500" class="mx-auto block max-w-full h-auto rounded-lg border border-primary/10 shadow-sm bg-white"></canvas>
+            </div>
+            <div class="mt-4 flex justify-center gap-4">
+               <button onclick="downloadCertificate()" class="bg-primary-container text-on-primary-container hover:bg-primary hover:text-on-primary transition-all px-6 py-3 rounded-full text-label-md font-label-md flex items-center gap-2 shadow-md font-bold">
+                 <span class="material-symbols-outlined text-lg">download</span> Tải Xuống Bản Đẹp (PNG)
+               </button>
+            </div>
+          </div>
+        </div>
+                                `;
+                        }
+
                         quizContainer.innerHTML = `
     <div class="text-center mb-12 animate-fade-in">
       <h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary mb-4">Kết Quả Đánh Giá</h1>
@@ -704,6 +730,8 @@
           <span class="block text-right text-label-md font-label-md text-primary mt-2 font-bold">— Chủ tịch Hồ Chí Minh</span>
         </blockquote>
 
+        ${certHtml}
+
         <div class="flex flex-col sm:flex-row justify-center gap-4 pt-6">
           <button onclick="initQuiz()" class="border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold text-sm tracking-wider hover:bg-primary/5 transition-all flex items-center justify-center gap-2">
             <span class="material-symbols-outlined text-lg">replay</span> Thử Thách Lại
@@ -716,6 +744,310 @@
     </div>
   `;
                 }
+
+                // --- CANVAS GRAPHICS UTILITIES FOR DIGITAL CERTIFICATE ---
+                function drawChimLac(ctx, x, y, scale, rotation) {
+                        ctx.save();
+                        ctx.translate(x, y);
+                        ctx.rotate(rotation);
+                        ctx.scale(scale, scale);
+                        
+                        ctx.beginPath();
+                        ctx.moveTo(0, 0); // Beak tip
+                        ctx.quadraticCurveTo(-15, -8, -30, -3); // Beak top and head
+                        ctx.quadraticCurveTo(-45, 8, -65, 0); // Neck and back
+                        ctx.lineTo(-80, 15); // Long tail feathers
+                        ctx.lineTo(-72, 22);
+                        ctx.lineTo(-88, 30);
+                        ctx.lineTo(-65, 33);
+                        ctx.quadraticCurveTo(-35, 30, -22, 18); // Tail base & belly
+                        ctx.bezierCurveTo(-15, 8, -8, -22, 8, -38); // Long primary wing up
+                        ctx.bezierCurveTo(0, -22, -8, -8, -15, 8); // Wing inner line
+                        ctx.quadraticCurveTo(-8, 8, 0, 0); // Beak bottom
+                        ctx.closePath();
+                        ctx.fill();
+                        ctx.restore();
+                }
+
+                function drawStar(ctx, cx, cy, spikes, outerRadius, innerRadius) {
+                        let rot = Math.PI / 2 * 3;
+                        let x = cx;
+                        let y = cy;
+                        let step = Math.PI / spikes;
+
+                        ctx.beginPath();
+                        ctx.moveTo(cx, cy - outerRadius)
+                        for (let i = 0; i < spikes; i++) {
+                                x = cx + Math.cos(rot) * outerRadius;
+                                y = cy + Math.sin(rot) * outerRadius;
+                                ctx.lineTo(x, y)
+                                rot += step
+
+                                x = cx + Math.cos(rot) * innerRadius;
+                                y = cy + Math.sin(rot) * innerRadius;
+                                ctx.lineTo(x, y)
+                                rot += step
+                        }
+                        ctx.lineTo(cx, cy - outerRadius)
+                        ctx.closePath();
+                        ctx.fill();
+                }
+
+                function drawDongSonDrum(ctx, cx, cy, radius, color) {
+                        ctx.save();
+                        ctx.strokeStyle = color;
+                        ctx.fillStyle = color;
+                        
+                        // 1. Concentric circles with varying line styles
+                        const rings = [0.08, 0.22, 0.38, 0.52, 0.68, 0.82, 0.94, 1.0];
+                        rings.forEach((ratio, i) => {
+                                const r = radius * ratio;
+                                ctx.beginPath();
+                                ctx.arc(cx, cy, r, 0, Math.PI * 2);
+                                
+                                if (i === 2 || i === 4) {
+                                        ctx.setLineDash([6, 8]);
+                                        ctx.lineWidth = 2.5;
+                                } else if (i === 6) {
+                                        ctx.setLineDash([3, 5]);
+                                        ctx.lineWidth = 1.5;
+                                } else {
+                                        ctx.setLineDash([]);
+                                        ctx.lineWidth = (i === rings.length - 1) ? 3.5 : 1;
+                                }
+                                ctx.stroke();
+                        });
+                        
+                        // 2. Solar star at the center (12-pointed sun)
+                        const starPoints = 12;
+                        const innerR = radius * 0.035;
+                        const outerR = radius * 0.08;
+                        ctx.beginPath();
+                        for (let i = 0; i < starPoints * 2; i++) {
+                                const angle = (i * Math.PI) / starPoints;
+                                const r = i % 2 === 0 ? outerR : innerR;
+                                const x = cx + Math.cos(angle) * r;
+                                const y = cy + Math.sin(angle) * r;
+                                if (i === 0) ctx.moveTo(x, y);
+                                else ctx.lineTo(x, y);
+                        }
+                        ctx.closePath();
+                        ctx.fill();
+                        
+                        // Triangles radiating between star rays
+                        for (let i = 0; i < starPoints; i++) {
+                                const angle = (i * Math.PI * 2) / starPoints;
+                                ctx.beginPath();
+                                ctx.arc(cx, cy, outerR, angle - 0.08, angle + 0.08);
+                                ctx.lineTo(cx + Math.cos(angle) * radius * 0.16, cy + Math.sin(angle) * radius * 0.16);
+                                ctx.closePath();
+                                ctx.fill();
+                        }
+                        
+                        // 3. Small circles (dots) decorative pattern ring
+                        ctx.setLineDash([]);
+                        const dotsRingRadius = radius * 0.45;
+                        const dotCount = 64;
+                        for (let i = 0; i < dotCount; i++) {
+                                const angle = (i * Math.PI * 2) / dotCount;
+                                const x = cx + Math.cos(angle) * dotsRingRadius;
+                                const y = cy + Math.sin(angle) * dotsRingRadius;
+                                ctx.beginPath();
+                                ctx.arc(x, y, 2, 0, Math.PI * 2);
+                                ctx.fill();
+                        }
+                        
+                        // 4. Stylized Chim Lac flying in the outer ring (counter-clockwise)
+                        const birdRingRadius = radius * 0.75;
+                        const birdCount = 4;
+                        for (let i = 0; i < birdCount; i++) {
+                                const angle = (i * Math.PI * 2) / birdCount - Math.PI / 3;
+                                const x = cx + Math.cos(angle) * birdRingRadius;
+                                const y = cy + Math.sin(angle) * birdRingRadius;
+                                // Rotate tangent with counter-clockwise direction
+                                drawChimLac(ctx, x, y, radius * 0.0035, angle + Math.PI + Math.PI / 2);
+                        }
+                        
+                        ctx.restore();
+                }
+
+                function drawRedStamp(ctx, x, y, size) {
+                        ctx.save();
+                        ctx.translate(x, y);
+                        ctx.rotate(-0.1); // Slightly tilted for realistic human touch
+                        
+                        const red = "rgba(186, 26, 26, 0.85)";
+                        ctx.strokeStyle = red;
+                        ctx.fillStyle = red;
+                        
+                        // Outer double circle stamp
+                        ctx.lineWidth = 3;
+                        ctx.beginPath();
+                        ctx.arc(0, 0, size, 0, Math.PI * 2);
+                        ctx.stroke();
+                        
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.arc(0, 0, size - 4, 0, Math.PI * 2);
+                        ctx.stroke();
+                        
+                        // Center 5-pointed star
+                        drawStar(ctx, 0, 0, 5, size * 0.28, size * 0.12);
+                        
+                        // Circular text
+                        const stampText = "BAN ĐIỀU HÀNH • DỰ ÁN SỐNG ĐẸP • ";
+                        ctx.font = "bold 8px 'Be Vietnam Pro', sans-serif";
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        
+                        for (let i = 0; i < stampText.length; i++) {
+                                const angle = (i * Math.PI * 2) / stampText.length - Math.PI / 2;
+                                const tx = Math.cos(angle) * (size - 10);
+                                const ty = Math.sin(angle) * (size - 10);
+                                ctx.save();
+                                ctx.translate(tx, ty);
+                                ctx.rotate(angle + Math.PI / 2);
+                                ctx.fillText(stampText[i], 0, 0);
+                                ctx.restore();
+                        }
+                        
+                        ctx.restore();
+                }
+
+                function generateCertificate() {
+                        const nameInput = document.getElementById('cert-name');
+                        const name = nameInput.value.trim() || 'Sinh Viên Sống Đẹp';
+                        
+                        const canvas = document.getElementById('cert-canvas');
+                        const ctx = canvas.getContext('2d');
+                        
+                        // 1. Draw elegant Giấy Dó cream radial gradient background
+                        let bgGrad = ctx.createRadialGradient(400, 250, 40, 400, 250, 480);
+                        bgGrad.addColorStop(0, '#fffdf4');
+                        bgGrad.addColorStop(1, '#ebe6d1');
+                        ctx.fillStyle = bgGrad;
+                        ctx.fillRect(0, 0, 800, 500);
+                        
+                        // 2. Draw huge Trống Đồng Đông Sơn watermark in the center
+                        ctx.globalAlpha = 0.05;
+                        drawDongSonDrum(ctx, 400, 250, 230, '#b40006');
+                        ctx.globalAlpha = 1.0;
+                        
+                        // 3. Draw borders
+                        // Gold outer border
+                        ctx.strokeStyle = '#c9a900';
+                        ctx.lineWidth = 5;
+                        ctx.strokeRect(15, 15, 770, 470);
+                        
+                        // Red inner border
+                        ctx.strokeStyle = '#b40006';
+                        ctx.lineWidth = 1.5;
+                        ctx.strokeRect(22, 22, 756, 456);
+                        
+                        // Gold stars in 4 inner corners
+                        ctx.fillStyle = '#c9a900';
+                        drawStar(ctx, 22, 22, 8, 8, 4);
+                        drawStar(ctx, 778, 22, 8, 8, 4);
+                        drawStar(ctx, 22, 478, 8, 8, 4);
+                        drawStar(ctx, 778, 478, 8, 8, 4);
+                        
+                        // 4. Header: Nation state motto
+                        ctx.fillStyle = '#323128';
+                        ctx.textAlign = 'center';
+                        ctx.font = "bold 11px 'Be Vietnam Pro', sans-serif";
+                        ctx.fillText("CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM", 400, 52);
+                        
+                        ctx.font = "italic bold 13px 'Lora', serif";
+                        ctx.fillText("Độc lập - Tự do - Hạnh phúc", 400, 70);
+                        
+                        ctx.fillStyle = '#c9a900';
+                        ctx.font = "11px sans-serif";
+                        ctx.fillText("☵☲☵ ---o0o--- ☵☲☵", 400, 84);
+                        
+                        // 5. Title of Certificate
+                        ctx.fillStyle = '#b40006';
+                        ctx.font = "bold 28px 'Lora', serif";
+                        ctx.fillText("CHỨNG NHẬN SỐNG ĐẸP", 400, 132);
+                        
+                        ctx.fillStyle = '#705d00';
+                        ctx.font = "italic bold 14px 'Lora', serif";
+                        ctx.fillText("DANH HIỆU: VỪA HỒNG VỪA CHUYÊN", 400, 156);
+                        
+                        // 6. Recipient Details
+                        ctx.fillStyle = '#5d403b';
+                        ctx.font = "italic 14px 'Be Vietnam Pro', sans-serif";
+                        ctx.fillText("Chứng nhận sinh viên", 400, 208);
+                        
+                        // Recipient Name
+                        ctx.fillStyle = '#b40006';
+                        ctx.font = "bold 28px 'Lora', serif";
+                        ctx.fillText(name.toUpperCase(), 400, 248);
+                        
+                        // Elegant golden underlines
+                        ctx.strokeStyle = '#c9a900';
+                        ctx.lineWidth = 2.5;
+                        ctx.beginPath();
+                        ctx.moveTo(250, 258);
+                        ctx.lineTo(550, 258);
+                        ctx.stroke();
+                        
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(280, 261);
+                        ctx.lineTo(520, 261);
+                        ctx.stroke();
+                        
+                        // 7. Achievement statement
+                        ctx.fillStyle = '#1c1c14';
+                        ctx.font = "14px 'Be Vietnam Pro', sans-serif";
+                        ctx.fillText("Đã hoàn thành xuất sắc Thử thách Đạo đức sinh viên thời đại số với số điểm đạt: " + alignedScore + "/10", 400, 296);
+                        
+                        ctx.fillStyle = '#5d403b';
+                        ctx.font = "italic 13px 'Be Vietnam Pro', sans-serif";
+                        ctx.fillText("Đạt chuẩn bản lĩnh đạo đức \"Mực Thước Vững Vàng\", luôn nỗ lực thực hành triệt để", 400, 320);
+                        ctx.fillText("Cần, Kiệm, Liêm, Chính, Chí công vô tư theo tấm gương sáng của Chủ tịch Hồ Chí Minh.", 400, 338);
+                        
+                        // 8. Signatures & Metadata
+                        // Left: Cert Identification
+                        const hash = Math.random().toString(36).substring(2, 8).toUpperCase();
+                        const certId = `Mã số: SD-2026-${hash}`;
+                        const dateStr = `Ngày cấp: ${new Date().toLocaleDateString('vi-VN')}`;
+                        
+                        ctx.textAlign = 'left';
+                        ctx.fillStyle = '#5d403b';
+                        ctx.font = "11px 'Be Vietnam Pro', sans-serif";
+                        ctx.fillText(certId, 60, 422);
+                        ctx.fillText(dateStr, 60, 440);
+                        
+                        // Right: Board signature
+                        ctx.textAlign = 'center';
+                        ctx.fillStyle = '#1c1c14';
+                        ctx.font = "bold 12px 'Be Vietnam Pro', sans-serif";
+                        ctx.fillText("BAN ĐIỀU HÀNH DỰ ÁN", 630, 400);
+                        
+                        ctx.fillStyle = '#5d403b';
+                        ctx.font = "italic 11px 'Be Vietnam Pro', sans-serif";
+                        ctx.fillText("(Ký nhận điện tử)", 630, 416);
+                        
+                        // Draw red stamp at the right signature
+                        drawRedStamp(ctx, 630, 420, 38);
+                        
+                        // Show container
+                        document.getElementById('cert-display-container').classList.remove('hidden');
+                }
+
+                function downloadCertificate() {
+                        const canvas = document.getElementById('cert-canvas');
+                        const nameInput = document.getElementById('cert-name');
+                        const name = nameInput.value.trim() || 'Sinh-Vien-Song-Dep';
+                        const cleanName = name.replace(/\s+/g, '-');
+                        
+                        const link = document.createElement('a');
+                        link.download = `Chung-Nhan-Song-Dep-${cleanName}.png`;
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+                }
+
 
                 // Mobile drawer triggers
                 window.addEventListener('scroll', () => {

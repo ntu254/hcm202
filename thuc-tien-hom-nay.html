@@ -176,6 +176,46 @@
     .commit-card {
       animation: fadeInUp 0.4s ease both;
     }
+
+    /* Flash Quiz Arena Animations & Styles */
+    .arena-option {
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .arena-option:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .option-correct {
+      background-color: #d4edda !important;
+      border-color: #28a745 !important;
+      color: #155724 !important;
+      box-shadow: 0 0 0 2px #28a745, 0 4px 12px rgba(40,167,69,0.15) !important;
+      animation: bounceOption 0.35s ease both;
+    }
+    .option-incorrect {
+      background-color: #f8d7da !important;
+      border-color: #dc3545 !important;
+      color: #721c24 !important;
+      box-shadow: 0 0 0 2px #dc3545, 0 4px 12px rgba(220,53,69,0.15) !important;
+      animation: shake 0.35s ease both;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+    @keyframes bounceOption {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+    @keyframes scaleUp {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .animate-scaleUp {
+      animation: scaleUp 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
   </style>
 </head>
 
@@ -204,8 +244,6 @@
         <a href="ban-dang-song.html"
           class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Thử
           Thách</a>
-        <a href="thuc-tien-hom-nay.html#game"
-          class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02] flex items-center gap-1"><span class="material-symbols-outlined text-base">sports_esports</span>Trò Chơi</a>
         <a href="thuc-tien-hom-nay.html"
           class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-bold text-label-md font-label-md transition-all duration-200 hover:scale-[1.02]">Phân
           Tích</a>
@@ -250,7 +288,6 @@
           class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Câu Chuyện</a>
         <a href="ban-dang-song.html"
           class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Thử Thách</a>
-        <a href="thuc-tien-hom-nay.html#game" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary flex items-center gap-1"><span class="material-symbols-outlined text-base">sports_esports</span>Trò Chơi</a>
         <a href="thuc-tien-hom-nay.html" class="py-2 border-b border-primary/5 text-primary">Phân Tích</a>
         <a href="toi-chon-cach-song.html"
           class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Kết Luận</a>
@@ -273,21 +310,33 @@
     </header>
     <!-- Stats Strip -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 reveal">
-      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center">
-        <div class="stat-num" data-count="73">0</div>
-        <div class="text-label-md font-label-md text-on-surface-variant mt-1">Triệu người dùng MXH</div>
+      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center flex flex-col justify-between">
+        <div>
+          <div class="stat-num" data-count="73">0</div>
+          <div class="text-label-md font-label-md text-on-surface-variant mt-1 font-bold">Triệu người dùng MXH</div>
+        </div>
+        <div class="text-[10px] text-on-surface-variant/50 mt-3 italic border-t border-primary/5 pt-1.5">(Nguồn: We Are Social Report 2024)</div>
       </div>
-      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center">
-        <div class="stat-num" data-count="65">0</div>
-        <div class="text-label-md font-label-md text-on-surface-variant mt-1">% SV từng gian lận</div>
+      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center flex flex-col justify-between">
+        <div>
+          <div class="stat-num" data-count="65">0</div>
+          <div class="text-label-md font-label-md text-on-surface-variant mt-1 font-bold">% SV từng gian lận</div>
+        </div>
+        <div class="text-[10px] text-on-surface-variant/50 mt-3 italic border-t border-primary/5 pt-1.5">(Nguồn: Khảo sát Viện NC Học đường)</div>
       </div>
-      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center">
-        <div class="stat-num" data-count="29">0</div>
-        <div class="text-label-md font-label-md text-on-surface-variant mt-1">Ngoại ngữ Bác tự học</div>
+      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center flex flex-col justify-between">
+        <div>
+          <div class="stat-num" data-count="29">0</div>
+          <div class="text-label-md font-label-md text-on-surface-variant mt-1 font-bold">Ngoại ngữ Bác tự học</div>
+        </div>
+        <div class="text-[10px] text-on-surface-variant/50 mt-3 italic border-t border-primary/5 pt-1.5">(Nguồn: Tư liệu Bảo tàng Hồ Chí Minh)</div>
       </div>
-      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center">
-        <div class="stat-num" data-count="170">0</div>
-        <div class="text-label-md font-label-md text-on-surface-variant mt-1">Cán bộ xử lý (2021-24)</div>
+      <div class="bg-surface-container-lowest rounded-xl p-6 border border-primary/10 text-center flex flex-col justify-between">
+        <div>
+          <div class="stat-num" data-count="170">0</div>
+          <div class="text-label-md font-label-md text-on-surface-variant mt-1 font-bold">Cán bộ xử lý (2021-24)</div>
+        </div>
+        <div class="text-[10px] text-on-surface-variant/50 mt-3 italic border-t border-primary/5 pt-1.5">(Nguồn: Báo cáo Ban Chỉ đạo TW PCTN)</div>
       </div>
     </div>
 
@@ -450,6 +499,147 @@
     </div>
 
 
+    <!-- Đấu Trường Trí Tuệ Flash Quiz Arena Section -->
+    <section id="arena-flash-quiz" class="mb-16 reveal">
+      <div class="max-w-3xl mx-auto bg-surface-container-lowest rounded-2xl border border-primary/10 shadow-sm overflow-hidden relative">
+        
+        <!-- Header of the Arena -->
+        <div class="bg-primary/5 px-6 py-4 border-b border-primary/10 flex items-center justify-between flex-wrap gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary border border-primary/20 flex items-center justify-center shadow-md">
+              <span class="material-symbols-outlined text-2xl">sports_esports</span>
+            </div>
+            <div>
+              <h2 class="text-headline-md font-headline-md text-on-surface font-bold">Đấu Trường Trí Tuệ Flash Quiz</h2>
+              <p class="text-label-md font-label-md text-on-surface-variant">Phản xạ nhanh - Chấm điểm tốc độ</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <!-- Clickable Leaderboard Trigger Button -->
+            <button onclick="toggleLeaderboardModal()" class="flex items-center gap-1.5 bg-primary/10 hover:bg-primary/20 text-primary px-3.5 py-1.5 rounded-full border border-primary/20 text-label-md font-label-md font-bold transition-all shadow-sm">
+              <span class="material-symbols-outlined text-base">leaderboard</span>
+              <span>Bảng Xếp Hạng</span>
+            </button>
+            <div class="flex items-center gap-1.5 bg-primary/5 px-3.5 py-1.5 rounded-full border border-primary/10 text-label-md font-label-md font-bold text-on-surface-variant">
+              <span class="material-symbols-outlined text-primary text-base">emoji_events</span>
+              <span class="animate-pulse" id="arena-high-score">Điểm cao: 0</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Game Container Screen -->
+        <div id="arena-screen" class="p-6 md:p-8 min-h-[380px] flex flex-col justify-center bg-[#fdfaf2]">
+          <!-- Start Screen View -->
+          <div id="arena-start-view" class="text-center space-y-6">
+            <span class="material-symbols-outlined text-primary text-6xl block hover:scale-110 duration-300">quiz</span>
+            <h3 class="text-headline-md font-headline-md text-on-surface font-bold">Chinh Phục Đấu Trường Trí Tuệ</h3>
+            <p class="text-body-md font-body-md text-on-surface-variant max-w-xl mx-auto">
+              Chào mừng bạn đến với mô-đun kiểm tra nhận thức pháp luật về **Phòng chống tham nhũng** và **Quy tắc ứng xử mạng xã hội**. <br>
+              Gồm **5 câu hỏi nhanh**. Bạn có **15 giây** để trả lời mỗi câu. Trả lời càng nhanh điểm thưởng càng cao (lên tới 150 điểm/câu)!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button onclick="startArenaGame()" class="bg-primary text-on-primary hover:bg-surface-tint transition-all px-8 py-4 rounded-full text-label-md font-label-md font-bold shadow-lg shadow-primary/20 flex items-center justify-center gap-2 duration-200 scale-105 hover:scale-110">
+                <span class="material-symbols-outlined text-lg">play_arrow</span> BẮT ĐẦU THÁCH ĐẤU
+              </button>
+              <button onclick="toggleLeaderboardModal()" class="border-2 border-primary text-primary hover:bg-primary/5 transition-all px-8 py-3.5 rounded-full text-label-md font-label-md font-bold flex items-center justify-center gap-2 duration-200">
+                <span class="material-symbols-outlined text-lg">leaderboard</span> XEM BẢNG XẾP HẠNG
+              </button>
+            </div>
+          </div>
+          
+          <!-- Question Playing Screen View (Hidden by default) -->
+          <div id="arena-play-view" class="hidden space-y-6 flex-1 flex flex-col justify-between">
+            <!-- Top progress and Timer -->
+            <div>
+              <div class="flex justify-between items-center text-label-md font-label-md text-on-surface-variant mb-2">
+                <span id="arena-q-num" class="font-bold text-primary">Câu hỏi 1 / 5</span>
+                <span id="arena-time-text" class="font-semibold text-primary-container">Thời gian: 15s</span>
+              </div>
+              <!-- Timer Bar container -->
+              <div class="w-full bg-surface-container-highest rounded-full h-3 overflow-hidden">
+                <div id="arena-timer-bar" class="bg-primary h-full rounded-full w-full" style="transition: width 0.1s linear;"></div>
+              </div>
+            </div>
+            
+            <!-- Question display -->
+            <div class="space-y-3">
+              <span id="arena-q-cat" class="text-xs font-label-md text-primary bg-primary/5 border border-primary/20 px-3 py-1 rounded-full uppercase tracking-wider font-bold inline-block">LUẬT PHÒNG CHỐNG THAM NHŨNG</span>
+              <h3 id="arena-q-text" class="text-headline-md font-headline-md text-on-surface leading-snug font-bold">Câu hỏi ở đây?</h3>
+            </div>
+            
+            <!-- Options Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="arena-options-container">
+              <!-- A, B, C, D button options are injected by JS -->
+            </div>
+          </div>
+          
+          <!-- Leaderboard & End Screen View (Hidden by default) -->
+          <div id="arena-end-view" class="hidden space-y-6">
+            <div class="text-center space-y-2">
+              <span class="material-symbols-outlined text-primary text-5xl">military_tech</span>
+              <h3 class="text-headline-md font-headline-md text-on-surface font-bold">Đã Hoàn Thành Thử Thách!</h3>
+              <p class="text-body-md font-body-md text-on-surface-variant">Tổng số điểm bạn đạt được:</p>
+              <div class="inline-block bg-primary-container text-on-primary-container text-3xl font-bold font-display px-6 py-3 rounded-2xl shadow-md" id="arena-total-score">
+                0 pts
+              </div>
+            </div>
+            
+            <!-- Leaderboard list -->
+            <div class="border border-primary/10 rounded-xl p-4 bg-surface-container-low max-w-md mx-auto">
+              <h4 class="text-label-md font-label-md text-primary font-bold text-center border-b border-primary/10 pb-2 uppercase tracking-wider">Bảng Vàng Đấu Trường</h4>
+              <div class="space-y-2 mt-3" id="arena-end-leaderboard-list">
+                 <!-- Top student scores -->
+              </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2 max-w-md mx-auto">
+              <div class="flex gap-2 w-full" id="arena-save-name-container">
+                 <input type="text" id="arena-player-name" placeholder="Tên của bạn để lưu Bảng vàng..." class="flex-1 bg-surface border border-primary/20 rounded-xl px-4 py-2 text-body-md font-body-md text-on-surface focus:outline-none focus:border-primary transition-all">
+                 <button onclick="saveArenaScore()" class="bg-primary text-on-primary hover:bg-surface-tint px-4 py-2 rounded-xl text-label-md font-label-md font-bold whitespace-nowrap transition-colors">Lưu điểm</button>
+              </div>
+              <button onclick="restartArenaGame()" class="border-2 border-primary text-primary px-6 py-2 rounded-xl font-bold text-label-md font-label-md hover:bg-primary/5 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                 <span class="material-symbols-outlined text-lg">replay</span> Thách Đấu Lại
+              </button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Leaderboard Modal (Hidden by default) -->
+      <div id="arena-leaderboard-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-all duration-300">
+        <div class="bg-surface-container-lowest border border-primary/10 rounded-2xl max-w-md w-full shadow-2xl overflow-hidden animate-scaleUp">
+          <!-- Modal Header -->
+          <div class="bg-primary/5 px-6 py-4 border-b border-primary/10 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-2xl animate-bounce">emoji_events</span>
+              <h3 class="text-headline-sm font-headline-sm font-bold text-on-surface">Bảng Vàng Đấu Trường</h3>
+            </div>
+            <button onclick="toggleLeaderboardModal()" class="w-8 h-8 rounded-full hover:bg-primary/10 flex items-center justify-center text-on-surface-variant transition-colors">
+              <span class="material-symbols-outlined text-xl">close</span>
+            </button>
+          </div>
+          
+          <!-- Modal Body -->
+          <div class="p-6 space-y-4">
+            <!-- Hidden admin controls container (keeps JS functioning perfectly while hidden from UI) -->
+            <div class="hidden">
+              <span id="arena-status-dot"></span>
+              <span id="arena-status-text"></span>
+              <div id="arena-config-panel">
+                <input type="text" id="arena-sheet-url">
+              </div>
+            </div>
+            
+            <!-- Scores List -->
+            <div class="space-y-2 max-h-[300px] overflow-y-auto pr-1" id="arena-modal-leaderboard-list">
+               <!-- Injecting scores here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Personal Commitment Section -->
     <section class="mb-16 reveal">
       <div class="max-w-3xl mx-auto bg-surface-container-lowest rounded-2xl border border-primary/10 shadow-sm p-8 md:p-10 relative overflow-hidden">
@@ -599,6 +789,553 @@
       if (e.key === 'Enter') addCommitment();
     });
     renderCommitments();
+
+    // ── Đấu Trường Trí Tuệ Flash Quiz Arena Controller ──
+    const SoundSynth = {
+      ctx: null,
+      init() {
+        if (!this.ctx) {
+          this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+      },
+      playStart() {
+        this.init();
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now);
+        osc.frequency.exponentialRampToValueAtTime(880, now + 0.3);
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.linearRampToValueAtTime(0.01, now + 0.3);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.3);
+      },
+      playCorrect() {
+        this.init();
+        const now = this.ctx.currentTime;
+        const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6 chord
+        notes.forEach((freq, idx) => {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(freq, now + idx * 0.04);
+          gain.gain.setValueAtTime(0.08, now + idx * 0.04);
+          gain.gain.linearRampToValueAtTime(0.01, now + idx * 0.04 + 0.15);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(now + idx * 0.04);
+          osc.stop(now + idx * 0.04 + 0.15);
+        });
+      },
+      playIncorrect() {
+        this.init();
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(130, now);
+        osc.frequency.linearRampToValueAtTime(90, now + 0.3);
+        gain.gain.setValueAtTime(0.1, now);
+        gain.gain.linearRampToValueAtTime(0.01, now + 0.3);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.3);
+      },
+      playVictory() {
+        this.init();
+        const now = this.ctx.currentTime;
+        const melody = [523.25, 587.33, 659.25, 783.99, 880.00, 1046.50];
+        melody.forEach((freq, idx) => {
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+          gain.gain.setValueAtTime(0.1, now + idx * 0.08);
+          gain.gain.linearRampToValueAtTime(0.01, now + idx * 0.08 + 0.12);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start(now + idx * 0.08);
+          osc.stop(now + idx * 0.08 + 0.12);
+        });
+      }
+    };
+
+    const arenaQuestions = [
+      {
+        question: "Luật Phòng, chống tham nhũng năm 2018 quy định hành vi nào sau đây là hành vi tham nhũng trong khu vực nhà nước?",
+        cat: "Luật Phòng, chống tham nhũng",
+        options: [
+          { text: "A. Nhận hối lộ để giải quyết công việc trái luật.", isCorrect: true },
+          { text: "B. Đi làm muộn không xin phép cấp trên.", isCorrect: false },
+          { text: "C. Tự nghiên cứu và chia sẻ tài liệu ôn tập môn học.", isCorrect: false },
+          { text: "D. Đăng bài viết góp ý xây dựng trường lớp văn minh.", isCorrect: false }
+        ]
+      },
+      {
+        question: "Theo Bộ quy tắc ứng xử trên mạng xã hội của Bộ TT&TT, quy tắc nào sau đây là bắt buộc đối với mọi cá nhân khi dùng MXH?",
+        cat: "Bộ Quy tắc Ứng xử mạng xã hội",
+        options: [
+          { text: "A. Chia sẻ thông tin rõ nguồn gốc, đã được kiểm chứng chuẩn xác.", isCorrect: true },
+          { text: "B. Tạo nick ảo để bình luận ẩn danh trêu đùa bạn bè.", isCorrect: false },
+          { text: "C. Thả phẫn nộ biểu đạt cảm xúc tiêu cực khi trái quan điểm.", isCorrect: false },
+          { text: "D. Sử dụng mạng xã hội liên tục tối thiểu 3 tiếng mỗi ngày.", isCorrect: false }
+        ]
+      },
+      {
+        question: "Theo Luật Phòng, chống tham nhũng 2018, đối tượng cán bộ công quyền nào có nghĩa vụ kê khai tài sản công khai?",
+        cat: "Luật Phòng, chống tham nhũng",
+        options: [
+          { text: "A. Cán bộ, công chức và sĩ quan lực lượng vũ trang nhân dân.", isCorrect: true },
+          { text: "B. Mọi công dân Việt Nam từ đủ 18 tuổi trở lên.", isCorrect: false },
+          { text: "C. Tất cả sinh viên đang theo học tại các đại học công lập.", isCorrect: false },
+          { text: "D. Chỉ có chủ doanh nghiệp tư nhân hoạt động độc lập.", isCorrect: false }
+        ]
+      },
+      {
+        question: "Hành vi ứng xử mạng xã hội nào thể hiện sự CHÍNH TRỰC và văn hóa số chuẩn mực của một sinh viên Gen Z?",
+        cat: "Bộ Quy tắc Ứng xử mạng xã hội",
+        options: [
+          { text: "A. Báo cáo bài viết xấu độc, cung cấp dẫn chứng phản bác văn minh lịch sự.", isCorrect: true },
+          { text: "B. Chia sẻ bài viết giật gân, bôi nhọ để bạn bè cùng kéo vào ném đá.", isCorrect: false },
+          { text: "C. Kêu gọi cộng đồng lập hội nhóm spam tin nhắn đe dọa người đăng tin.", isCorrect: false },
+          { text: "D. Tương tác nhấn thích (like) để lấy uy tín chứ không cần kiểm chứng nguồn.", isCorrect: false }
+        ]
+      },
+      {
+        question: "Đâu là biểu hiện chuẩn mực phòng, chống tham nhũng vặt của sinh viên khi ngồi trên giảng đường đại học?",
+        cat: "Chuẩn mực Sinh viên Sống Đẹp",
+        options: [
+          { text: "A. Tuyệt đối trung thực, nói không với quay cóp, phao thi, chạy điểm.", isCorrect: true },
+          { text: "B. Nhờ bạn thân điểm danh hộ khi trót ngủ quên giờ học.", isCorrect: false },
+          { text: "C. Sao chép tiểu luận khóa trước rồi đổi tên nộp cho đúng thời hạn.", isCorrect: false },
+          { text: "D. Chỉ tham gia ý kiến khi sự việc tiêu cực ảnh hưởng đến điểm số của mình.", isCorrect: false }
+        ]
+      }
+    ];
+
+    let arenaCurrentQIndex = 0;
+    let arenaScore = 0;
+    let arenaTimer = 15;
+    let arenaTimerInterval = null;
+    let arenaCanAnswer = true;
+    let arenaMockScores = [];
+    let arenaLeaderboard = [];
+
+    function getLocalLeaderboard() {
+      const localData = localStorage.getItem('arena_leaderboard');
+      if (localData) {
+        try {
+          const parsed = JSON.parse(localData);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            const mockNames = ["Nguyễn Minh Triết (K68)", "Trần Lê Vy (K67)", "Phạm Hùng Dũng (K68)", "Lê Minh Hương (K69)", "Vũ Hoàng Nam (K67)"];
+            const filtered = parsed.filter(item => !mockNames.includes(item.name));
+            if (filtered.length > 0) {
+              return filtered;
+            }
+          }
+        } catch(e) {}
+      }
+      return [...arenaMockScores];
+    }
+
+    function initArenaGame() {
+      const storedHighScore = localStorage.getItem('arena_high_score') || 0;
+      document.getElementById('arena-high-score').innerText = `Điểm cao: ${storedHighScore}`;
+      
+      // Load saved sheet URL if any, or default to the user's Google Sheet URL
+      let savedUrl = localStorage.getItem('arena_sheet_url');
+      if (savedUrl === null) {
+        savedUrl = "https://script.google.com/macros/s/AKfycbwBE2AQfSYY5XS1Ysrz3SVrWkjsD6fhzYPPY8NKtSVkO_Q8RTWva9ymGj3pwNPJpjLeAw/exec";
+        localStorage.setItem('arena_sheet_url', savedUrl);
+      }
+      
+      if (savedUrl && savedUrl !== "none") {
+        document.getElementById('arena-sheet-url').value = savedUrl;
+        updateConnectionStatus(true);
+        fetchLeaderboardFromSheet();
+      } else {
+        updateConnectionStatus(false);
+        // Load local leaderboard fallback
+        arenaLeaderboard = getLocalLeaderboard();
+        drawLeaderboard();
+      }
+    }
+
+    function toggleConfigPanel() {
+      const panel = document.getElementById('arena-config-panel');
+      panel.classList.toggle('hidden');
+    }
+
+    function toggleLeaderboardModal() {
+      const modal = document.getElementById('arena-leaderboard-modal');
+      modal.classList.toggle('hidden');
+      if (!modal.classList.contains('hidden')) {
+        // Fetch new data when opening the leaderboard modal
+        const sheetUrl = localStorage.getItem('arena_sheet_url');
+        if (sheetUrl && sheetUrl !== 'none') {
+          fetchLeaderboardFromSheet();
+        } else {
+          drawLeaderboard();
+        }
+      }
+    }
+
+    function updateConnectionStatus(isConnected) {
+      const dot = document.getElementById('arena-status-dot');
+      const text = document.getElementById('arena-status-text');
+      if (isConnected) {
+        dot.className = "w-2.5 h-2.5 rounded-full inline-block bg-emerald-500 animate-pulse";
+        text.innerText = "Chế độ: Trực tuyến (Real-time Live)";
+      } else {
+        dot.className = "w-2.5 h-2.5 rounded-full inline-block bg-neutral-400";
+        text.innerText = "Chế độ: Ngoại tuyến (Local)";
+      }
+    }
+
+    function saveSheetConfig() {
+      const urlInput = document.getElementById('arena-sheet-url');
+      const url = urlInput.value.trim();
+      if (!url) {
+        alert("Vui lòng dán URL Web App Google Apps Script vào!");
+        return;
+      }
+      
+      localStorage.setItem('arena_sheet_url', url);
+      updateConnectionStatus(true);
+      fetchLeaderboardFromSheet();
+      toggleConfigPanel();
+    }
+
+    function clearSheetConfig() {
+      localStorage.setItem('arena_sheet_url', 'none');
+      document.getElementById('arena-sheet-url').value = '';
+      updateConnectionStatus(false);
+      
+      // Restore default mock scores or local storage scores
+      arenaLeaderboard = getLocalLeaderboard();
+      drawLeaderboard();
+      toggleConfigPanel();
+    }
+
+    function fetchLeaderboardFromSheet() {
+      const url = localStorage.getItem('arena_sheet_url');
+      if (!url) return;
+      
+      // Indicate loading in both elements
+      const modalListEl = document.getElementById('arena-modal-leaderboard-list');
+      const endListEl = document.getElementById('arena-end-leaderboard-list');
+      const loadingHtml = `<div class="text-center py-4 text-xs text-on-surface-variant/60 italic animate-pulse">Đang đồng bộ bảng vàng trực tuyến...</div>`;
+      if (modalListEl) modalListEl.innerHTML = loadingHtml;
+      if (endListEl) endListEl.innerHTML = loadingHtml;
+      
+      // Append cache buster to bypass cached redirect/sign-in pages or stale responses
+      const separator = url.includes('?') ? '&' : '?';
+      const fetchUrl = `${url}${separator}_cb=${new Date().getTime()}`;
+      
+      fetch(fetchUrl)
+        .then(res => {
+          if (!res.ok) throw new Error("Mã trạng thái phản hồi không hợp lệ: " + res.status);
+          return res.json();
+        })
+        .then(data => {
+          if (Array.isArray(data)) {
+            // Map the top scores from Google Sheet
+            arenaLeaderboard = data.map(item => ({
+              name: item.name,
+              score: parseInt(item.score, 10) || 0,
+              isUser: false
+            }));
+            
+            // Re-save to local cache
+            localStorage.setItem('arena_leaderboard', JSON.stringify(arenaLeaderboard));
+            drawLeaderboard();
+            
+            // Restore connection status to connected if successful
+            updateConnectionStatus(true);
+          } else {
+            throw new Error("Dữ liệu trả về không phải là mảng");
+          }
+        })
+        .catch(err => {
+          console.error("Lỗi tải bảng vàng live:", err);
+          // Fallback to local storage
+          arenaLeaderboard = getLocalLeaderboard();
+          drawLeaderboard();
+          
+          const text = document.getElementById('arena-status-text');
+          text.innerText = "Chế độ: Trực tuyến (Mất kết nối!)";
+          const dot = document.getElementById('arena-status-dot');
+          dot.className = "w-2.5 h-2.5 rounded-full inline-block bg-rose-500 animate-pulse";
+        });
+    }
+
+    function startArenaGame() {
+      SoundSynth.playStart();
+      document.getElementById('arena-start-view').classList.add('hidden');
+      document.getElementById('arena-end-view').classList.add('hidden');
+      document.getElementById('arena-play-view').classList.remove('hidden');
+      
+      arenaScore = 0;
+      arenaCurrentQIndex = 0;
+      renderArenaQuestion();
+    }
+
+    function renderArenaQuestion() {
+      if (arenaCurrentQIndex >= arenaQuestions.length) {
+        endArenaGame();
+        return;
+      }
+      
+      arenaCanAnswer = true;
+      const q = arenaQuestions[arenaCurrentQIndex];
+      
+      document.getElementById('arena-q-num').innerText = `Câu hỏi ${arenaCurrentQIndex + 1} / ${arenaQuestions.length}`;
+      document.getElementById('arena-q-cat').innerText = q.cat;
+      document.getElementById('arena-q-text').innerText = q.question;
+      
+      // Shuffle options for dynamics
+      const shuffledOptions = [...q.options].sort(() => Math.random() - 0.5);
+      
+      const optionsContainer = document.getElementById('arena-options-container');
+      optionsContainer.innerHTML = "";
+      
+      const optionLetters = ["A", "B", "C", "D"];
+      shuffledOptions.forEach((opt, idx) => {
+        const optionCard = document.createElement('div');
+        optionCard.className = "arena-option flex items-center gap-4 bg-surface-container-lowest border-2 border-primary/10 rounded-xl p-4 transition-all";
+        optionCard.onclick = () => selectArenaOption(opt.isCorrect, optionCard);
+        
+        optionCard.innerHTML = `
+          <div class="w-8 h-8 rounded-full bg-primary/10 text-primary border border-primary/20 flex items-center justify-center font-bold font-display shrink-0 text-sm">
+             ${optionLetters[idx]}
+          </div>
+          <span class="text-body-md font-body-md text-on-surface font-semibold">${opt.text}</span>
+        `;
+        optionsContainer.appendChild(optionCard);
+      });
+      
+      // Setup Timer Bar
+      arenaTimer = 15;
+      document.getElementById('arena-timer-bar').style.width = '100%';
+      document.getElementById('arena-time-text').innerText = `Thời gian: 15s`;
+      
+      if (arenaTimerInterval) clearInterval(arenaTimerInterval);
+      
+      arenaTimerInterval = setInterval(() => {
+        arenaTimer -= 0.1;
+        if (arenaTimer <= 0) {
+          arenaTimer = 0;
+          clearInterval(arenaTimerInterval);
+          handleArenaTimeout();
+        }
+        
+        const percent = (arenaTimer / 15) * 100;
+        document.getElementById('arena-timer-bar').style.width = percent + '%';
+        document.getElementById('arena-time-text').innerText = `Thời gian: ${Math.ceil(arenaTimer)}s`;
+      }, 100);
+    }
+
+    function selectArenaOption(isCorrect, element) {
+      if (!arenaCanAnswer) return;
+      arenaCanAnswer = false;
+      clearInterval(arenaTimerInterval);
+      
+      const optionsContainer = document.getElementById('arena-options-container');
+      const allOptionCards = optionsContainer.children;
+      
+      if (isCorrect) {
+        SoundSynth.playCorrect();
+        element.classList.add('option-correct');
+        
+        // Kahoot/Gimkit scoring formula: base (100) + time speed multiplier (timer * 3.33 -> max 50 pts)
+        const earned = Math.round(100 + arenaTimer * 3.33);
+        arenaScore += earned;
+      } else {
+        SoundSynth.playIncorrect();
+        element.classList.add('option-incorrect');
+        
+        // Highlight correct one
+        const correctIndex = arenaQuestions[arenaCurrentQIndex].options.findIndex(o => o.isCorrect);
+        const correctText = arenaQuestions[arenaCurrentQIndex].options[correctIndex].text;
+        
+        Array.from(allOptionCards).forEach(card => {
+          if (card.querySelector('span').innerText === correctText) {
+            card.classList.add('option-correct');
+          }
+        });
+      }
+      
+      // Delay to view visual feedback before next question
+      arenaCurrentQIndex++;
+      setTimeout(() => {
+        renderArenaQuestion();
+      }, 2000);
+    }
+
+    function handleArenaTimeout() {
+      arenaCanAnswer = false;
+      SoundSynth.playIncorrect();
+      
+      const optionsContainer = document.getElementById('arena-options-container');
+      const allOptionCards = optionsContainer.children;
+      
+      const correctIndex = arenaQuestions[arenaCurrentQIndex].options.findIndex(o => o.isCorrect);
+      const correctText = arenaQuestions[arenaCurrentQIndex].options[correctIndex].text;
+      
+      Array.from(allOptionCards).forEach(card => {
+        card.classList.add('opacity-60');
+        if (card.querySelector('span').innerText === correctText) {
+          card.classList.remove('opacity-60');
+          card.classList.add('option-correct');
+        }
+      });
+      
+      setTimeout(() => {
+        renderArenaQuestion();
+      }, 2500);
+    }
+
+    function endArenaGame() {
+      SoundSynth.playVictory();
+      
+      document.getElementById('arena-play-view').classList.add('hidden');
+      document.getElementById('arena-end-view').classList.remove('hidden');
+      document.getElementById('arena-total-score').innerText = `${arenaScore} pts`;
+      
+      // High score handling
+      const currentHighScore = parseInt(localStorage.getItem('arena_high_score') || '0', 10);
+      if (arenaScore > currentHighScore) {
+        localStorage.setItem('arena_high_score', arenaScore);
+        document.getElementById('arena-high-score').innerText = `Điểm cao: ${arenaScore}`;
+      }
+      
+      // Show leaderboard entry container
+      document.getElementById('arena-save-name-container').classList.remove('hidden');
+      
+      drawLeaderboard();
+    }
+
+    function drawLeaderboard() {
+      const modalListEl = document.getElementById('arena-modal-leaderboard-list');
+      const endListEl = document.getElementById('arena-end-leaderboard-list');
+      
+      const emptyState = `
+        <div class="text-center py-6 text-xs text-on-surface-variant/50 italic">
+           Chưa có dữ liệu ghi danh. Hãy chơi và lưu điểm để xuất hiện đầu tiên tại đây!
+        </div>
+      `;
+      
+      if (!arenaLeaderboard || arenaLeaderboard.length === 0) {
+        if (modalListEl) modalListEl.innerHTML = emptyState;
+        if (endListEl) endListEl.innerHTML = emptyState;
+        return;
+      }
+      
+      // Sort and slice top scores
+      const sorted = [...arenaLeaderboard].sort((a, b) => b.score - a.score);
+      
+      // Modal gets top 10 scores
+      let modalHtml = "";
+      sorted.slice(0, 10).forEach((entry, idx) => {
+        const medal = idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : `${idx + 1}.`;
+        const isUserClass = entry.isUser ? "bg-primary/10 border-primary/20 text-primary font-bold shadow-sm" : "bg-surface-container-lowest text-on-surface";
+        
+        modalHtml += `
+          <div class="flex items-center justify-between p-2.5 rounded-lg border border-primary/5 ${isUserClass} transition-all duration-200">
+             <div class="flex items-center gap-2">
+                <span class="text-sm font-semibold">${medal}</span>
+                <span class="text-sm">${entry.name}</span>
+             </div>
+             <span class="text-sm font-bold font-display text-primary-container">${entry.score} pts</span>
+          </div>
+        `;
+      });
+      if (modalListEl) modalListEl.innerHTML = modalHtml;
+      
+      // End game view gets top 5 scores
+      let endHtml = "";
+      sorted.slice(0, 5).forEach((entry, idx) => {
+        const medal = idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : `${idx + 1}.`;
+        const isUserClass = entry.isUser ? "bg-primary/10 border-primary/20 text-primary font-bold shadow-sm" : "bg-surface-container-lowest text-on-surface";
+        
+        endHtml += `
+          <div class="flex items-center justify-between p-2.5 rounded-lg border border-primary/5 ${isUserClass} transition-all duration-200">
+             <div class="flex items-center gap-2">
+                <span class="text-sm font-semibold">${medal}</span>
+                <span class="text-sm">${entry.name}</span>
+             </div>
+             <span class="text-sm font-bold font-display text-primary-container">${entry.score} pts</span>
+          </div>
+        `;
+      });
+      if (endListEl) endListEl.innerHTML = endHtml;
+    }
+
+    function saveArenaScore() {
+      const nameInput = document.getElementById('arena-player-name');
+      const name = nameInput.value.trim() || 'Người thách đấu ẩn danh';
+      
+      const sheetUrl = localStorage.getItem('arena_sheet_url');
+      if (sheetUrl) {
+        // Online mode: Push score to Google Sheets via GET (bypasses CORS perfectly)
+        const separator = sheetUrl.includes('?') ? '&' : '?';
+        const submitUrl = `${sheetUrl}${separator}name=${encodeURIComponent(name)}&score=${arenaScore}&_cb=${new Date().getTime()}`;
+        
+        // Show loading state
+        const saveContainer = document.getElementById('arena-save-name-container');
+        saveContainer.innerHTML = `<span class="text-xs text-primary font-semibold animate-pulse py-2">Đang gửi điểm lên Google Sheets...</span>`;
+        
+        fetch(submitUrl, { method: 'GET', mode: 'no-cors' })
+          .then(() => {
+            // Local push for immediate display
+            arenaLeaderboard.push({ name: name, score: arenaScore, isUser: true });
+            localStorage.setItem('arena_leaderboard', JSON.stringify(arenaLeaderboard));
+            
+            // Show save completed
+            saveContainer.innerHTML = `<span class="text-xs text-emerald-600 font-bold py-2">Đã lưu điểm trực tuyến thành công!</span>`;
+            
+            // Sync from Sheets again after 1.5s delay
+            setTimeout(() => {
+              fetchLeaderboardFromSheet();
+              document.getElementById('arena-save-name-container').classList.add('hidden');
+            }, 1500);
+          })
+          .catch(err => {
+            console.error("Lỗi gửi điểm trực tuyến:", err);
+            // Fallback to local
+            arenaLeaderboard.push({ name: name, score: arenaScore, isUser: true });
+            localStorage.setItem('arena_leaderboard', JSON.stringify(arenaLeaderboard));
+            drawLeaderboard();
+            document.getElementById('arena-save-name-container').classList.add('hidden');
+          });
+      } else {
+        // Offline local mode
+        arenaLeaderboard.push({ name: name, score: arenaScore, isUser: true });
+        localStorage.setItem('arena_leaderboard', JSON.stringify(arenaLeaderboard));
+        
+        // Hide name entry block to avoid resubmit
+        document.getElementById('arena-save-name-container').classList.add('hidden');
+        drawLeaderboard();
+      }
+    }
+
+    function restartArenaGame() {
+      document.getElementById('arena-end-view').classList.add('hidden');
+      document.getElementById('arena-start-view').classList.remove('hidden');
+      
+      // Reload scores
+      const sheetUrl = localStorage.getItem('arena_sheet_url');
+      if (sheetUrl) {
+        fetchLeaderboardFromSheet();
+      }
+    }
+
+    // Initialize high score on load
+    initArenaGame();
   </script>
 </body>
 

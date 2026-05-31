@@ -385,6 +385,40 @@
       flex-grow: 1;
       margin: 4px auto;
     }
+
+    /* ── INTERACTIVE TIMELINE & SVG MAP ── */
+    .timeline-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+    .timeline-card.active {
+      border-color: #b40006;
+      background-color: rgba(180, 0, 6, 0.03);
+      box-shadow: 0 8px 24px rgba(180, 0, 6, 0.06);
+    }
+    .map-pin {
+      transition: transform 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .map-pin.active {
+      fill: #b40006 !important;
+      stroke: #fff;
+      transform: scale(1.4);
+    }
+    circle.animate-ping {
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+    .map-path {
+      stroke-dasharray: 6,4;
+      animation: dash 25s linear infinite;
+    }
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -500;
+      }
+    }
   </style>
 </head>
 
@@ -413,9 +447,6 @@
         <a href="ban-dang-song.html"
           class="text-on-surface-variant hover:text-primary px-3 py-2 rounded-lg hover:bg-surface-container transition-all">Thử
           Thách</a>
-        <a href="thuc-tien-hom-nay.html#game"
-          class="text-on-surface-variant hover:text-primary px-3 py-2 rounded-lg hover:bg-surface-container transition-all flex items-center gap-1">
-          <span class="material-symbols-outlined text-base">sports_esports</span>Trò Chơi</a>
         <a href="thuc-tien-hom-nay.html"
           class="text-on-surface-variant hover:text-primary px-3 py-2 rounded-lg hover:bg-surface-container transition-all">Phân
           Tích</a>
@@ -458,7 +489,6 @@
           class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Câu Chuyện</a>
         <a href="ban-dang-song.html" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Thử
           Thách</a>
-        <a href="thuc-tien-hom-nay.html#game" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary flex items-center gap-1"><span class="material-symbols-outlined text-base">sports_esports</span>Trò Chơi</a>
         <a href="thuc-tien-hom-nay.html"
           class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Phân Tích</a>
         <a href="toi-chon-cach-song.html"
@@ -677,6 +707,223 @@
       </div>
     </section>
 
+    <!-- ══════════════ TRỤC LỊCH SỬ SỐ (JOURNEY TIMELINE) ══════════════ -->
+    <section id="hanh-trinh-bien-lon" class="py-24 px-6 bg-surface-container-low/40 border-t border-b border-primary/10 relative overflow-hidden">
+      <!-- Decorative background watermark -->
+      <div class="absolute -bottom-24 -left-24 text-primary/5 pointer-events-none select-none">
+        <span class="material-symbols-outlined text-[320px]">explore</span>
+      </div>
+      
+      <div class="max-w-[1200px] mx-auto">
+        <div class="text-center mb-16 reveal">
+          <span class="hero-badge mb-4 inline-flex">Hành trình vươn ra biển lớn</span>
+          <h2 class="font-display font-bold text-on-surface mt-3" style="font-size: clamp(1.8rem, 4vw, 2.8rem);">
+            30 Năm, 4 Biển, 3 Đại Dương
+          </h2>
+          <p class="text-on-surface-variant mt-3 max-w-2xl mx-auto">
+            Hành trình bôn ba tìm đường cứu nước (1911 - 1941) của Bác Hồ — biểu tượng vĩ đại của tinh thần tự học, tự tu dưỡng Cần, Kiệm, Liêm, Chính, vượt khó làm cái gốc định hướng cuộc đời.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Left Column: Vertical Timeline Card List (5 cols) -->
+          <div class="lg:col-span-5 flex flex-col gap-4 lg:max-h-[520px] lg:overflow-y-auto pr-2 overflow-x-hidden" id="timeline-scroll-container">
+            
+            <!-- Milestone 0 -->
+            <div onclick="selectMilestone(0)" id="timeline-card-0" class="timeline-card active p-6 rounded-2xl border border-primary/30 bg-primary/5 flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-wider">Mốc 1 · 1911</span>
+                <span class="material-symbols-outlined text-primary text-lg">sailing</span>
+              </div>
+              <h3 class="font-headline-md text-base text-on-surface font-bold">Khởi hành tại Bến Cảng Nhà Rồng</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Người thanh niên Nguyễn Tất Thành với hai bàn tay trắng phụ bếp trên tàu Đô đốc Latouche-Tréville ra đi tìm đường cứu nước. Ý chí tự lập và khát vọng giải phóng dân tộc chính là ngọn lửa dẫn đường đầu tiên.
+              </p>
+              <blockquote class="border-l-2 border-primary pl-3 py-1 text-[11px] text-on-surface-variant italic font-quote">
+                "Tôi muốn đi ra nước ngoài, xem nước Pháp và các nước khác làm thế nào, rồi sẽ trở về giúp đồng bào chúng ta."
+              </blockquote>
+            </div>
+
+            <!-- Milestone 1 -->
+            <div onclick="selectMilestone(1)" id="timeline-card-1" class="timeline-card p-6 rounded-2xl border border-primary/10 bg-surface-container-lowest flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <span class="px-3 py-1 rounded-full bg-outline/10 text-outline font-bold text-xs uppercase tracking-wider">Mốc 2 · 1911 - 1917</span>
+                <span class="material-symbols-outlined text-outline text-lg">language</span>
+              </div>
+              <h3 class="font-headline-md text-base text-on-surface font-bold">Bôn ba trùng khơi (Pháp, Anh, Mỹ)</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Vượt qua 3 đại dương, Bác làm đủ nghề: cào tuyết ở London, phụ bếp ở Boston, làm thợ ảnh ở Paris. Bác kiên trì viết từ mới ngoại ngữ lên tay để vừa làm vừa học, rèn luyện ý chí vượt khó phi thường.
+              </p>
+              <blockquote class="border-l-2 border-outline pl-3 py-1 text-[11px] text-on-surface-variant italic font-quote">
+                Chữ "Cần" và "Kiệm" trong sạch của người lao động tự lực được rèn giũa từ đây.
+              </blockquote>
+            </div>
+
+            <!-- Milestone 2 -->
+            <div onclick="selectMilestone(2)" id="timeline-card-2" class="timeline-card p-6 rounded-2xl border border-primary/10 bg-surface-container-lowest flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <span class="px-3 py-1 rounded-full bg-outline/10 text-outline font-bold text-xs uppercase tracking-wider">Mốc 3 · 1920</span>
+                <span class="material-symbols-outlined text-outline text-lg">local_library</span>
+              </div>
+              <h3 class="font-headline-md text-base text-on-surface font-bold">Tìm ra ánh sáng cứu nước (Paris)</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Tại Paris, Bác đọc bản Sơ thảo Luận cương của Lenin về vấn đề dân tộc và thuộc địa. Người cảm động đến phát khóc, tìm thấy con đường giải phóng thực chất cho toàn thể nhân dân Việt Nam bị áp bức.
+              </p>
+              <blockquote class="border-l-2 border-outline pl-3 py-1 text-[11px] text-on-surface-variant italic font-quote">
+                "Hỡi đồng bào bị đọa đày đau khổ! Đây là cái cần thiết cho chúng ta, đây là con đường giải phóng chúng ta!"
+              </blockquote>
+            </div>
+
+            <!-- Milestone 3 -->
+            <div onclick="selectMilestone(3)" id="timeline-card-3" class="timeline-card p-6 rounded-2xl border border-primary/10 bg-surface-container-lowest flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <span class="px-3 py-1 rounded-full bg-outline/10 text-outline font-bold text-xs uppercase tracking-wider">Mốc 4 · 1923 - 1924</span>
+                <span class="material-symbols-outlined text-outline text-lg">menu_book</span>
+              </div>
+              <h3 class="font-headline-md text-base text-on-surface font-bold">Đào sâu lý luận cách mạng (Moscow)</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Bác đến Moscow (Liên Xô) nghiên cứu thực tiễn cách mạng vô sản, trực tiếp làm việc tại Quốc tế Cộng sản, đào tạo thế hệ trẻ và bồi đắp tư tưởng đạo đức người cách mạng.
+              </p>
+              <blockquote class="border-l-2 border-outline pl-3 py-1 text-[11px] text-on-surface-variant italic font-quote">
+                Chuẩn bị lý luận về giải phóng thuộc địa kết hợp chặt chẽ với tư cách đạo đức người chiến sĩ.
+              </blockquote>
+            </div>
+
+            <!-- Milestone 4 -->
+            <div onclick="selectMilestone(4)" id="timeline-card-4" class="timeline-card p-6 rounded-2xl border border-primary/10 bg-surface-container-lowest flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <span class="px-3 py-1 rounded-full bg-outline/10 text-outline font-bold text-xs uppercase tracking-wider">Mốc 5 · 1924 - 1930</span>
+                <span class="material-symbols-outlined text-outline text-lg">history_edu</span>
+              </div>
+              <h3 class="font-headline-md text-base text-on-surface font-bold">Khai sinh Đường Kách Mệnh (Quảng Châu)</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Tại Quảng Châu, Bác mở các lớp huấn luyện cán bộ trẻ, xuất bản cuốn "Đường Kách mệnh" (1927). Bác đặt nội dung "Tư cách một người kách mệnh" lên trang đầu, khẳng định đạo đức là nền tảng tối thượng. Sáng lập Đảng Cộng sản Việt Nam (1930).
+              </p>
+              <blockquote class="border-l-2 border-outline pl-3 py-1 text-[11px] text-on-surface-variant italic font-quote">
+                "Người kách mệnh phải giữ chủ nghĩa cho vững... phải ít lòng tham muốn về vật chất... nói đi đôi với làm."
+              </blockquote>
+            </div>
+
+            <!-- Milestone 5 -->
+            <div onclick="selectMilestone(5)" id="timeline-card-5" class="timeline-card p-6 rounded-2xl border border-primary/10 bg-surface-container-lowest flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <span class="px-3 py-1 rounded-full bg-outline/10 text-outline font-bold text-xs uppercase tracking-wider">Mốc 6 · 1941</span>
+                <span class="material-symbols-outlined text-outline text-lg">forest</span>
+              </div>
+              <h3 class="font-headline-md text-base text-on-surface font-bold">Trở về Tổ quốc (Pác Bó, Cao Bằng)</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Bác về nước sau 30 năm bôn ba vạn dặm. Tại hang Cốc Bó núi rừng Cao Bằng, Bác sống cuộc đời vô cùng giản dị, trực tiếp chèo lái con thuyền cách mạng Việt Nam đi tới thắng lợi, khai sinh nước Việt Nam Dân chủ Cộng hòa.
+              </p>
+              <blockquote class="border-l-2 border-outline pl-3 py-1 text-[11px] text-on-surface-variant italic font-quote">
+                "Sáng ra bờ suối, tối vào hang / Cháo bẹ rau măng vẫn sẵn sàng / Bàn đá chông chênh dịch sử Đảng / Cuộc đời cách mạng thật là sang."
+              </blockquote>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Stylized SVG World Map (7 cols) -->
+          <div class="lg:col-span-7 flex flex-col items-center justify-center bg-surface-container-lowest border border-outline-variant/40 rounded-3xl p-6 shadow-sm">
+            <h3 class="font-headline-md text-sm text-on-surface mb-4 uppercase tracking-wider font-semibold">Bản Đồ Hành Trình Di Sản Số</h3>
+            
+            <div class="relative w-full aspect-[2/1] overflow-hidden rounded-2xl">
+              <!-- SVG map -->
+              <svg viewBox="0 0 1000 500" class="w-full h-auto bg-surface border border-outline-variant/60 rounded-2xl shadow-inner relative overflow-hidden">
+                <!-- Grid backdrop -->
+                <defs>
+                  <pattern id="map-grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(180, 0, 6, 0.03)" stroke-width="1"/>
+                  </pattern>
+                </defs>
+                <rect width="1000" height="500" fill="url(#map-grid-pattern)" />
+                
+                <!-- Stylized world map continents for high contrast & recognizable shapes -->
+                <!-- Greenland -->
+                <path d="M 230 20 C 240 10, 280 10, 290 25 C 280 50, 240 50, 230 20 Z" fill="#e6e2d5" stroke="rgba(93, 64, 59, 0.3)" stroke-width="1.2" />
+                
+                <!-- North America -->
+                <path d="M 50 60 C 80 50, 120 40, 160 45 C 190 50, 210 65, 230 85 C 250 105, 280 135, 275 160 C 260 185, 245 205, 230 210 C 205 215, 190 215, 175 220 C 160 235, 150 255, 140 250 C 130 235, 130 215, 120 200 C 110 185, 95 175, 80 170 C 60 165, 45 140, 40 120 C 35 100, 40 80, 50 60 Z" fill="#e6e2d5" stroke="rgba(93, 64, 59, 0.35)" stroke-width="1.2" stroke-linejoin="round" />
+                
+                <!-- South America -->
+                <path d="M 170 230 C 190 235, 210 250, 220 280 C 230 310, 210 360, 190 400 C 170 440, 150 470, 140 485 C 135 480, 130 435, 135 390 C 140 345, 145 300, 150 265 C 155 245, 160 235, 170 230 Z" fill="#e6e2d5" stroke="rgba(93, 64, 59, 0.3)" stroke-width="1.2" stroke-linejoin="round" />
+                
+                <!-- Eurasia (Europe + Asia combined) -->
+                <path d="M 330 110 C 360 80, 410 60, 460 65 C 510 70, 550 55, 600 45 C 650 35, 730 35, 810 45 C 870 55, 920 75, 950 110 C 970 135, 960 180, 920 220 C 880 260, 840 290, 820 320 C 800 350, 785 355, 775 350 C 765 330, 765 295, 760 280 C 755 260, 750 240, 740 230 C 710 220, 680 240, 650 250 C 620 260, 610 245, 580 235 C 550 225, 520 205, 500 195 C 480 185, 440 190, 410 185 C 380 180, 360 155, 350 140 C 340 125, 335 115, 330 110 Z" fill="#e6e2d5" stroke="rgba(93, 64, 59, 0.35)" stroke-width="1.2" stroke-linejoin="round" />
+                
+                <!-- Africa -->
+                <path d="M 380 220 C 410 215, 445 205, 475 220 C 505 235, 520 265, 525 295 C 530 325, 505 355, 485 380 C 465 405, 445 430, 430 450 C 425 445, 420 425, 417 395 C 414 365, 405 345, 395 325 C 385 305, 375 285, 373 265 C 371 245, 373 230, 380 220 Z" fill="#e6e2d5" stroke="rgba(93, 64, 59, 0.3)" stroke-width="1.2" stroke-linejoin="round" />
+                
+                <!-- Australia -->
+                <path d="M 800 370 C 830 360, 860 365, 880 380 C 900 395, 890 420, 870 430 C 850 440, 825 435, 810 420 C 795 405, 790 385, 800 370 Z" fill="#e6e2d5" stroke="rgba(93, 64, 59, 0.3)" stroke-width="1.2" stroke-linejoin="round" />
+                
+                <!-- Compass rose or decorative watermark -->
+                <circle cx="80" cy="420" r="30" fill="none" stroke="rgba(180,0,6,0.08)" stroke-width="1.5" />
+                <path d="M 80 380 L 80 460 M 40 420 L 120 420" stroke="rgba(180,0,6,0.08)" stroke-width="1" />
+                <text x="80" y="375" font-size="9" fill="rgba(180,0,6,0.3)" font-family="Lora" font-weight="bold" text-anchor="middle">N</text>
+                
+                <!-- Stylized travel path lines -->
+                <!-- Line 1: Nhà Rồng (Sài Gòn) -> Anh/Mỹ -->
+                <path id="path-line-1" class="map-connection-line map-path" d="M 780 340 Q 500 380 230 200" fill="none" stroke="#b40006" stroke-width="3.5" stroke-dasharray="6,4" />
+                <!-- Line 2: Anh/Mỹ -> Paris -->
+                <path id="path-line-2" class="map-connection-line" d="M 230 200 Q 345 180 460 185" fill="none" stroke="#b40006" stroke-width="2" stroke-dasharray="6,4" opacity="0.3" />
+                <!-- Line 3: Paris -> Moscow -->
+                <path id="path-line-3" class="map-connection-line" d="M 460 185 Q 500 160 540 150" fill="none" stroke="#b40006" stroke-width="2" stroke-dasharray="6,4" opacity="0.3" />
+                <!-- Line 4: Paris/Moscow -> Quảng Châu -->
+                <path id="path-line-4" class="map-connection-line" d="M 540 150 Q 650 200 765 280" fill="none" stroke="#b40006" stroke-width="2" stroke-dasharray="6,4" opacity="0.3" />
+                <!-- Line 5: Quảng Châu -> Pác Bó -->
+                <path id="path-line-5" class="map-connection-line" d="M 765 280 Q 768 298 770 315" fill="none" stroke="#b40006" stroke-width="2" stroke-dasharray="6,4" opacity="0.3" />
+
+                <!-- Animated Pins (Pulsing Circle + Core Circle) -->
+                <!-- Pin 0: Nhà Rồng -->
+                <g class="map-pin-group" onclick="selectMilestone(0)" cursor="pointer">
+                  <circle id="pin-pulse-0" cx="780" cy="340" r="14" class="fill-primary/20 stroke-primary/40 animate-ping" />
+                  <circle id="pin-core-0" cx="780" cy="340" r="6" class="map-pin active fill-primary stroke-white stroke-2" />
+                </g>
+                <!-- Pin 1: Pháp, Anh, Mỹ -->
+                <g class="map-pin-group" onclick="selectMilestone(1)" cursor="pointer">
+                  <circle id="pin-pulse-1" cx="230" cy="200" r="14" class="fill-primary/20 stroke-primary/40 opacity-0" />
+                  <circle id="pin-core-1" cx="230" cy="200" r="6" class="map-pin fill-outline stroke-white stroke-2" />
+                </g>
+                <!-- Pin 2: Paris -->
+                <g class="map-pin-group" onclick="selectMilestone(2)" cursor="pointer">
+                  <circle id="pin-pulse-2" cx="460" cy="185" r="14" class="fill-primary/20 stroke-primary/40 opacity-0" />
+                  <circle id="pin-core-2" cx="460" cy="185" r="6" class="map-pin fill-outline stroke-white stroke-2" />
+                </g>
+                <!-- Pin 3: Moscow -->
+                <g class="map-pin-group" onclick="selectMilestone(3)" cursor="pointer">
+                  <circle id="pin-pulse-3" cx="540" cy="150" r="14" class="fill-primary/20 stroke-primary/40 opacity-0" />
+                  <circle id="pin-core-3" cx="540" cy="150" r="6" class="map-pin fill-outline stroke-white stroke-2" />
+                </g>
+                <!-- Pin 4: Quảng Châu -->
+                <g class="map-pin-group" onclick="selectMilestone(4)" cursor="pointer">
+                  <circle id="pin-pulse-4" cx="765" cy="280" r="14" class="fill-primary/20 stroke-primary/40 opacity-0" />
+                  <circle id="pin-core-4" cx="765" cy="280" r="6" class="map-pin fill-outline stroke-white stroke-2" />
+                </g>
+                <!-- Pin 5: Pác Bó -->
+                <g class="map-pin-group" onclick="selectMilestone(5)" cursor="pointer">
+                  <circle id="pin-pulse-5" cx="770" cy="315" r="14" class="fill-primary/20 stroke-primary/40 opacity-0" />
+                  <circle id="pin-core-5" cx="770" cy="315" r="6" class="map-pin fill-outline stroke-white stroke-2" />
+                </g>
+                
+                <!-- Text Labels for Cities with Contrast-Boosting Outlines -->
+                <text x="780" y="364" font-size="13" font-family="Be Vietnam Pro" font-weight="bold" fill="#5d403b" text-anchor="middle" paint-order="stroke fill" stroke="#fdf9eb" stroke-width="3" stroke-linejoin="round">Sài Gòn</text>
+                <text x="218" y="204" font-size="13" font-family="Be Vietnam Pro" font-weight="bold" fill="#5d403b" text-anchor="end" paint-order="stroke fill" stroke="#fdf9eb" stroke-width="3" stroke-linejoin="round">Anh/Mỹ</text>
+                <text x="460" y="206" font-size="13" font-family="Be Vietnam Pro" font-weight="bold" fill="#5d403b" text-anchor="middle" paint-order="stroke fill" stroke="#fdf9eb" stroke-width="3" stroke-linejoin="round">Paris</text>
+                <text x="540" y="134" font-size="13" font-family="Be Vietnam Pro" font-weight="bold" fill="#5d403b" text-anchor="middle" paint-order="stroke fill" stroke="#fdf9eb" stroke-width="3" stroke-linejoin="round">Moscow</text>
+                <text x="778" y="284" font-size="13" font-family="Be Vietnam Pro" font-weight="bold" fill="#5d403b" text-anchor="start" paint-order="stroke fill" stroke="#fdf9eb" stroke-width="3" stroke-linejoin="round">Quảng Châu</text>
+                <text x="758" y="319" font-size="13" font-family="Be Vietnam Pro" font-weight="bold" fill="#5d403b" text-anchor="end" paint-order="stroke fill" stroke="#fdf9eb" stroke-width="3" stroke-linejoin="round">Pác Bó</text>
+              </svg>
+            </div>
+            
+            <div class="mt-4 flex gap-4 text-xs font-semibold text-outline items-center select-none">
+              <span class="flex items-center gap-1"><span class="w-2.5 h-2.5 bg-primary rounded-full animate-pulse"></span> Điểm ghim hiện tại</span>
+              <span class="text-outline-variant">|</span>
+              <span>Bấm vào các mốc hoặc điểm ghim để dịch chuyển hành trình</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ══════════════ FEATURED CARDS ══════════════ -->
     <section class="py-16 px-6 bg-surface-container/40">
       <div class="max-w-[1200px] mx-auto">
@@ -890,6 +1137,88 @@
       }
       draw();
     })();
+
+    // ── Interactive Heritage Timeline Map Logic ──
+    let activeMilestoneIdx = 0;
+    
+    window.selectMilestone = function(idx) {
+      activeMilestoneIdx = idx;
+      
+      // Update vertical timeline cards states
+      const cards = document.querySelectorAll('.timeline-card');
+      cards.forEach((card, i) => {
+        const badge = card.querySelector('span:first-child');
+        const icon = card.querySelector('span:last-child');
+        
+        if (i === idx) {
+          card.classList.add('active');
+          card.classList.remove('border-primary/10', 'bg-surface-container-lowest');
+          card.classList.add('border-primary/30', 'bg-primary/5');
+          if (badge) {
+            badge.classList.remove('bg-outline/10', 'text-outline');
+            badge.classList.add('bg-primary/10', 'text-primary');
+          }
+          if (icon) {
+            icon.classList.remove('text-outline');
+            icon.classList.add('text-primary');
+          }
+          
+          // Scroll the card into view smoothly inside the container
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        } else {
+          card.classList.remove('active', 'border-primary/30', 'bg-primary/5');
+          card.classList.add('border-primary/10', 'bg-surface-container-lowest');
+          if (badge) {
+            badge.classList.remove('bg-primary/10', 'text-primary');
+            badge.classList.add('bg-outline/10', 'text-outline');
+          }
+          if (icon) {
+            icon.classList.remove('text-primary');
+            icon.classList.add('text-outline');
+          }
+        }
+      });
+
+      // Update map pins states
+      for (let i = 0; i <= 5; i++) {
+        const pulse = document.getElementById(`pin-pulse-${i}`);
+        const core = document.getElementById(`pin-core-${i}`);
+        const pathLine = document.getElementById(`path-line-${i}`);
+        
+        if (pulse && core) {
+          if (i === idx) {
+            pulse.classList.remove('opacity-0');
+            pulse.classList.add('animate-ping');
+            core.classList.add('active');
+            core.classList.remove('fill-outline');
+            core.classList.add('fill-primary');
+          } else {
+            pulse.classList.add('opacity-0');
+            pulse.classList.remove('animate-ping');
+            core.classList.remove('active', 'fill-primary');
+            core.classList.add('fill-outline');
+          }
+        }
+        
+        // Highlight active paths up to the current milestone
+        if (pathLine) {
+          if (i <= idx) {
+            pathLine.setAttribute('stroke-width', '3.5');
+            pathLine.setAttribute('opacity', '1');
+            pathLine.classList.add('map-path');
+          } else {
+            pathLine.setAttribute('stroke-width', '2');
+            pathLine.setAttribute('opacity', '0.3');
+            pathLine.classList.remove('map-path');
+          }
+        }
+      }
+    }
+    
+    // Initialize the timeline state on load
+    document.addEventListener('DOMContentLoaded', () => {
+      window.selectMilestone(0);
+    });
 
     // ── Mobile menu ──
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');

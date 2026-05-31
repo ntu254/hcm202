@@ -222,6 +222,27 @@
                         from { opacity: 0; transform: translateY(24px); }
                         to { opacity: 1; transform: translateY(0); }
                 }
+
+                /* ── THEORY PAGE ADDITIONS ── */
+                .tab-btn.active {
+                        background-color: rgba(180, 0, 6, 0.06);
+                        border-left: 4px solid #b40006;
+                        padding-left: 14px;
+                }
+                .tab-btn.active .tab-num {
+                        color: #b40006;
+                }
+                .tab-btn.active h4 {
+                        color: #b40006;
+                        font-weight: 700;
+                }
+                .animate-fade-in {
+                        animation: fadeIn 0.5s ease forwards;
+                }
+                @keyframes fadeIn {
+                        from { opacity: 0; transform: translateY(4px); }
+                        to { opacity: 1; transform: translateY(0); }
+                }
         </style>
 </head>
 
@@ -251,8 +272,6 @@
                                 <a href="ban-dang-song.html"
                                         class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Thử
                                         Thách</a>
-                                <a href="thuc-tien-hom-nay.html#game"
-                                        class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02] flex items-center gap-1"><span class="material-symbols-outlined text-base">sports_esports</span>Trò Chơi</a>
                                 <a href="thuc-tien-hom-nay.html"
                                         class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Phân
                                         Tích</a>
@@ -301,7 +320,6 @@
                                 <a href="ban-dang-song.html"
                                         class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Thử
                                         Thách</a>
-                                <a href="thuc-tien-hom-nay.html#game" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary flex items-center gap-1"><span class="material-symbols-outlined text-base">sports_esports</span>Trò Chơi</a>
                                 <a href="thuc-tien-hom-nay.html"
                                         class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Phân
                                         Tích</a>
@@ -348,6 +366,332 @@
                         <div
                                 class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50 text-primary-container">
                                 <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                        </div>
+                </section>
+
+                <!-- Section 1: CƠ SỞ LÝ LUẬN – Triết lý con người và Đạo đức trong Tư tưởng Hồ Chí Minh -->
+                <section id="co-so-ly-luan" class="py-20 px-margin-mobile md:px-margin-desktop bg-surface-container-low/60 border-t border-outline-variant/30">
+                        <div class="max-w-max-width mx-auto">
+                                <div class="text-center mb-12 reveal">
+                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold uppercase tracking-wider text-primary mb-3">
+                                                <span class="material-symbols-outlined text-sm">menu_book</span> Chương I: Cơ sở lý luận
+                                        </span>
+                                        <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary-container mb-4">
+                                                Triết Lý Con Người & Đạo Đức
+                                        </h2>
+                                        <p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mx-auto">
+                                                Trong tư tưởng Hồ Chí Minh, con người luôn là vị trí trung tâm, vừa là mục tiêu tối thượng vừa là động lực quyết định sự nghiệp cách mạng.
+                                        </p>
+                                </div>
+
+                                <!-- Master-Detail Split Layout for Desktop & Accordion for Mobile -->
+                                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                                        <!-- Left sidebar: Tab List (hidden on mobile, shown on lg) -->
+                                        <div class="hidden lg:flex lg:col-span-4 flex-col gap-2 border-r border-outline-variant/40 pr-4">
+                                                <button onclick="switchTab(0)" class="tab-btn active flex items-center gap-3 p-4 rounded-xl text-left transition-all hover:bg-surface-container-high/60 group">
+                                                        <span class="tab-num font-display font-bold text-lg text-outline-variant group-hover:text-primary transition-colors">01</span>
+                                                        <div class="flex-1">
+                                                                <h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm">Quan niệm về con người</h4>
+                                                        </div>
+                                                        <span class="material-symbols-outlined text-outline-variant group-hover:text-primary group-[.active]:text-primary transition-colors">chevron_right</span>
+                                                </button>
+                                                <button onclick="switchTab(1)" class="tab-btn flex items-center gap-3 p-4 rounded-xl text-left transition-all hover:bg-surface-container-high/60 group">
+                                                        <span class="tab-num font-display font-bold text-lg text-outline-variant group-hover:text-primary transition-colors">02</span>
+                                                        <div class="flex-1">
+                                                                <h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm">Vai trò của đạo đức</h4>
+                                                        </div>
+                                                        <span class="material-symbols-outlined text-outline-variant transition-colors">chevron_right</span>
+                                                </button>
+                                                <button onclick="switchTab(2)" class="tab-btn flex items-center gap-3 p-4 rounded-xl text-left transition-all hover:bg-surface-container-high/60 group">
+                                                        <span class="tab-num font-display font-bold text-lg text-outline-variant group-hover:text-primary transition-colors">03</span>
+                                                        <div class="flex-1">
+                                                                <h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm">Quan hệ Đức và Tài</h4>
+                                                        </div>
+                                                        <span class="material-symbols-outlined text-outline-variant transition-colors">chevron_right</span>
+                                                </button>
+                                                <button onclick="switchTab(3)" class="tab-btn flex items-center gap-3 p-4 rounded-xl text-left transition-all hover:bg-surface-container-high/60 group">
+                                                        <span class="tab-num font-display font-bold text-lg text-outline-variant group-hover:text-primary transition-colors">04</span>
+                                                        <div class="flex-1">
+                                                                <h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm">"Nói đi đôi với làm"</h4>
+                                                        </div>
+                                                        <span class="material-symbols-outlined text-outline-variant transition-colors">chevron_right</span>
+                                                </button>
+                                                <button onclick="switchTab(4)" class="tab-btn flex items-center gap-3 p-4 rounded-xl text-left transition-all hover:bg-surface-container-high/60 group">
+                                                        <span class="tab-num font-display font-bold text-lg text-outline-variant group-hover:text-primary transition-colors">05</span>
+                                                        <div class="flex-1">
+                                                                <h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm">Tu dưỡng đạo đức suốt đời</h4>
+                                                        </div>
+                                                        <span class="material-symbols-outlined text-outline-variant transition-colors">chevron_right</span>
+                                                </button>
+                                                <button onclick="switchTab(5)" class="tab-btn flex items-center gap-3 p-4 rounded-xl text-left transition-all hover:bg-surface-container-high/60 group">
+                                                        <span class="tab-num font-display font-bold text-lg text-outline-variant group-hover:text-primary transition-colors">06</span>
+                                                        <div class="flex-1">
+                                                                <h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm">Chủ nghĩa cá nhân</h4>
+                                                        </div>
+                                                        <span class="material-symbols-outlined text-outline-variant transition-colors">chevron_right</span>
+                                                </button>
+                                                <button onclick="switchTab(6)" class="tab-btn flex items-center gap-3 p-4 rounded-xl text-left transition-all hover:bg-surface-container-high/60 group">
+                                                        <span class="tab-num font-display font-bold text-lg text-outline-variant group-hover:text-primary transition-colors">07</span>
+                                                        <div class="flex-1">
+                                                                <h4 class="font-semibold text-on-surface group-hover:text-primary transition-colors text-sm">Ý nghĩa đối với sinh viên</h4>
+                                                        </div>
+                                                        <span class="material-symbols-outlined text-outline-variant transition-colors">chevron_right</span>
+                                                </button>
+                                        </div>
+
+                                        <!-- Right Content display pane for Desktop (lg:col-span-8) -->
+                                        <div class="hidden lg:block lg:col-span-8 bg-surface-container-lowest border border-outline-variant/30 rounded-2xl p-8 min-h-[460px] shadow-sm relative overflow-hidden">
+                                                <!-- Background decorative motif -->
+                                                <div class="absolute -bottom-16 -right-16 text-primary/5 pointer-events-none select-none">
+                                                        <span class="material-symbols-outlined text-[240px]">history_edu</span>
+                                                </div>
+                                                
+                                                <div id="tab-content" class="relative z-10 space-y-6 transition-all duration-300">
+                                                        <!-- Tab content will be injected by JavaScript -->
+                                                </div>
+                                        </div>
+
+                                        <!-- Mobile: Accordion (shown on < lg) -->
+                                        <div class="lg:hidden w-full flex flex-col gap-4" id="mobile-accordion">
+                                                <!-- Accordions will be injected by JavaScript -->
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+
+                <!-- Section 2: Ma Trận Tự Đánh Giá Đức - Tài (Self-Assessment Matrix) -->
+                <section id="ma-tran-tu-danh-gia" class="py-20 px-margin-mobile md:px-margin-desktop bg-surface relative overflow-hidden">
+                        <!-- Decorative subtle border lines -->
+                        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+                        <div class="max-w-4xl mx-auto">
+                                <div class="text-center mb-12 reveal">
+                                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary/10 border border-tertiary/20 text-xs font-bold uppercase tracking-wider text-tertiary mb-3">
+                                                 <span class="material-symbols-outlined text-sm">analytics</span> Tương tác cá nhân hóa
+                                         </span>
+                                         <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary-container mb-4">
+                                                 Ma Trận Tự Đánh Giá Đức - Tài
+                                         </h2>
+                                         <p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mx-auto">
+                                                 Hãy tự chấm điểm bản thân qua 4 câu hỏi trắc nghiệm ngắn để vẽ nên ma trận năng lực biện chứng của chính bạn dựa trên Tư tưởng Hồ Chí Minh.
+                                         </p>
+                                </div>
+
+                                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal">
+                                         <!-- Left column: Questionnaire -->
+                                         <div class="lg:col-span-6 bg-surface-container-low border border-primary/10 rounded-2xl p-6 space-y-6">
+                                                 <h3 class="font-headline-md text-base text-primary border-b border-outline-variant/30 pb-3 flex items-center gap-2">
+                                                         <span class="material-symbols-outlined">quiz</span> Bộ câu hỏi tự suy ngẫm
+                                                 </h3>
+                                                 
+                                                 <!-- Q1 (Đức 1) -->
+                                                 <div class="space-y-2">
+                                                         <h4 class="text-xs font-bold text-on-surface flex items-start gap-1.5">
+                                                                 <span class="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] mt-0.5">1</span>
+                                                                 Chính trực học thuật & Đạo đức số:
+                                                         </h4>
+                                                         <p class="text-[11px] text-on-surface-variant leading-relaxed">
+                                                                 Bạn kiên quyết không đạo văn, trung thực trong thi cử và có trách nhiệm khi sử dụng AI hỗ trợ học tập?
+                                                         </p>
+                                                         <div class="flex items-center justify-between gap-2 pt-1">
+                                                                 <span class="text-[10px] text-outline font-semibold">Cải thiện</span>
+                                                                 <div class="flex items-center gap-2">
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-duc-1" value="1" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">1</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-duc-1" value="2" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">2</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-duc-1" value="3" checked class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">3</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-duc-1" value="4" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">4</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-duc-1" value="5" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">5</div>
+                                                                         </label>
+                                                                 </div>
+                                                                 <span class="text-[10px] text-primary font-semibold">Tốt</span>
+                                                         </div>
+                                                 </div>
+
+                                                 <!-- Q2 (Đức 2) -->
+                                                 <div class="space-y-2">
+                                                         <h4 class="text-xs font-bold text-on-surface flex items-start gap-1.5">
+                                                                 <span class="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] mt-0.5">2</span>
+                                                                 Tinh thần trách nhiệm tập thể:
+                                                         </h4>
+                                                         <p class="text-[11px] text-on-surface-variant leading-relaxed">
+                                                                 Bạn sẵn sàng cống hiến công sức cho công việc nhóm, không đùn đẩy trách nhiệm và tôn trọng lợi ích chung?
+                                                         </p>
+                                                         <div class="flex items-center justify-between gap-2 pt-1">
+                                                                 <span class="text-[10px] text-outline font-semibold">Cải thiện</span>
+                                                                 <div class="flex items-center gap-2">
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-duc-2" value="1" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">1</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-duc-2" value="2" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">2</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-duc-2" value="3" checked class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">3</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-duc-2" value="4" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">4</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-duc-2" value="5" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">5</div>
+                                                                         </label>
+                                                                 </div>
+                                                                 <span class="text-[10px] text-primary font-semibold">Tốt</span>
+                                                         </div>
+                                                 </div>
+
+                                                 <!-- Q3 (Tài 1) -->
+                                                 <div class="space-y-2">
+                                                         <h4 class="text-xs font-bold text-on-surface flex items-start gap-1.5">
+                                                                 <span class="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] mt-0.5">3</span>
+                                                                 Năng lực chuyên môn & Kỹ năng:
+                                                         </h4>
+                                                         <p class="text-[11px] text-on-surface-variant leading-relaxed">
+                                                                 Bạn có ý thức chủ động nâng cao trình độ chuyên ngành, kỹ năng thực hành nghề nghiệp và kỹ năng mềm?
+                                                         </p>
+                                                         <div class="flex items-center justify-between gap-2 pt-1">
+                                                                 <span class="text-[10px] text-outline font-semibold">Cải thiện</span>
+                                                                 <div class="flex items-center gap-2">
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-tai-1" value="1" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">1</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-tai-1" value="2" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">2</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-tai-1" value="3" checked class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">3</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-tai-1" value="4" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">4</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-tai-1" value="5" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">5</div>
+                                                                         </label>
+                                                                 </div>
+                                                                 <span class="text-[10px] text-primary font-semibold">Tốt</span>
+                                                         </div>
+                                                 </div>
+
+                                                 <!-- Q4 (Tài 2) -->
+                                                 <div class="space-y-2">
+                                                         <h4 class="text-xs font-bold text-on-surface flex items-start gap-1.5">
+                                                                 <span class="w-4 h-4 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[10px] mt-0.5">4</span>
+                                                                 Khả năng thích ứng số & Công nghệ:
+                                                         </h4>
+                                                         <p class="text-[11px] text-on-surface-variant leading-relaxed">
+                                                                 Bạn tích cực và nhạy bén trong việc tiếp cận công nghệ số mới, làm chủ các công cụ hiện đại và ngoại ngữ?
+                                                         </p>
+                                                         <div class="flex items-center justify-between gap-2 pt-1">
+                                                                 <span class="text-[10px] text-outline font-semibold">Cải thiện</span>
+                                                                 <div class="flex items-center gap-2">
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-tai-2" value="1" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">1</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-tai-2" value="2" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">2</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-tai-2" value="3" checked class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">3</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-tai-2" value="4" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">4</div>
+                                                                         </label>
+                                                                         <label class="relative cursor-pointer">
+                                                                                 <input type="radio" name="q-tai-2" value="5" class="sr-only peer" />
+                                                                                 <div class="w-8 h-8 rounded-full border border-outline-variant/50 flex items-center justify-center text-xs font-bold text-on-surface peer-checked:bg-primary peer-checked:text-on-primary peer-checked:border-primary transition-all">5</div>
+                                                                         </label>
+                                                                 </div>
+                                                                 <span class="text-[10px] text-primary font-semibold">Tốt</span>
+                                                         </div>
+                                                 </div>
+
+                                                 <div class="pt-2 text-center">
+                                                         <button onclick="analyzeMatrix()" class="w-full bg-primary-container text-on-primary-container hover:bg-surface-tint hover:scale-[1.01] px-5 py-3 rounded-xl font-bold transition-all flex items-center justify-center gap-2 shadow-sm">
+                                                                 <span class="material-symbols-outlined text-sm">explore</span> Phân Tích Ma Trận Của Bạn
+                                                         </button>
+                                                 </div>
+                                         </div>
+
+                                         <!-- Right column: Chart visualizer & explanation -->
+                                         <div class="lg:col-span-6 space-y-6">
+                                                 <!-- Dynamic Coordinate Plot -->
+                                                 <div class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl p-6 shadow-sm flex flex-col items-center">
+                                                         <h4 class="font-headline-md text-sm text-on-surface mb-4 uppercase tracking-wider font-semibold">Ma Trận Đức - Tài Biện Chứng</h4>
+                                                         
+                                                         <div class="relative w-full aspect-square max-w-[320px] bg-surface border border-outline-variant/60 rounded-xl overflow-hidden shadow-inner">
+                                                                 <!-- 4 Quadrants -->
+                                                                 <div class="absolute inset-0 grid grid-cols-2 grid-rows-2">
+                                                                         <!-- Top Left: Có Tài Thiếu Đức -->
+                                                                         <div class="border-r border-b border-dashed border-outline-variant/40 bg-red-500/[0.02] flex items-start p-3 select-none">
+                                                                                 <span class="text-[8px] font-bold text-red-500/60 uppercase tracking-wider">Có Tài Thiếu Đức</span>
+                                                                         </div>
+                                                                         <!-- Top Right: Vừa Hồng Vừa Chuyên -->
+                                                                         <div class="border-b border-dashed border-outline-variant/40 bg-green-500/[0.02] flex items-start justify-end p-3 select-none">
+                                                                                 <span class="text-[8px] font-bold text-green-500/60 uppercase tracking-wider">Vừa Hồng Vừa Chuyên</span>
+                                                                         </div>
+                                                                         <!-- Bottom Left: Cần Rèn Luyện Toàn Diện -->
+                                                                         <div class="border-r border-dashed border-outline-variant/40 bg-outline/[0.02] flex items-end p-3 select-none">
+                                                                                 <span class="text-[8px] font-bold text-outline/50 uppercase tracking-wider">Cần Rèn Luyện</span>
+                                                                         </div>
+                                                                         <!-- Bottom Right: Có Đức Thiếu Tài -->
+                                                                         <div class="bg-yellow-500/[0.02] flex items-end justify-end p-3 select-none">
+                                                                                 <span class="text-[8px] font-bold text-yellow-600/50 uppercase tracking-wider">Có Đức Thiếu Tài</span>
+                                                                         </div>
+                                                                 </div>
+                                                                 
+                                                                 <!-- Y-axis (Tài) -->
+                                                                 <div class="absolute inset-y-0 left-1/2 w-px bg-outline-variant/60 flex flex-col justify-between items-center py-2 pointer-events-none">
+                                                                         <span class="text-[8px] font-bold text-outline bg-surface px-1 -translate-y-1">TÀI ▲</span>
+                                                                         <span class="text-[8px] font-bold text-outline bg-surface px-1 translate-y-1">▼</span>
+                                                                 </div>
+                                                                 <!-- X-axis (Đức) -->
+                                                                 <div class="absolute inset-x-0 top-1/2 h-px bg-outline-variant/60 flex justify-between items-center px-1 pointer-events-none">
+                                                                         <span class="text-[8px] font-bold text-outline bg-surface py-0.5 -translate-x-0.5">◀</span>
+                                                                         <span class="text-[8px] font-bold text-outline bg-surface py-0.5 translate-x-0.5">ĐỨC ▶</span>
+                                                                 </div>
+                                                                 
+                                                                 <!-- The Plotting Dot -->
+                                                                 <div id="matrix-dot" class="absolute w-5 h-5 bg-primary-container text-on-primary-container rounded-full shadow-[0_0_16px_rgba(218,37,29,0.6)] transform -translate-x-1/2 -translate-y-1/2 transition-all duration-1000 ease-out flex items-center justify-center scale-0" style="left: 50%; top: 50%;">
+                                                                         <span class="w-3.5 h-3.5 bg-on-primary-container rounded-full animate-ping absolute"></span>
+                                                                         <span class="w-2.5 h-2.5 bg-on-primary-container rounded-full relative z-10"></span>
+                                                                 </div>
+                                                         </div>
+                                                 </div>
+
+                                                 <!-- Results & Diagnosis Box -->
+                                                 <div id="matrix-result-container" class="hidden opacity-0 scale-95 transition-all duration-500 bg-surface-container-lowest border border-outline-variant/60 rounded-2xl p-6 shadow-sm">
+                                                         <div id="matrix-result-box">
+                                                                 <!-- Diagnostic results dynamically injected by JS -->
+                                                         </div>
+                                                 </div>
+                                         </div>
+                                </div>
                         </div>
                 </section>
                 <!-- Infographic Section: 5 Standards (Bento Grid) -->
@@ -594,6 +938,313 @@
                         });
                 }, { threshold: 0.12 });
                 document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+                // --- THEORY FRAMEWORK DATA & INTERACTIVE LOGIC ---
+                const frameworkData = [
+                        {
+                                title: "Quan niệm của Hồ Chí Minh về con người",
+                                badge: "Vị trí trung tâm",
+                                icon: "groups",
+                                theory: "Trong tư tưởng Hồ Chí Minh, con người luôn giữ vị trí trung tâm của mọi hoạt động cách mạng. Người nhìn nhận con người vừa là mục tiêu, vừa là động lực của sự nghiệp giải phóng dân tộc và xây dựng xã hội mới.",
+                                details: [
+                                        "<strong>Con người là mục tiêu:</strong> Mọi cuộc đấu tranh cách mạng cuối cùng đều nhằm giải phóng con người, đem lại cuộc sống tự do, ấm no, hạnh phúc cho nhân dân.",
+                                        "<strong>Con người là động lực:</strong> Mọi thành tựu của xã hội đều do con người kiến tạo. Không có sức dân thì không có cách mạng thành công, không có con người thì không có sự phát triển."
+                                ],
+                                quote: "Trong bầu trời không gì quý bằng nhân dân. Trong thế giới không gì mạnh bằng lực lượng đoàn kết của nhân dân.",
+                                example: "Trong Cách mạng Tháng Tám năm 1945, Hồ Chí Minh không dựa vào một cá nhân hay một lực lượng riêng lẻ nào mà dựa vào sức mạnh đại đoàn kết của toàn dân tộc. Điều đó thể hiện niềm tin tuyệt đối của Người vào vai trò quyết định của quần chúng nhân dân trong lịch sử."
+                        },
+                        {
+                                title: "Vai trò của đạo đức trong đời sống con người",
+                                badge: "Nền tảng nhân cách",
+                                icon: "spa",
+                                theory: "Theo Hồ Chí Minh, đạo đức là nền tảng của nhân cách và là yếu tố quyết định giá trị của mỗi con người. Đức chính là cái gốc định hướng, chèo lái cho tài năng được phát huy đúng đắn.",
+                                details: [
+                                        "Người ví đạo đức như gốc của cây, như nguồn của dòng sông: 'Cây phải có gốc, không có gốc thì cây héo. Sông phải có nguồn, không có nguồn thì sông cạn.'",
+                                        "Nếu đạo đức bị suy thoái, tài năng có thể bị sử dụng sai mục đích, trở thành công cụ phục vụ cho sự ích kỷ cá nhân hoặc gây hại lớn cho lợi ích chung của xã hội."
+                                ],
+                                quote: "Người cách mạng phải có đạo đức, không có đạo đức thì dù tài giỏi mấy cũng không lãnh đạo được nhân dân.",
+                                example: "Một bác sĩ có trình độ chuyên môn rất cao nhưng nếu suy thoái đạo đức, nhận hối lộ hoặc thiếu tinh thần trách nhiệm với tính mạng bệnh nhân sẽ gây ra những hậu quả vô cùng nghiêm trọng, tổn hại lớn hơn rất nhiều so với một người bình thường."
+                        },
+                        {
+                                title: "Quan hệ giữa Đức và Tài",
+                                badge: "Biện chứng song hành",
+                                icon: "balance",
+                                theory: "Một trong những nội dung trọng tâm trong tư tưởng Hồ Chí Minh là mối quan hệ gắn bó hữu cơ giữa Đức và Tài. Người khẳng định hai yếu tố này phải bổ trợ và hoàn thiện lẫn nhau.",
+                                details: [
+                                        "Đức là gốc, là nền tảng tinh thần; Tài là điều kiện quan trọng để hiện thực hóa các lý tưởng đạo đức cao đẹp thành hành động có ích cho đời.",
+                                        "Người cho rằng: 'Có tài mà không có đức là người vô dụng. Có đức mà không có tài thì làm việc gì cũng khó.' Sinh viên cần phát triển toàn diện cả Đức lẫn Tài."
+                                ],
+                                quote: "Có tài mà không có đức là người vô dụng. Có đức mà không có tài thì làm việc gì cũng khó.",
+                                example: "Một sinh viên đạt điểm GPA xuất sắc nhưng lại thường xuyên gian lận thi cử, đạo văn thì không thể coi là người phát triển toàn diện. Ngược lại, một sinh viên có tấm lòng trung thực nhưng lười biếng, thiếu kỹ năng chuyên môn thì cũng khó đóng góp hiệu quả trong thời đại số."
+                        },
+                        {
+                                title: "Nguyên tắc \"Nói đi đôi với làm\"",
+                                badge: "Lời nói gắn liền hành động",
+                                icon: "task_alt",
+                                theory: "Đây là nguyên tắc đạo đức xuyên suốt và quan trọng bậc nhất trong tư tưởng Hồ Chí Minh. Giá trị đạo đức không được đo lường bằng những lời nói sáo rỗng mà bằng hành động thực tế thiết thực.",
+                                details: [
+                                        "Người phê phán gay gắt hiện tượng 'nói nhiều làm ít', 'hứa mà không thực hiện' hoặc lý luận suông xa rời thực tiễn.",
+                                        "Nói đi đôi với làm là thước đo bản lĩnh, lòng trung thực và tinh thần trách nhiệm trước tập thể và nhân dân."
+                                ],
+                                quote: "Nói miệng ai cũng nói được. Phải làm. Có làm được nhân dân mới tin.",
+                                example: "Trong suốt những năm tháng kháng chiến gian khổ, Hồ Chí Minh luôn thực hành phong cách sống vô cùng giản dị, tiết kiệm, liêm khiết. Chính lối sống gương mẫu ấy đã tạo nên sức thuyết phục và truyền cảm hứng mạnh mẽ, làm lay động hàng triệu trái tim nhân dân."
+                        },
+                        {
+                                title: "Nguyên tắc tu dưỡng đạo đức suốt đời",
+                                badge: "Rèn luyện liên tục",
+                                icon: "published_with_changes",
+                                theory: "Hồ Chí Minh khẳng định đạo đức cách mạng không phải tự nhiên mà có, cũng không phải là bất biến. Nó được hình thành và gìn giữ thông qua quá trình không ngừng học tập, tự rèn luyện và đấu tranh nội tâm bền bỉ.",
+                                details: [
+                                        "Người ví việc rèn luyện đạo đức giống như việc 'rửa mặt hằng ngày'. Một ngày không rửa mặt thì bụi bặm sẽ bám vào, đạo đức cũng vậy, nếu lơ là tu dưỡng sẽ dễ bị mai một.",
+                                        "Trong bối cảnh công nghệ thay đổi nhanh chóng, việc rèn luyện sự tự giác và đạo đức số lại càng đòi hỏi sự kiên trì vượt bậc."
+                                ],
+                                quote: "Đạo đức cách mạng không phải trên trời sa xuống. Nó do đấu tranh, rèn luyện bền bỉ hằng ngày mà phát triển và củng cố.",
+                                example: "Một sinh viên năm nhất có thể rất chăm chỉ, đầy hoài bão và nhiệt tình. Tuy nhiên, nếu sau đó chủ quan, lười biếng hoặc chạy theo thành tích ảo, thiếu sự tự rèn luyện hằng ngày thì các phẩm chất tốt ban đầu cũng sẽ dần phai nhạt."
+                        },
+                        {
+                                title: "Chủ nghĩa cá nhân – trở ngại lớn đối với sự phát triển",
+                                badge: "Giặc nội xâm",
+                                icon: "person_cancel",
+                                theory: "Hồ Chí Minh coi chủ nghĩa cá nhân là một loại 'giặc nội xâm' nguy hiểm, là kẻ thù hung ác của đạo đức cách mạng. Nó cản trở con người hướng tới những giá trị chân-thiện-mỹ.",
+                                details: [
+                                        "Chủ nghĩa cá nhân biểu hiện ở việc đặt lợi ích ích kỷ của bản thân lên trên lợi ích chung của tập thể và cộng đồng; chỉ muốn hưởng thụ mà trốn tránh cống hiến.",
+                                        "Đấu tranh chống chủ nghĩa cá nhân không phải là xóa bỏ lợi ích cá nhân chính đáng, mà là chống lại việc chà đạp lên lợi ích chung vì lòng tham cá nhân."
+                                ],
+                                quote: "Chủ nghĩa cá nhân là một thứ vi trùng rất độc, nó đẻ ra trăm thứ bệnh nguy hiểm: quan liêu, mệnh lệnh, bè phái, chủ quan...",
+                                example: "Trong hoạt động học tập nhóm tại giảng đường, hành vi đùn đẩy công việc cho người khác, đến ngày nộp bài mới ghi tên để lấy điểm chung, hoặc cướp công sức của bạn bè chính là biểu hiện điển hình của chủ nghĩa cá nhân ích kỷ mà Bác đã cảnh báo."
+                        },
+                        {
+                                title: "Ý nghĩa đối với sinh viên hiện nay",
+                                badge: "Kim chỉ nam Gen Z",
+                                icon: "school",
+                                theory: "Những tư tưởng sâu sắc của Bác về con người và đạo đức vẫn vẹn nguyên giá trị thời đại, đóng vai trò là chiếc la bàn định hướng cho thế hệ Gen Z tự tin vững bước trong kỷ nguyên số hóa và trí tuệ nhân tạo (AI).",
+                                details: [
+                                        "Sinh viên cần thể hiện việc học tập bằng những hành động thực tế: Trung thực học thuật, không đạo văn, có trách nhiệm với xã hội.",
+                                        "Biết sử dụng AI như một công cụ hỗ trợ sáng tạo thay vì lạm dụng để gian lận, luôn đặt lợi ích của cộng đồng song hành cùng sự phát triển cá nhân."
+                                ],
+                                quote: "Thanh niên là người chủ tương lai của nước nhà... Nước nhà thịnh hay suy, yếu hay mạnh, một phần lớn là do các thanh niên.",
+                                example: "Một sinh viên Gen Z thời nay biết kết hợp giữa tri thức công nghệ tiên tiến (sử dụng AI đúng mục đích, lập trình sáng tạo) với phẩm chất đạo đức liêm chính (trung thực học thuật, làm việc nhóm tận tụy) chính là hình mẫu 'vừa hồng vừa chuyên' lý tưởng."
+                        }
+                ];
+
+                let activeTabIdx = 0;
+
+                function switchTab(idx) {
+                        activeTabIdx = idx;
+                        
+                        // Update active state in sidebar
+                        const buttons = document.querySelectorAll('.tab-btn');
+                        buttons.forEach((btn, i) => {
+                                if (i === idx) {
+                                        btn.classList.add('active');
+                                } else {
+                                        btn.classList.remove('active');
+                                }
+                        });
+
+                        // Render detail pane
+                        const pane = document.getElementById('tab-content');
+                        if (!pane) return;
+
+                        const data = frameworkData[idx];
+                        pane.style.opacity = 0;
+                        pane.style.transform = 'translateY(8px)';
+                        
+                        setTimeout(() => {
+                                let detailsHtml = '';
+                                data.details.forEach(detail => {
+                                        detailsHtml += `<li class="flex items-start gap-2.5 text-on-surface-variant text-sm leading-relaxed">
+                                                <span class="material-symbols-outlined text-primary text-lg mt-0.5 select-none">arrow_right_alt</span>
+                                                <span>${detail}</span>
+                                        </li>`;
+                                });
+
+                                pane.innerHTML = `
+                                        <div class="flex items-center gap-3">
+                                                <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                                                        <span class="material-symbols-outlined text-xl">${data.icon}</span>
+                                                </div>
+                                                <div>
+                                                        <span class="inline-flex px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-bold text-[10px] uppercase tracking-wider">${data.badge}</span>
+                                                        <h3 class="text-headline-md text-lg text-primary font-bold mt-0.5">${data.title}</h3>
+                                                </div>
+                                        </div>
+                                        
+                                        <p class="text-body-md text-on-surface font-medium leading-relaxed">${data.theory}</p>
+                                        
+                                        <ul class="space-y-2.5 border-t border-outline-variant/20 pt-4">
+                                                ${detailsHtml}
+                                        </ul>
+                                        
+                                        <blockquote class="bg-surface p-4 rounded-xl border-l-4 border-primary text-sm italic font-quote text-on-surface-variant relative py-6 px-8 my-4">
+                                                <span class="material-symbols-outlined absolute top-2 left-2 text-outline-variant text-2xl opacity-30 select-none">format_quote</span>
+                                                "${data.quote}"
+                                        </blockquote>
+                                        
+                                        <div class="bg-surface-container p-4 rounded-xl border border-primary/10">
+                                                <div class="flex items-center gap-1 text-[11px] font-bold text-tertiary uppercase tracking-wider mb-1.5">
+                                                        <span class="material-symbols-outlined text-sm">lightbulb</span> Ví dụ thực tế
+                                                </div>
+                                                <p class="text-body-md text-on-surface-variant text-xs leading-relaxed">${data.example}</p>
+                                        </div>
+                                `;
+                                pane.style.opacity = 1;
+                                pane.style.transform = 'translateY(0)';
+                        }, 180);
+                }
+
+                function renderMobileAccordion() {
+                        const accordionContainer = document.getElementById('mobile-accordion');
+                        if (!accordionContainer) return;
+
+                        let html = '';
+                        frameworkData.forEach((data, idx) => {
+                                let detailsHtml = '';
+                                data.details.forEach(detail => {
+                                        detailsHtml += `<li class="flex items-start gap-2 text-on-surface-variant text-xs leading-relaxed">
+                                                <span class="material-symbols-outlined text-primary text-base mt-0.5 select-none">arrow_right_alt</span>
+                                                <span>${detail}</span>
+                                        </li>`;
+                                });
+
+                                html += `
+                                        <div class="border border-outline-variant/30 rounded-xl overflow-hidden bg-surface-container-lowest shadow-sm">
+                                                <button onclick="toggleAccordion(${idx})" class="w-full flex items-center justify-between p-4 text-left font-semibold text-sm text-on-surface hover:bg-surface-container/30 transition-colors">
+                                                        <div class="flex items-center gap-3">
+                                                                <span class="font-display font-bold text-primary text-base">${String(idx + 1).padStart(2, '0')}</span>
+                                                                <span class="text-xs font-bold text-on-surface">${data.title}</span>
+                                                        </div>
+                                                        <span id="accordion-arrow-${idx}" class="material-symbols-outlined text-outline-variant transition-transform duration-300">expand_more</span>
+                                                </button>
+                                                <div id="accordion-body-${idx}" class="hidden border-t border-outline-variant/20 p-4 space-y-4 bg-surface/30">
+                                                        <div class="inline-flex px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-bold text-[9px] uppercase tracking-wider">${data.badge}</div>
+                                                        <p class="text-xs text-on-surface leading-relaxed">${data.theory}</p>
+                                                        <ul class="space-y-2">
+                                                                ${detailsHtml}
+                                                        </ul>
+                                                        <blockquote class="p-3 bg-surface rounded-lg border-l-3 border-primary text-xs italic font-quote text-on-surface-variant relative pl-6 my-2">
+                                                                <span class="material-symbols-outlined absolute top-1 left-1 text-outline-variant text-lg opacity-30 select-none">format_quote</span>
+                                                                "${data.quote}"
+                                                        </blockquote>
+                                                        <div class="bg-surface-container p-3 rounded-lg border border-primary/10">
+                                                                <div class="text-[10px] font-bold text-tertiary uppercase tracking-wider mb-1">Ví dụ thực tế</div>
+                                                                <p class="text-on-surface-variant text-[11px] leading-relaxed">${data.example}</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                `;
+                        });
+                        accordionContainer.innerHTML = html;
+                }
+
+                let openAccordionIdx = null;
+                function toggleAccordion(idx) {
+                        const body = document.getElementById(`accordion-body-${idx}`);
+                        const arrow = document.getElementById(`accordion-arrow-${idx}`);
+                        if (!body || !arrow) return;
+
+                        if (body.classList.contains('hidden')) {
+                                // Close previously open accordion
+                                if (openAccordionIdx !== null) {
+                                        document.getElementById(`accordion-body-${openAccordionIdx}`)?.classList.add('hidden');
+                                        document.getElementById(`accordion-arrow-${openAccordionIdx}`)?.classList.remove('rotate-180');
+                                }
+                                body.classList.remove('hidden');
+                                arrow.classList.add('rotate-180');
+                                openAccordionIdx = idx;
+                        } else {
+                                body.classList.add('hidden');
+                                arrow.classList.remove('rotate-180');
+                                openAccordionIdx = null;
+                        }
+                }
+
+                // --- THEORY SELF-ASSESSMENT MATRIX LOGIC ---
+                function analyzeMatrix() {
+                        const d1 = parseFloat(document.querySelector('input[name="q-duc-1"]:checked')?.value || 3);
+                        const d2 = parseFloat(document.querySelector('input[name="q-duc-2"]:checked')?.value || 3);
+                        const t1 = parseFloat(document.querySelector('input[name="q-tai-1"]:checked')?.value || 3);
+                        const t2 = parseFloat(document.querySelector('input[name="q-tai-2"]:checked')?.value || 3);
+
+                        const ducAvg = (d1 + d2) / 2;
+                        const taiAvg = (t1 + t2) / 2;
+
+                        // Set dot coordinates
+                        const dot = document.getElementById('matrix-dot');
+                        const xPct = ((ducAvg - 1) / 4) * 100;
+                        const yPct = 100 - ((taiAvg - 1) / 4) * 100;
+
+                        if (dot) {
+                                dot.style.left = `${xPct}%`;
+                                dot.style.top = `${yPct}%`;
+                                dot.classList.remove('scale-0');
+                        }
+
+                        // Determine quadrant and advice
+                        let quadrantTitle = "";
+                        let quadrantDesc = "";
+                        let hcmQuote = "";
+                        let advice = "";
+                        let badgeColor = "";
+
+                        if (ducAvg >= 3 && taiAvg >= 3) {
+                                quadrantTitle = "Vừa Hồng Vừa Chuyên";
+                                badgeColor = "bg-green-500/10 text-green-600 border-green-500/20";
+                                quadrantDesc = "Bạn đang ở trạng thái lý tưởng nhất theo Tư tưởng Hồ Chí Minh: Đức và Tài cùng bổ trợ mạnh mẽ cho nhau.";
+                                hcmQuote = "Thanh niên là người chủ tương lai của nước nhà... Nước nhà thịnh hay suy, yếu hay mạnh, một phần lớn là do các thanh niên.";
+                                advice = "Hãy tiếp tục phát huy năng lực chuyên môn đi đôi với việc giữ vững phẩm chất liêm chính, lan tỏa tinh thần cống hiến cho tập thể và cộng đồng xung quanh.";
+                        } else if (ducAvg < 3 && taiAvg >= 3) {
+                                quadrantTitle = "Có Tài Thiếu Đức";
+                                badgeColor = "bg-red-500/10 text-red-600 border-red-500/20";
+                                quadrantDesc = "Bạn có năng lực xuất sắc nhưng phẩm chất đạo đức và tinh thần trách nhiệm tập thể cần được củng cố nghiêm túc.";
+                                hcmQuote = "Có tài mà không có đức là người vô dụng.";
+                                advice = "Đầu tư rèn luyện tính trung thực học thuật, chống lại chủ nghĩa cá nhân ích kỷ, biết đặt lợi ích chung lên trên cá nhân để tài năng phát huy đúng nghĩa.";
+                        } else if (ducAvg >= 3 && taiAvg < 3) {
+                                quadrantTitle = "Có Đức Thiếu Tài";
+                                badgeColor = "bg-yellow-500/10 text-yellow-600 border-yellow-500/20";
+                                quadrantDesc = "Bạn có phẩm chất đạo đức rất tốt, sống tử tế và trách nhiệm, nhưng năng lực làm việc thực tế và kỹ năng số cần nỗ lực bồi đắp.";
+                                hcmQuote = "Có đức mà không có tài thì làm việc gì cũng khó.";
+                                advice = "Chủ động học tập chuyên môn, rèn luyện ngoại ngữ, kỹ năng mềm và làm chủ các công cụ công nghệ/AI để nâng cao hiệu suất cống hiến.";
+                        } else {
+                                quadrantTitle = "Cần Nỗ Lực Toàn Diện";
+                                badgeColor = "bg-outline/10 text-outline border-outline/20";
+                                quadrantDesc = "Cả phẩm chất đạo đức lẫn năng lực chuyên môn của bạn đều cần cải thiện vượt bậc để đáp ứng sự phát triển của xã hội hiện đại.";
+                                hcmQuote = "Đạo đức cách mạng không phải trên trời sa xuống. Nó do đấu tranh, rèn luyện bền bỉ hằng ngày mà phát triển và củng cố.";
+                                advice = "Thiết lập kế hoạch học tập nghiêm túc, rèn luyện thói quen tự học song hành với tu dưỡng tính chính trực, kỷ luật bản thân hằng ngày.";
+                        }
+
+                        // Render diagnostic text
+                        const resultBox = document.getElementById('matrix-result-box');
+                        resultBox.innerHTML = `
+                                <div class="space-y-4 animate-fade-in">
+                                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-bold uppercase tracking-wider ${badgeColor}">
+                                                Phân nhóm: ${quadrantTitle}
+                                        </div>
+                                        <p class="text-body-md font-body-md text-on-surface font-semibold text-sm leading-relaxed">${quadrantDesc}</p>
+                                        <blockquote class="bg-surface p-4 rounded-xl border-l-4 border-primary text-xs italic font-quote text-on-surface-variant relative pl-8 py-4 my-2">
+                                                <span class="material-symbols-outlined absolute top-2 left-2 text-outline-variant text-xl opacity-30 select-none">format_quote</span>
+                                                "${hcmQuote}"
+                                        </blockquote>
+                                        <div class="bg-surface-container p-3 rounded-lg border border-primary/10">
+                                                <div class="text-[10px] font-bold text-tertiary uppercase tracking-wider mb-1.5 flex items-center gap-1">
+                                                        <span class="material-symbols-outlined text-xs">directions_run</span> Lộ trình rèn luyện dành cho bạn
+                                                </div>
+                                                <p class="text-on-surface-variant text-[11px] leading-relaxed">${advice}</p>
+                                        </div>
+                                </div>
+                        `;
+
+                        // Show result container
+                        const resultContainer = document.getElementById('matrix-result-container');
+                        resultContainer.classList.remove('hidden');
+                        setTimeout(() => {
+                                resultContainer.classList.remove('opacity-0', 'scale-95');
+                        }, 50);
+                }
+
+                // Initialize default tab & mobile accordion
+                switchTab(0);
+                renderMobileAccordion();
         </script>
 </body>
 
