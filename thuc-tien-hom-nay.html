@@ -1031,12 +1031,33 @@
       if (modalListEl) modalListEl.innerHTML = loadingHtml;
       if (endListEl) endListEl.innerHTML = loadingHtml;
       
+      // Xóa script tag cũ nếu còn (tránh xung đột)
+      const oldScript = document.getElementById('jsonp-read-script');
+      if (oldScript) oldScript.remove();
+
       // Dùng JSONP để đọc dữ liệu — vượt CORS hoàn toàn
       const cbName = 'gsReadCb_' + Date.now();
       const separator = url.includes('?') ? '&' : '?';
       const fetchUrl = `${url}${separator}callback=${cbName}&_cb=${Date.now()}`;
       
+      // Timeout 8 giây nếu không có phản hồi
+      const timeoutId = setTimeout(() => {
+        if (window[cbName]) {
+          delete window[cbName];
+          const s = document.getElementById('jsonp-read-script');
+          if (s) s.remove();
+          console.warn('JSONP timeout — dùng dữ liệu cục bộ');
+          arenaLeaderboard = getLocalLeaderboard();
+          drawLeaderboard();
+          const text = document.getElementById('arena-status-text');
+          if (text) text.innerText = 'Chế độ: Trực tuyến (Mất kết nối!)';
+          const dot = document.getElementById('arena-status-dot');
+          if (dot) dot.className = 'w-2.5 h-2.5 rounded-full inline-block bg-rose-500 animate-pulse';
+        }
+      }, 8000);
+
       window[cbName] = function(data) {
+        clearTimeout(timeoutId);
         const scriptEl = document.getElementById('jsonp-read-script');
         if (scriptEl) scriptEl.remove();
         delete window[cbName];
@@ -1057,6 +1078,7 @@
       script.id = 'jsonp-read-script';
       script.src = fetchUrl;
       script.onerror = function() {
+        clearTimeout(timeoutId);
         delete window[cbName];
         script.remove();
         console.error('Lỗi tải bảng vàng live qua JSONP');
@@ -1069,6 +1091,7 @@
       };
       document.head.appendChild(script);
     }
+
 
     function startArenaGame() {
       SoundSynth.playStart();
