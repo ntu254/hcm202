@@ -1,661 +1,1330 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html class="light" lang="vi"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Tôi Chọn Cách Sống - Sống Đẹp</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "tertiary-fixed": "#ffe16d",
-                      "inverse-on-surface": "#f5f1e3",
-                      "surface-dim": "#dedacd",
-                      "on-error-container": "#93000a",
-                      "surface-bright": "#fdf9eb",
-                      "inverse-primary": "#ffb4a9",
-                      "primary-fixed": "#ffdad5",
-                      "outline": "#916f6a",
-                      "on-tertiary": "#ffffff",
-                      "on-surface-variant": "#5d403b",
-                      "primary-fixed-dim": "#ffb4a9",
-                      "tertiary-fixed-dim": "#e9c400",
-                      "on-secondary-fixed": "#3e0021",
-                      "secondary-fixed": "#ffd9e4",
-                      "on-tertiary-container": "#4c3f00",
-                      "on-secondary-container": "#64003a",
-                      "primary": "#b40006",
-                      "error-container": "#ffdad6",
-                      "surface-container-lowest": "#ffffff",
-                      "on-primary": "#ffffff",
-                      "on-primary-fixed-variant": "#930004",
-                      "primary-container": "#da251d",
-                      "on-primary-container": "#fff3f1",
-                      "secondary": "#b3176d",
-                      "on-tertiary-fixed": "#221b00",
-                      "inverse-surface": "#323128",
-                      "surface": "#fdf9eb",
-                      "surface-container-highest": "#e6e2d5",
-                      "tertiary": "#705d00",
-                      "on-error": "#ffffff",
-                      "surface-container": "#f2eee0",
-                      "error": "#ba1a1a",
-                      "secondary-fixed-dim": "#ffb0cd",
-                      "background": "#fdf9eb",
-                      "surface-container-high": "#ece8da",
-                      "surface-variant": "#e6e2d5",
-                      "secondary-container": "#ff5ba9",
-                      "on-surface": "#1c1c14",
-                      "outline-variant": "#e6bdb7",
-                      "on-secondary-fixed-variant": "#8c0053",
-                      "surface-tint": "#bf080b",
-                      "on-primary-fixed": "#410001",
-                      "surface-container-low": "#f8f4e6",
-                      "on-tertiary-fixed-variant": "#544600",
-                      "on-secondary": "#ffffff",
-                      "tertiary-container": "#c9a900",
-                      "on-background": "#1c1c14"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "unit": "8px",
-                      "max-width": "1200px",
-                      "margin-desktop": "48px",
-                      "gutter": "20px",
-                      "margin-mobile": "16px"
-              },
-              "fontFamily": {
-                      "body-md": [
-                              "Be Vietnam Pro"
-                      ],
-                      "quote": [
-                              "Lora"
-                      ],
-                      "label-md": [
-                              "Be Vietnam Pro"
-                      ],
-                      "body-lg": [
-                              "Be Vietnam Pro"
-                      ],
-                      "headline-xl": [
-                              "Lora"
-                      ],
-                      "headline-md": [
-                              "Lora"
-                      ],
-                      "headline-lg-mobile": [
-                              "Lora"
-                      ],
-                      "headline-lg": [
-                              "Lora"
-                      ]
-              },
-              "fontSize": {
-                      "body-md": [
-                              "15px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "quote": [
-                              "20px",
-                              {
-                                      "lineHeight": "1.5",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-md": [
-                              "13px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "0.05em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "body-lg": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-xl": [
-                              "40px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "headline-md": [
-                              "21px",
-                              {
-                                      "lineHeight": "1.4",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "headline-lg-mobile": [
-                              "23px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "headline-lg": [
-                              "26px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "fontWeight": "700"
-                              }
-                      ]
-              }
+<html class="light" lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tôi Chọn Cách Sống - Sống Đẹp</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lora:ital,wght@0,500;0,600;0,700;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffe16d",
+              "inverse-on-surface": "#f5f1e3",
+              "surface-dim": "#dedacd",
+              "on-error-container": "#93000a",
+              "surface-bright": "#fdf9eb",
+              "inverse-primary": "#ffb4a9",
+              "primary-fixed": "#ffdad5",
+              outline: "#916f6a",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#5d403b",
+              "primary-fixed-dim": "#ffb4a9",
+              "tertiary-fixed-dim": "#e9c400",
+              "on-secondary-fixed": "#3e0021",
+              "secondary-fixed": "#ffd9e4",
+              "on-tertiary-container": "#4c3f00",
+              "on-secondary-container": "#64003a",
+              primary: "#b40006",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#930004",
+              "primary-container": "#da251d",
+              "on-primary-container": "#fff3f1",
+              secondary: "#b3176d",
+              "on-tertiary-fixed": "#221b00",
+              "inverse-surface": "#323128",
+              surface: "#fdf9eb",
+              "surface-container-highest": "#e6e2d5",
+              tertiary: "#705d00",
+              "on-error": "#ffffff",
+              "surface-container": "#f2eee0",
+              error: "#ba1a1a",
+              "secondary-fixed-dim": "#ffb0cd",
+              background: "#fdf9eb",
+              "surface-container-high": "#ece8da",
+              "surface-variant": "#e6e2d5",
+              "secondary-container": "#ff5ba9",
+              "on-surface": "#1c1c14",
+              "outline-variant": "#e6bdb7",
+              "on-secondary-fixed-variant": "#8c0053",
+              "surface-tint": "#bf080b",
+              "on-primary-fixed": "#410001",
+              "surface-container-low": "#f8f4e6",
+              "on-tertiary-fixed-variant": "#544600",
+              "on-secondary": "#ffffff",
+              "tertiary-container": "#c9a900",
+              "on-background": "#1c1c14",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              unit: "8px",
+              "max-width": "1200px",
+              "margin-desktop": "48px",
+              gutter: "20px",
+              "margin-mobile": "16px",
+            },
+            fontFamily: {
+              "body-md": ["Be Vietnam Pro"],
+              quote: ["Lora"],
+              "label-md": ["Be Vietnam Pro"],
+              "body-lg": ["Be Vietnam Pro"],
+              "headline-xl": ["Lora"],
+              "headline-md": ["Lora"],
+              "headline-lg-mobile": ["Lora"],
+              "headline-lg": ["Lora"],
+            },
+            fontSize: {
+              "body-md": [
+                "15px",
+                {
+                  lineHeight: "1.6",
+                  fontWeight: "400",
+                },
+              ],
+              quote: [
+                "20px",
+                {
+                  lineHeight: "1.5",
+                  fontWeight: "400",
+                },
+              ],
+              "label-md": [
+                "13px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": [
+                "16px",
+                {
+                  lineHeight: "1.6",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-xl": [
+                "40px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "21px",
+                {
+                  lineHeight: "1.4",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg-mobile": [
+                "23px",
+                {
+                  lineHeight: "1.3",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg": [
+                "26px",
+                {
+                  lineHeight: "1.3",
+                  fontWeight: "700",
+                },
+              ],
             },
           },
-        }
-      </script>
+        },
+      };
+    </script>
     <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .nav-scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .nav-scrolled {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      }
 
-        #scroll-progress {
-            position: fixed; top: 0; left: 0; height: 3px;
-            background: linear-gradient(90deg, #b40006, #da251d);
-            z-index: 100; transition: width 0.1s linear; width: 0%;
-        }
+      #scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #b40006, #da251d);
+        z-index: 100;
+        transition: width 0.1s linear;
+        width: 0%;
+      }
 
-        .reveal {
-            opacity: 0; transform: translateY(32px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.1s; }
-        .reveal-delay-2 { transition-delay: 0.2s; }
-        .reveal-delay-3 { transition-delay: 0.3s; }
-        .reveal-delay-4 { transition-delay: 0.4s; }
-        .reveal-delay-5 { transition-delay: 0.5s; }
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2 {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-3 {
+        transition-delay: 0.3s;
+      }
+      .reveal-delay-4 {
+        transition-delay: 0.4s;
+      }
+      .reveal-delay-5 {
+        transition-delay: 0.5s;
+      }
 
-        .hero-fade-in { animation: heroUp 0.8s ease both; }
-        .hero-fade-in-d1 { animation-delay: 0.15s; }
-        .hero-fade-in-d2 { animation-delay: 0.3s; }
-        .hero-fade-in-d3 { animation-delay: 0.45s; }
-        @keyframes heroUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
+      .hero-fade-in {
+        animation: heroUp 0.8s ease both;
+      }
+      .hero-fade-in-d1 {
+        animation-delay: 0.15s;
+      }
+      .hero-fade-in-d2 {
+        animation-delay: 0.3s;
+      }
+      .hero-fade-in-d3 {
+        animation-delay: 0.45s;
+      }
+      @keyframes heroUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-        /* ── VƯỜN ƯƠM CỐNG HIẾN SỐ & CÂY ĐẠI ĐOÀN KẾT ── */
-        .commitment-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: 1px solid rgba(180, 0, 6, 0.08);
-            position: relative;
-            background: #ffffff;
-        }
-        .commitment-card:hover {
-            border-color: rgba(180, 0, 6, 0.25);
-            box-shadow: 0 12px 32px rgba(180, 0, 6, 0.06);
-            transform: translateY(-2px);
-        }
-        .commitment-card.committed {
-            background: rgba(180, 0, 6, 0.02) !important;
-            border-color: rgba(180, 0, 6, 0.35) !important;
-        }
-        .commitment-card.committed .check-icon-wrap {
-            background-color: #b40006 !important;
-            color: #ffffff !important;
-            transform: scale(1.1);
-        }
-        .commitment-card.committed .check-icon {
-            font-variation-settings: 'FILL' 1;
-        }
-        .commitment-card.committed .commitment-text {
-            color: rgba(28, 28, 20, 0.7);
-            text-decoration: line-through;
-            text-decoration-color: rgba(180, 0, 6, 0.25);
-        }
+      /* ── VƯỜN ƯƠM CỐNG HIẾN SỐ & CÂY ĐẠI ĐOÀN KẾT ── */
+      .commitment-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        border: 1px solid rgba(180, 0, 6, 0.08);
+        position: relative;
+        background: #ffffff;
+      }
+      .commitment-card:hover {
+        border-color: rgba(180, 0, 6, 0.25);
+        box-shadow: 0 12px 32px rgba(180, 0, 6, 0.06);
+        transform: translateY(-2px);
+      }
+      .commitment-card.committed {
+        background: rgba(180, 0, 6, 0.02) !important;
+        border-color: rgba(180, 0, 6, 0.35) !important;
+      }
+      .commitment-card.committed .check-icon-wrap {
+        background-color: #b40006 !important;
+        color: #ffffff !important;
+        transform: scale(1.1);
+      }
+      .commitment-card.committed .check-icon {
+        font-variation-settings: "FILL" 1;
+      }
+      .commitment-card.committed .commitment-text {
+        color: rgba(28, 28, 20, 0.7);
+        text-decoration: line-through;
+        text-decoration-color: rgba(180, 0, 6, 0.25);
+      }
 
-        .tree-container-card {
-            background: radial-gradient(circle at center, #fdf9eb 0%, #ece8da 100%);
-            border: 1px solid rgba(93, 64, 59, 0.15);
-            box-shadow: inset 0 2px 8px rgba(0,0,0,0.02), 0 20px 48px rgba(93, 64, 59, 0.08);
-        }
+      .tree-container-card {
+        background: radial-gradient(circle at center, #fdf9eb 0%, #ece8da 100%);
+        border: 1px solid rgba(93, 64, 59, 0.15);
+        box-shadow:
+          inset 0 2px 8px rgba(0, 0, 0, 0.02),
+          0 20px 48px rgba(93, 64, 59, 0.08);
+      }
 
-        .tree-leaf {
-            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease;
-            transform-origin: center;
-            transform-box: fill-box;
-            opacity: 0;
-            transform: scale(0);
-        }
-        .tree-leaf.active {
-            opacity: 0.95;
-            transform: scale(1.4) rotate(var(--leaf-rotate, 0deg)) !important;
-        }
+      .tree-leaf {
+        transition:
+          transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          opacity 0.6s ease;
+        transform-origin: center;
+        transform-box: fill-box;
+        opacity: 0;
+        transform: scale(0);
+      }
+      .tree-leaf.active {
+        opacity: 0.95;
+        transform: scale(1.4) rotate(var(--leaf-rotate, 0deg)) !important;
+      }
 
-        .floating-leaf {
-            position: fixed;
-            width: 24px;
-            height: 16px;
-            background: #b40006;
-            border-radius: 0 12px 0 12px;
-            z-index: 9999;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(180, 0, 6, 0.3);
-            transition: transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 1.2s ease;
-            opacity: 1;
-        }
-        .floating-leaf::after {
-            content: "★";
-            color: #ffe16d;
-            font-size: 8px;
-            font-weight: bold;
-            transform: translateY(-1px);
-        }
+      .floating-leaf {
+        position: fixed;
+        width: 24px;
+        height: 16px;
+        background: #b40006;
+        border-radius: 0 12px 0 12px;
+        z-index: 9999;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(180, 0, 6, 0.3);
+        transition:
+          transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1),
+          opacity 1.2s ease;
+        opacity: 1;
+      }
+      .floating-leaf::after {
+        content: "★";
+        color: #ffe16d;
+        font-size: 8px;
+        font-weight: bold;
+        transform: translateY(-1px);
+      }
 
-        /* Pulse glow animation for tree branch */
-        .branch-glow {
-            animation: pulseGlow 0.8s ease-out;
+      /* Pulse glow animation for tree branch */
+      .branch-glow {
+        animation: pulseGlow 0.8s ease-out;
+      }
+      @keyframes pulseGlow {
+        0% {
+          filter: drop-shadow(0 0 0px rgba(180, 0, 6, 0));
         }
-        @keyframes pulseGlow {
-            0% { filter: drop-shadow(0 0 0px rgba(180,0,6,0)); }
-            50% { filter: drop-shadow(0 0 15px rgba(180,0,6,0.6)); }
-            100% { filter: drop-shadow(0 0 0px rgba(180,0,6,0)); }
+        50% {
+          filter: drop-shadow(0 0 15px rgba(180, 0, 6, 0.6));
         }
+        100% {
+          filter: drop-shadow(0 0 0px rgba(180, 0, 6, 0));
+        }
+      }
     </style>
-</head>
-<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden">
-<!-- Scroll progress bar -->
-<div id="scroll-progress"></div>
-<!-- TopNavBar -->
-<header class="bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md border-b border-primary/10 shadow-sm fixed top-0 left-0 w-full z-50 flex items-center h-16 transition-all duration-300">
-  <nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-full max-w-max-width mx-auto w-full">
-    <a href="index.html" class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">Sống Đẹp</a>
-    
-    <!-- Desktop Nav Links -->
-    <div class="hidden md:flex items-center gap-4 lg:gap-6 text-label-md font-label-md h-full">
-      <a href="index.html" class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Trang Chủ</a>
-      <a href="triet-ly.html" class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Triết Lý</a>
-      <a href="tam-guong-bac.html" class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Câu Chuyện</a>
-      <a href="ban-dang-song.html" class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Thử Thách</a>
-      <a href="thuc-tien-hom-nay.html" class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Phân Tích</a>
-      <a href="toi-chon-cach-song.html" class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-bold text-label-md font-label-md transition-all duration-200 hover:scale-[1.02]">Kết Luận</a>
-      <a href="minh-bach-ai.html" class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]">Minh Bạch</a>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden"
+  >
+    <!-- Scroll progress bar -->
+    <div id="scroll-progress"></div>
+    <!-- TopNavBar -->
+    <header
+      class="bg-surface/95 dark:bg-surface-container-lowest/95 backdrop-blur-md border-b border-primary/10 shadow-sm fixed top-0 left-0 w-full z-50 flex items-center h-16 transition-all duration-300"
+    >
+      <nav
+        class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-full max-w-max-width mx-auto w-full"
+      >
+        <a
+          href="index.html"
+          class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim tracking-tight"
+          >Sống Đẹp</a
+        >
+
+        <!-- Desktop Nav Links -->
+        <div
+          class="hidden md:flex items-center gap-4 lg:gap-6 text-label-md font-label-md h-full"
+        >
+          <a
+            href="index.html"
+            class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]"
+            >Trang Chủ</a
+          >
+          <a
+            href="triet-ly.html"
+            class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]"
+            >Triết Lý</a
+          >
+          <a
+            href="tam-guong-bac.html"
+            class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]"
+            >Câu Chuyện</a
+          >
+          <a
+            href="ban-dang-song.html"
+            class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]"
+            >Thử Thách</a
+          >
+          <a
+            href="thuc-tien-hom-nay.html"
+            class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]"
+            >Phân Tích</a
+          >
+          <a
+            href="toi-chon-cach-song.html"
+            class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-bold text-label-md font-label-md transition-all duration-200 hover:scale-[1.02]"
+            >Kết Luận</a
+          >
+          <a
+            href="minh-bach-ai.html"
+            class="text-on-surface-variant dark:text-on-surface hover:text-primary dark:hover:text-primary-fixed text-label-md font-label-md hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-2 rounded-DEFAULT transition-all duration-200 hover:scale-[1.02]"
+            >Minh Bạch</a
+          >
+        </div>
+
+        <!-- CTA Button (Next Step) & Mobile Trigger -->
+        <div class="flex items-center gap-4">
+          <a
+            href="minh-bach-ai.html"
+            class="hidden md:flex bg-primary-container text-on-primary-container hover:bg-surface-tint transition-all px-4 py-2 rounded-lg text-label-md font-label-md items-center justify-center font-semibold"
+            >Tiếp Theo</a
+          >
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden text-primary hover:scale-110 transition-transform duration-200"
+          >
+            <span class="material-symbols-outlined text-3xl">menu</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div
+      id="mobile-drawer"
+      class="fixed inset-0 z-50 bg-on-surface/20 backdrop-blur-sm hidden transition-all duration-300"
+    >
+      <div
+        class="fixed top-0 right-0 w-64 h-full bg-surface shadow-2xl p-6 flex flex-col gap-6 transform translate-x-full transition-transform duration-300"
+        id="mobile-drawer-content"
+      >
+        <div
+          class="flex justify-between items-center pb-4 border-b border-primary/10"
+        >
+          <span class="text-xl font-display font-bold text-primary"
+            >Sống Đẹp</span
+          >
+          <button
+            id="mobile-menu-close"
+            class="text-primary hover:rotate-90 transition-transform duration-200"
+          >
+            <span class="material-symbols-outlined text-2xl">close</span>
+          </button>
+        </div>
+        <nav
+          class="flex flex-col gap-4 text-sm font-semibold uppercase tracking-wider"
+        >
+          <a
+            href="index.html"
+            class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary"
+            >Trang Chủ</a
+          >
+          <a
+            href="triet-ly.html"
+            class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary"
+            >Triết Lý</a
+          >
+          <a
+            href="tam-guong-bac.html"
+            class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary"
+            >Câu Chuyện</a
+          >
+          <a
+            href="ban-dang-song.html"
+            class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary"
+            >Thử Thách</a
+          >
+          <a
+            href="thuc-tien-hom-nay.html"
+            class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary"
+            >Phân Tích</a
+          >
+          <a
+            href="toi-chon-cach-song.html"
+            class="py-2 border-b border-primary/5 text-primary"
+            >Kết Luận</a
+          >
+          <a
+            href="minh-bach-ai.html"
+            class="py-2 text-on-surface-variant hover:text-primary"
+            >Minh Bạch</a
+          >
+        </nav>
+      </div>
     </div>
+    <!-- Main Canvas -->
+    <main
+      class="flex-grow z-10 pt-24 md:pt-32 pb-24 relative max-w-[1200px] mx-auto w-full px-margin-mobile md:px-margin-desktop"
+    >
+      <!-- Hero Conclusion -->
+      <section class="text-center mb-16 max-w-4xl mx-auto">
+        <h1
+          class="text-headline-xl font-headline-xl text-primary mb-6 hero-fade-in"
+        >
+          Tôi Chọn Cách Sống
+        </h1>
+        <p
+          class="text-quote font-quote text-on-surface-variant italic mb-8 hero-fade-in hero-fade-in-d1"
+        >
+          "Ở đời và làm người phải như thế nào?"
+        </p>
+        <p
+          class="text-body-lg font-body-lg text-on-surface/80 hero-fade-in hero-fade-in-d2"
+        >
+          Trong thời đại số đầy biến động, câu hỏi nền tảng về đạo đức cách mạng
+          và nhân cách sống vẫn giữ nguyên giá trị cốt lõi. Sống đẹp không chỉ
+          là một khái niệm trừu tượng, mà là sự thực hành liên tục trong từng
+          suy nghĩ và hành động.
+        </p>
+      </section>
 
-    <!-- CTA Button (Next Step) & Mobile Trigger -->
-    <div class="flex items-center gap-4">
-      <a href="minh-bach-ai.html" class="hidden md:flex bg-primary-container text-on-primary-container hover:bg-surface-tint transition-all px-4 py-2 rounded-lg text-label-md font-label-md items-center justify-center font-semibold">Tiếp Theo</a>
-      <button id="mobile-menu-btn" class="md:hidden text-primary hover:scale-110 transition-transform duration-200">
-        <span class="material-symbols-outlined text-3xl">menu</span>
-      </button>
-    </div>
-  </nav>
-</header>
-
-<!-- Mobile Drawer -->
-<div id="mobile-drawer" class="fixed inset-0 z-50 bg-on-surface/20 backdrop-blur-sm hidden transition-all duration-300">
-  <div class="fixed top-0 right-0 w-64 h-full bg-surface shadow-2xl p-6 flex flex-col gap-6 transform translate-x-full transition-transform duration-300" id="mobile-drawer-content">
-    <div class="flex justify-between items-center pb-4 border-b border-primary/10">
-      <span class="text-xl font-display font-bold text-primary">Sống Đẹp</span>
-      <button id="mobile-menu-close" class="text-primary hover:rotate-90 transition-transform duration-200">
-        <span class="material-symbols-outlined text-2xl">close</span>
-      </button>
-    </div>
-    <nav class="flex flex-col gap-4 text-sm font-semibold uppercase tracking-wider">
-      <a href="index.html" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Trang Chủ</a>
-      <a href="triet-ly.html" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Triết Lý</a>
-      <a href="tam-guong-bac.html" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Câu Chuyện</a>
-      <a href="ban-dang-song.html" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Thử Thách</a>
-      <a href="thuc-tien-hom-nay.html" class="py-2 border-b border-primary/5 text-on-surface-variant hover:text-primary">Phân Tích</a>
-      <a href="toi-chon-cach-song.html" class="py-2 border-b border-primary/5 text-primary">Kết Luận</a>
-      <a href="minh-bach-ai.html" class="py-2 text-on-surface-variant hover:text-primary">Minh Bạch</a>
-    </nav>
-  </div>
-</div>
-<!-- Main Canvas -->
-<main class="flex-grow z-10 pt-24 md:pt-32 pb-24 relative max-w-[1200px] mx-auto w-full px-margin-mobile md:px-margin-desktop">
-<!-- Hero Conclusion -->
-<section class="text-center mb-16 max-w-4xl mx-auto">
-<h1 class="text-headline-xl font-headline-xl text-primary mb-6 hero-fade-in">Tôi Chọn Cách Sống</h1>
-<p class="text-quote font-quote text-on-surface-variant italic mb-8 hero-fade-in hero-fade-in-d1">"Ở đời và làm người phải như thế nào?"</p>
-<p class="text-body-lg font-body-lg text-on-surface/80 hero-fade-in hero-fade-in-d2">Trong thời đại số đầy biến động, câu hỏi nền tảng về đạo đức cách mạng và nhân cách sống vẫn giữ nguyên giá trị cốt lõi. Sống đẹp không chỉ là một khái niệm trừu tượng, mà là sự thực hành liên tục trong từng suy nghĩ và hành động.</p>
-</section>
-
-<!-- Premium Campus Hero Banner -->
-<div class="max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-xl border border-primary/10 mb-24 hover:scale-[1.01] transition-transform duration-300 hero-fade-in hero-fade-in-d3">
-  <img alt="Bình minh rực rỡ và khát vọng tuổi trẻ" class="w-full h-auto object-cover" src="images/toi_chon_song_hero.png"/>
-</div>
-
-<!-- Bento Grid: The 3 Pillars -->
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-32">
-<!-- Pillar 1 -->
-<div class="bg-surface-container-lowest border border-primary/10 rounded-xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal reveal-delay-1" style="box-shadow: 0 8px 24px rgba(218, 37, 29, 0.04);">
-<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">account_balance</span>
-</div>
-<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full mb-6 text-primary border border-primary/20">
-<span class="text-headline-md font-headline-md">1</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-4">Đạo đức là nền tảng</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Đạo đức cách mạng không phải là những giáo điều khô khan, mà là "cái gốc" của người cách mạng. Nó định hình la bàn nội tâm, giúp thế hệ trẻ đứng vững trước những cám dỗ vật chất và sự nhiễu loạn thông tin.</p>
-</div>
-<!-- Pillar 2 -->
-<div class="bg-surface-container-lowest border border-primary/10 rounded-xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal reveal-delay-2" style="box-shadow: 0 8px 24px rgba(218, 37, 29, 0.04);">
-<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">nature_people</span>
-</div>
-<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full mb-6 text-primary border border-primary/20">
-<span class="text-headline-md font-headline-md">2</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-4">Sống bằng sự nêu gương</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Làm người không chỉ là sống cho riêng mình, mà là "mình vì mọi người". Sự nêu gương trong công việc nhỏ bé hàng ngày, trong cách cư xử văn minh trên không gian mạng, chính là biểu hiện sinh động nhất của việc học tập và làm theo tấm gương Chủ tịch Hồ Chí Minh.</p>
-</div>
-<!-- Pillar 3 -->
-<div class="bg-surface-container-lowest border border-primary/10 rounded-xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal reveal-delay-3" style="box-shadow: 0 8px 24px rgba(218, 37, 29, 0.04);">
-<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-symbols-outlined text-primary text-6xl" style="font-variation-settings: 'FILL' 1;">all_inclusive</span>
-</div>
-<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full mb-6 text-primary border border-primary/20">
-<span class="text-headline-md font-headline-md">3</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-4">Giá trị vượt thời gian</h3>
-<p class="text-body-md font-body-md text-on-surface-variant">Đối với Gen Z, những bài học lịch sử không hề lỗi thời. Cần kiệm, liêm chính, chí công vô tư được dịch sang ngôn ngữ hiện đại: sống bền vững, trung thực số, làm việc hiệu quả và có trách nhiệm với cộng đồng toàn cầu.</p>
-</div>
-</section>
-
-<!-- ══════════════ VƯỜN ƯƠM CỐNG HIẾN SỐ (DYNAMIC CONTRIBUTION TREE) ══════════════ -->
-<section class="mb-32 relative">
-  <!-- Subtle background decoration -->
-  <div class="absolute inset-0 bg-gradient-to-b from-surface-container-low/60 via-surface-container-low/20 to-transparent rounded-[2rem] -mx-4 md:-mx-8 p-8 md:p-12 -z-10"></div>
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-primary/5 rounded-full blur-3xl -z-10"></div>
-
-  <!-- Header -->
-  <div class="text-center mb-16 relative reveal">
-    <span class="inline-block bg-primary/10 text-primary text-label-md font-label-md px-4 py-1.5 rounded-full mb-4">Vườn Ươm Cống Hiến Số</span>
-    <h2 class="text-headline-lg font-headline-lg text-primary mb-4">Bản Đồ Hành Động: Cây Đại Đoàn Kết Tuổi Trẻ Số</h2>
-    <p class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl mx-auto">
-      Trả lời câu hỏi trung tâm của Bác: <strong class="text-primary">"Ở đời và làm người phải như thế nào?"</strong> bằng những thói quen hành động thiết thực. Hãy nhấp chọn cam kết hành động của bạn — mỗi chiếc lá cờ đỏ sao vàng đơm bông trên Cây Đại Đoàn Kết chính là hạt giống dựng xây tương lai đất nước!
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-    <!-- Left Column: The 10 Clickable Commitments (lg:col-span-7) -->
-    <div class="lg:col-span-7 flex flex-col gap-6 reveal">
-      
-      <!-- CẦN -->
-      <div class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 shadow-sm">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-sm">1</div>
-          <span class="material-symbols-outlined text-primary text-xl">bolt</span>
-          <h3 class="font-headline-md text-base text-on-surface font-bold">Cần — Tự Học &amp; Chủ Động</h3>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div onclick="commitAction(0, this)" class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none">
-            <div class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300">
-              <span class="material-symbols-outlined text-sm check-icon">check</span>
-            </div>
-            <span class="commitment-text text-xs text-on-surface-variant leading-relaxed">Tôi cam kết dành tối thiểu 1 giờ mỗi ngày tự nghiên cứu, phát triển tư duy phản biện.</span>
-          </div>
-          <div onclick="commitAction(1, this)" class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none">
-            <div class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300">
-              <span class="material-symbols-outlined text-sm check-icon">check</span>
-            </div>
-            <span class="commitment-text text-xs text-on-surface-variant leading-relaxed">Tôi cam kết chủ động tự học ngoại ngữ và trau dồi các kỹ năng số mới liên tục.</span>
-          </div>
-        </div>
+      <!-- Premium Campus Hero Banner -->
+      <div
+        class="max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-xl border border-primary/10 mb-24 hover:scale-[1.01] transition-transform duration-300 hero-fade-in hero-fade-in-d3"
+      >
+        <img
+          alt="Bình minh rực rỡ và khát vọng tuổi trẻ"
+          class="w-full h-auto object-cover"
+          src="images/lhk_5563.jpg"
+        />
       </div>
 
-      <!-- KIỆM -->
-      <div class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 shadow-sm">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-sm">2</div>
-          <span class="material-symbols-outlined text-primary text-xl">eco</span>
-          <h3 class="font-headline-md text-base text-on-surface font-bold">Kiệm — Sống Xanh &amp; Tinh Gọn</h3>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div onclick="commitAction(2, this)" class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none">
-            <div class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300">
-              <span class="material-symbols-outlined text-sm check-icon">check</span>
-            </div>
-            <span class="commitment-text text-xs text-on-surface-variant leading-relaxed">Tôi cam kết tắt các thiết bị điện, nước và thiết bị công nghệ khi rời khỏi phòng học.</span>
+      <!-- Bento Grid: The 3 Pillars -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-32">
+        <!-- Pillar 1 -->
+        <div
+          class="bg-surface-container-lowest border border-primary/10 rounded-xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal reveal-delay-1"
+          style="box-shadow: 0 8px 24px rgba(218, 37, 29, 0.04)"
+        >
+          <div
+            class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-6xl"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >account_balance</span
+            >
           </div>
-          <div onclick="commitAction(3, this)" class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none">
-            <div class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300">
-              <span class="material-symbols-outlined text-sm check-icon">check</span>
-            </div>
-            <span class="commitment-text text-xs text-on-surface-variant leading-relaxed">Tôi cam kết dọn dẹp thư rác điện tử, hạn chế tiêu dùng lãng phí và xả rác thải nhựa.</span>
+          <div
+            class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full mb-6 text-primary border border-primary/20"
+          >
+            <span class="text-headline-md font-headline-md">1</span>
           </div>
-        </div>
-      </div>
-
-      <!-- LIÊM -->
-      <div class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 shadow-sm">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-sm">3</div>
-          <span class="material-symbols-outlined text-primary text-xl">verified</span>
-          <h3 class="font-headline-md text-base text-on-surface font-bold">Liêm — Liêm Chính Học Thuật</h3>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div onclick="commitAction(4, this)" class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none">
-            <div class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300">
-              <span class="material-symbols-outlined text-sm check-icon">check</span>
-            </div>
-            <span class="commitment-text text-xs text-on-surface-variant leading-relaxed">Tôi cam kết tuyệt đối nói không với đạo văn, gian lận học thuật hay lạm dụng AI.</span>
-          </div>
-          <div onclick="commitAction(5, this)" class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none">
-            <div class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300">
-              <span class="material-symbols-outlined text-sm check-icon">check</span>
-            </div>
-            <span class="commitment-text text-xs text-on-surface-variant leading-relaxed">Tôi cam kết tôn trọng bản quyền, trích dẫn minh bạch nguồn tài liệu và tôn vinh đồng nghiệp.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- CHÍNH -->
-      <div class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 shadow-sm">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-sm">4</div>
-          <span class="material-symbols-outlined text-primary text-xl">gavel</span>
-          <h3 class="font-headline-md text-base text-on-surface font-bold">Chính — Chính Trực Không Gian Số</h3>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div onclick="commitAction(6, this)" class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none">
-            <div class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300">
-              <span class="material-symbols-outlined text-sm check-icon">check</span>
-            </div>
-            <span class="commitment-text text-xs text-on-surface-variant leading-relaxed">Tôi cam kết kiểm chứng thông tin (fact-check), không lan truyền tin giả, tin bẩn trên MXH.</span>
-          </div>
-          <div onclick="commitAction(7, this)" class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none">
-            <div class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300">
-              <span class="material-symbols-outlined text-sm check-icon">check</span>
-            </div>
-            <span class="commitment-text text-xs text-on-surface-variant leading-relaxed">Tôi cam kết ứng xử văn minh mạng, dũng cảm đấu tranh chống lại các hành vi xấu độc hại.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- CHÍ CÔNG VÔ TƯ -->
-      <div class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 shadow-sm">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-sm">5</div>
-          <span class="material-symbols-outlined text-primary text-xl">group</span>
-          <h3 class="font-headline-md text-base text-on-surface font-bold">Vô Tư — Hợp Tác &amp; Phụng Sự</h3>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div onclick="commitAction(8, this)" class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none">
-            <div class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300">
-              <span class="material-symbols-outlined text-sm check-icon">check</span>
-            </div>
-            <span class="commitment-text text-xs text-on-surface-variant leading-relaxed">Tôi cam kết làm bài tập nhóm trách nhiệm, chủ động gánh vác việc khó và hỗ trợ đồng đội.</span>
-          </div>
-          <div onclick="commitAction(9, this)" class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none">
-            <div class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300">
-              <span class="material-symbols-outlined text-sm check-icon">check</span>
-            </div>
-            <span class="commitment-text text-xs text-on-surface-variant leading-relaxed">Tôi cam kết chia sẻ tri thức số rộng rãi cho tập thể, tích cực tham gia phụng sự xã hội.</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Right Column: Interactive Union Tree Card (lg:col-span-5) -->
-    <div class="lg:col-span-5 lg:sticky lg:top-24 flex flex-col gap-6 reveal">
-      <div class="tree-container-card rounded-3xl p-6 border border-outline-variant/40 relative overflow-hidden flex flex-col items-center">
-        <!-- Badge -->
-        <span class="hero-badge mb-3 inline-flex bg-primary/10 text-primary text-[11px] font-bold">Vườn ươm cống hiến</span>
-        <h3 class="font-headline-md text-base text-on-surface font-bold mb-4">Cây Đại Đoàn Kết Tuổi Trẻ Số</h3>
-        
-        <!-- Live Counter -->
-        <div class="text-xs font-semibold text-outline mb-4 flex items-center gap-1.5 bg-surface-container-low px-4 py-1.5 rounded-full border border-primary/5 select-none">
-          <span class="flex items-center"><span id="leaf-counter" class="text-primary font-bold text-sm">0</span>&nbsp;/ 10</span>
-          <span class="text-outline-variant">|</span>
-          <span>Lá vàng sao đỏ đã đơm mầm</span>
-        </div>
-
-        <!-- Custom SVG Tree Drawing -->
-        <div class="relative w-full aspect-square max-w-[280px] sm:max-w-[320px] overflow-visible mb-4 flex items-center justify-center">
-          <svg id="svg-union-tree" viewBox="0 0 400 400" class="w-full h-full overflow-visible">
-            <!-- Tree trunk and branches path (artistic, minimalist organic lines) -->
-            <g id="tree-branches" class="transition-all duration-500">
-              <!-- Main trunk -->
-              <path d="M 200 370 Q 200 310 200 250" stroke="#5d403b" stroke-width="14" stroke-linecap="round" fill="none" />
-              <!-- Root flare -->
-              <path d="M 185 370 Q 200 366 215 370" stroke="#5d403b" stroke-width="10" stroke-linecap="round" fill="none" />
-              
-              <!-- Primary branches -->
-              <!-- Left branch -->
-              <path d="M 200 270 Q 150 230 140 190" stroke="#5d403b" stroke-width="8" stroke-linecap="round" fill="none" />
-              <!-- Left sub-branches -->
-              <path d="M 170 245 Q 130 200 120 140" stroke="#5d403b" stroke-width="6" stroke-linecap="round" fill="none" />
-              <path d="M 148 198 Q 120 170 160 110" stroke="#5d403b" stroke-width="5" stroke-linecap="round" fill="none" />
-              
-              <!-- Center branch -->
-              <path d="M 200 260 Q 200 180 180 150" stroke="#5d403b" stroke-width="8" stroke-linecap="round" fill="none" />
-              <path d="M 195 200 Q 220 170 220 140" stroke="#5d403b" stroke-width="6" stroke-linecap="round" fill="none" />
-              <path d="M 185 165 Q 170 130 200 90" stroke="#5d403b" stroke-width="4.5" stroke-linecap="round" fill="none" />
-              <path d="M 194 125 Q 200 90 200 60" stroke="#5d403b" stroke-width="3.5" stroke-linecap="round" fill="none" />
-              
-              <!-- Right branch -->
-              <path d="M 200 270 Q 250 230 260 170" stroke="#5d403b" stroke-width="8" stroke-linecap="round" fill="none" />
-              <!-- Right sub-branches -->
-              <path d="M 230 245 Q 270 200 280 120" stroke="#5d403b" stroke-width="6" stroke-linecap="round" fill="none" />
-              <path d="M 252 198 Q 280 170 240 100" stroke="#5d403b" stroke-width="5" stroke-linecap="round" fill="none" />
-            </g>
-            
-            <!-- Static Leaves (10 total, initially hidden with transform: scale(0), opacity: 0) -->
-            <!-- Leaf 0: connected to Branch 1 (140, 190) -->
-            <g id="tree-leaf-0" class="tree-leaf" transform="translate(140, 190) rotate(-45)" style="--leaf-rotate: -45deg;">
-              <path d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z" fill="#da251d" />
-              <path d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z" fill="#ffe16d" transform="translate(0, -3) scale(0.6)" />
-            </g>
-            
-            <!-- Leaf 1: connected to Branch 2 (120, 140) -->
-            <g id="tree-leaf-1" class="tree-leaf" transform="translate(120, 140) rotate(-80)" style="--leaf-rotate: -80deg;">
-              <path d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z" fill="#da251d" />
-              <path d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z" fill="#ffe16d" transform="translate(0, -3) scale(0.6)" />
-            </g>
-            
-            <!-- Leaf 2: connected to Branch 3 (160, 110) -->
-            <g id="tree-leaf-2" class="tree-leaf" transform="translate(160, 110) rotate(-15)" style="--leaf-rotate: -15deg;">
-              <path d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z" fill="#da251d" />
-              <path d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z" fill="#ffe16d" transform="translate(0, -3) scale(0.6)" />
-            </g>
-            
-            <!-- Leaf 3: connected to Branch 4 (180, 150) -->
-            <g id="tree-leaf-3" class="tree-leaf" transform="translate(180, 150) rotate(-30)" style="--leaf-rotate: -30deg;">
-              <path d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z" fill="#da251d" />
-              <path d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z" fill="#ffe16d" transform="translate(0, -3) scale(0.6)" />
-            </g>
-            
-            <!-- Leaf 4: connected to Branch 5 (220, 140) -->
-            <g id="tree-leaf-4" class="tree-leaf" transform="translate(220, 140) rotate(30)" style="--leaf-rotate: 30deg;">
-              <path d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z" fill="#da251d" />
-              <path d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z" fill="#ffe16d" transform="translate(0, -3) scale(0.6)" />
-            </g>
-            
-            <!-- Leaf 5: connected to Branch 6 (200, 90) -->
-            <g id="tree-leaf-5" class="tree-leaf" transform="translate(200, 90) rotate(-5)" style="--leaf-rotate: -5deg;">
-              <path d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z" fill="#da251d" />
-              <path d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z" fill="#ffe16d" transform="translate(0, -3) scale(0.6)" />
-            </g>
-            
-            <!-- Leaf 6: connected to Branch 7 (200, 60) -->
-            <g id="tree-leaf-6" class="tree-leaf" transform="translate(200, 60) rotate(15)" style="--leaf-rotate: 15deg;">
-              <path d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z" fill="#da251d" />
-              <path d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z" fill="#ffe16d" transform="translate(0, -3) scale(0.6)" />
-            </g>
-            
-            <!-- Leaf 7: connected to Branch 8 (260, 170) -->
-            <g id="tree-leaf-7" class="tree-leaf" transform="translate(260, 170) rotate(45)" style="--leaf-rotate: 45deg;">
-              <path d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z" fill="#da251d" />
-              <path d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z" fill="#ffe16d" transform="translate(0, -3) scale(0.6)" />
-            </g>
-            
-            <!-- Leaf 8: connected to Branch 9 (240, 100) -->
-            <g id="tree-leaf-8" class="tree-leaf" transform="translate(240, 100) rotate(60)" style="--leaf-rotate: 60deg;">
-              <path d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z" fill="#da251d" />
-              <path d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z" fill="#ffe16d" transform="translate(0, -3) scale(0.6)" />
-            </g>
-            
-            <!-- Leaf 9: connected to Branch 10 (280, 120) -->
-            <g id="tree-leaf-9" class="tree-leaf" transform="translate(280, 120) rotate(80)" style="--leaf-rotate: 80deg;">
-              <path d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z" fill="#da251d" />
-              <path d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z" fill="#ffe16d" transform="translate(0, -3) scale(0.6)" />
-            </g>
-          </svg>
-        </div>
-
-        <!-- Digital Progress Bar -->
-        <div class="w-full bg-surface-container rounded-full h-2 mb-6 border border-primary/5 relative overflow-hidden select-none">
-          <div id="tree-progress" class="bg-gradient-to-r from-primary to-primary-container h-full w-0 transition-all duration-500 rounded-full"></div>
-        </div>
-
-        <!-- Celebration Card (congrats-card) -->
-        <div id="tree-congrats-card" class="w-full bg-primary/5 border border-primary/20 rounded-2xl p-5 text-center transition-all duration-500 transform scale-95 opacity-0 hidden">
-          <span class="material-symbols-outlined text-primary text-3xl mb-2 fill-icon">military_tech</span>
-          <h4 class="font-headline-md text-sm text-primary font-bold mb-2">Thế Hệ Số Vừa Hồng Vừa Chuyên!</h4>
-          <p class="text-xs text-on-surface-variant leading-relaxed italic mb-3 font-quote">
-            "Nhiệm vụ của thanh niên không phải là hỏi nước nhà đã cho mình những gì, mà phải tự hỏi mình đã làm gì cho nước nhà?"
+          <h3 class="text-headline-md font-headline-md text-on-surface mb-4">
+            Đạo đức là nền tảng
+          </h3>
+          <p class="text-body-md font-body-md text-on-surface-variant">
+            Đạo đức cách mạng không phải là những giáo điều khô khan, mà là "cái
+            gốc" của người cách mạng. Nó định hình la bàn nội tâm, giúp thế hệ
+            trẻ đứng vững trước những cám dỗ vật chất và sự nhiễu loạn thông
+            tin.
           </p>
-          <p class="text-[10px] text-primary/70 uppercase tracking-widest font-bold">— Chủ tịch Hồ Chí Minh</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Pillar 2 -->
+        <div
+          class="bg-surface-container-lowest border border-primary/10 rounded-xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal reveal-delay-2"
+          style="box-shadow: 0 8px 24px rgba(218, 37, 29, 0.04)"
+        >
+          <div
+            class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-6xl"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >nature_people</span
+            >
+          </div>
+          <div
+            class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full mb-6 text-primary border border-primary/20"
+          >
+            <span class="text-headline-md font-headline-md">2</span>
+          </div>
+          <h3 class="text-headline-md font-headline-md text-on-surface mb-4">
+            Sống bằng sự nêu gương
+          </h3>
+          <p class="text-body-md font-body-md text-on-surface-variant">
+            Làm người không chỉ là sống cho riêng mình, mà là "mình vì mọi
+            người". Sự nêu gương trong công việc nhỏ bé hàng ngày, trong cách cư
+            xử văn minh trên không gian mạng, chính là biểu hiện sinh động nhất
+            của việc học tập và làm theo tấm gương Chủ tịch Hồ Chí Minh.
+          </p>
+        </div>
+        <!-- Pillar 3 -->
+        <div
+          class="bg-surface-container-lowest border border-primary/10 rounded-xl p-8 relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 reveal reveal-delay-3"
+          style="box-shadow: 0 8px 24px rgba(218, 37, 29, 0.04)"
+        >
+          <div
+            class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-6xl"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >all_inclusive</span
+            >
+          </div>
+          <div
+            class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full mb-6 text-primary border border-primary/20"
+          >
+            <span class="text-headline-md font-headline-md">3</span>
+          </div>
+          <h3 class="text-headline-md font-headline-md text-on-surface mb-4">
+            Giá trị vượt thời gian
+          </h3>
+          <p class="text-body-md font-body-md text-on-surface-variant">
+            Đối với Gen Z, những bài học lịch sử không hề lỗi thời. Cần kiệm,
+            liêm chính, chí công vô tư được dịch sang ngôn ngữ hiện đại: sống
+            bền vững, trung thực số, làm việc hiệu quả và có trách nhiệm với
+            cộng đồng toàn cầu.
+          </p>
+        </div>
+      </section>
 
-<!-- The Manifesto Section (Glassmorphism inspired, highly tactile) -->
-<section class="relative rounded-[2rem] overflow-hidden p-10 md:p-16 border border-primary/20 reveal" style="background: linear-gradient(135deg, rgba(253, 249, 235, 0.97) 0%, rgba(236, 232, 218, 0.95) 100%); box-shadow: 0 20px 40px rgba(218, 37, 29, 0.05);"><!-- Decorative corner brackets -->
-<div class="absolute top-8 left-8 w-8 h-8 border-t-2 border-l-2 border-primary"></div>
-<div class="absolute top-8 right-8 w-8 h-8 border-t-2 border-r-2 border-primary"></div>
-<div class="absolute bottom-8 left-8 w-8 h-8 border-b-2 border-l-2 border-primary"></div>
-<div class="absolute bottom-8 right-8 w-8 h-8 border-b-2 border-r-2 border-primary"></div>
-<div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 relative z-10">
-<div class="lg:w-1/2 text-center lg:text-left">
-<h2 class="text-headline-lg font-headline-lg text-on-surface mb-8">Tuyên Ngôn Thế Hệ Trẻ</h2>
-<div class="text-quote font-quote italic text-on-surface-variant space-y-6 mb-12">
-<p>Chúng tôi, thế hệ sinh viên trong thời đại số, nhận thức rõ trách nhiệm của mình.</p>
-<p>Chúng tôi cam kết biến những giá trị đạo đức truyền thống thành hành động hiện đại.</p>
-<p>Sống không chỉ để tồn tại, mà để cống hiến, sáng tạo và tự hào mang bản sắc Việt Nam bước ra thế giới.</p>
-</div>
-<div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
+      <!-- ══════════════ VƯỜN ƯƠM CỐNG HIẾN SỐ (DYNAMIC CONTRIBUTION TREE) ══════════════ -->
+      <section class="mb-32 relative">
+        <!-- Subtle background decoration -->
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-surface-container-low/60 via-surface-container-low/20 to-transparent rounded-[2rem] -mx-4 md:-mx-8 p-8 md:p-12 -z-10"
+        ></div>
+        <div
+          class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 bg-primary/5 rounded-full blur-3xl -z-10"
+        ></div>
+
+        <!-- Header -->
+        <div class="text-center mb-16 relative reveal">
+          <span
+            class="inline-block bg-primary/10 text-primary text-label-md font-label-md px-4 py-1.5 rounded-full mb-4"
+            >Vườn Ươm Cống Hiến Số</span
+          >
+          <h2 class="text-headline-lg font-headline-lg text-primary mb-4">
+            Bản Đồ Hành Động: Cây Đại Đoàn Kết Tuổi Trẻ Số
+          </h2>
+          <p
+            class="text-body-lg font-body-lg text-on-surface-variant max-w-3xl mx-auto"
+          >
+            Trả lời câu hỏi trung tâm của Bác:
+            <strong class="text-primary"
+              >"Ở đời và làm người phải như thế nào?"</strong
+            >
+            bằng những thói quen hành động thiết thực. Hãy nhấp chọn cam kết
+            hành động của bạn — mỗi chiếc lá cờ đỏ sao vàng đơm bông trên Cây
+            Đại Đoàn Kết chính là hạt giống dựng xây tương lai đất nước!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Left Column: The 10 Clickable Commitments (lg:col-span-7) -->
+          <div class="lg:col-span-7 flex flex-col gap-6 reveal">
+            <!-- CẦN -->
+            <div
+              class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 shadow-sm"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-8 h-8 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-sm"
+                >
+                  1
+                </div>
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >bolt</span
+                >
+                <h3
+                  class="font-headline-md text-base text-on-surface font-bold"
+                >
+                  Cần — Tự Học &amp; Chủ Động
+                </h3>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div
+                  onclick="commitAction(0, this)"
+                  class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none"
+                >
+                  <div
+                    class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined text-sm check-icon"
+                      >check</span
+                    >
+                  </div>
+                  <span
+                    class="commitment-text text-xs text-on-surface-variant leading-relaxed"
+                    >Tôi cam kết dành tối thiểu 1 giờ mỗi ngày tự nghiên cứu,
+                    phát triển tư duy phản biện.</span
+                  >
+                </div>
+                <div
+                  onclick="commitAction(1, this)"
+                  class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none"
+                >
+                  <div
+                    class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined text-sm check-icon"
+                      >check</span
+                    >
+                  </div>
+                  <span
+                    class="commitment-text text-xs text-on-surface-variant leading-relaxed"
+                    >Tôi cam kết chủ động tự học ngoại ngữ và trau dồi các kỹ
+                    năng số mới liên tục.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- KIỆM -->
+            <div
+              class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 shadow-sm"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-8 h-8 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-sm"
+                >
+                  2
+                </div>
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >eco</span
+                >
+                <h3
+                  class="font-headline-md text-base text-on-surface font-bold"
+                >
+                  Kiệm — Sống Xanh &amp; Tinh Gọn
+                </h3>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div
+                  onclick="commitAction(2, this)"
+                  class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none"
+                >
+                  <div
+                    class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined text-sm check-icon"
+                      >check</span
+                    >
+                  </div>
+                  <span
+                    class="commitment-text text-xs text-on-surface-variant leading-relaxed"
+                    >Tôi cam kết tắt các thiết bị điện, nước và thiết bị công
+                    nghệ khi rời khỏi phòng học.</span
+                  >
+                </div>
+                <div
+                  onclick="commitAction(3, this)"
+                  class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none"
+                >
+                  <div
+                    class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined text-sm check-icon"
+                      >check</span
+                    >
+                  </div>
+                  <span
+                    class="commitment-text text-xs text-on-surface-variant leading-relaxed"
+                    >Tôi cam kết dọn dẹp thư rác điện tử, hạn chế tiêu dùng lãng
+                    phí và xả rác thải nhựa.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- LIÊM -->
+            <div
+              class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 shadow-sm"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-8 h-8 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-sm"
+                >
+                  3
+                </div>
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >verified</span
+                >
+                <h3
+                  class="font-headline-md text-base text-on-surface font-bold"
+                >
+                  Liêm — Liêm Chính Học Thuật
+                </h3>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div
+                  onclick="commitAction(4, this)"
+                  class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none"
+                >
+                  <div
+                    class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined text-sm check-icon"
+                      >check</span
+                    >
+                  </div>
+                  <span
+                    class="commitment-text text-xs text-on-surface-variant leading-relaxed"
+                    >Tôi cam kết tuyệt đối nói không với đạo văn, gian lận học
+                    thuật hay lạm dụng AI.</span
+                  >
+                </div>
+                <div
+                  onclick="commitAction(5, this)"
+                  class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none"
+                >
+                  <div
+                    class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined text-sm check-icon"
+                      >check</span
+                    >
+                  </div>
+                  <span
+                    class="commitment-text text-xs text-on-surface-variant leading-relaxed"
+                    >Tôi cam kết tôn trọng bản quyền, trích dẫn minh bạch nguồn
+                    tài liệu và tôn vinh đồng nghiệp.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- CHÍNH -->
+            <div
+              class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 shadow-sm"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-8 h-8 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-sm"
+                >
+                  4
+                </div>
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >gavel</span
+                >
+                <h3
+                  class="font-headline-md text-base text-on-surface font-bold"
+                >
+                  Chính — Chính Trực Không Gian Số
+                </h3>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div
+                  onclick="commitAction(6, this)"
+                  class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none"
+                >
+                  <div
+                    class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined text-sm check-icon"
+                      >check</span
+                    >
+                  </div>
+                  <span
+                    class="commitment-text text-xs text-on-surface-variant leading-relaxed"
+                    >Tôi cam kết kiểm chứng thông tin (fact-check), không lan
+                    truyền tin giả, tin bẩn trên MXH.</span
+                  >
+                </div>
+                <div
+                  onclick="commitAction(7, this)"
+                  class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none"
+                >
+                  <div
+                    class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined text-sm check-icon"
+                      >check</span
+                    >
+                  </div>
+                  <span
+                    class="commitment-text text-xs text-on-surface-variant leading-relaxed"
+                    >Tôi cam kết ứng xử văn minh mạng, dũng cảm đấu tranh chống
+                    lại các hành vi xấu độc hại.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- CHÍ CÔNG VÔ TƯ -->
+            <div
+              class="bg-surface-container-lowest border border-primary/10 rounded-2xl p-6 shadow-sm"
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-8 h-8 bg-primary/10 text-primary rounded-xl flex items-center justify-center font-bold text-sm"
+                >
+                  5
+                </div>
+                <span class="material-symbols-outlined text-primary text-xl"
+                  >group</span
+                >
+                <h3
+                  class="font-headline-md text-base text-on-surface font-bold"
+                >
+                  Vô Tư — Hợp Tác &amp; Phụng Sự
+                </h3>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div
+                  onclick="commitAction(8, this)"
+                  class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none"
+                >
+                  <div
+                    class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined text-sm check-icon"
+                      >check</span
+                    >
+                  </div>
+                  <span
+                    class="commitment-text text-xs text-on-surface-variant leading-relaxed"
+                    >Tôi cam kết làm bài tập nhóm trách nhiệm, chủ động gánh vác
+                    việc khó và hỗ trợ đồng đội.</span
+                  >
+                </div>
+                <div
+                  onclick="commitAction(9, this)"
+                  class="commitment-card p-4 rounded-xl flex items-center gap-3 select-none"
+                >
+                  <div
+                    class="check-icon-wrap w-7 h-7 rounded-full bg-primary/8 text-primary flex items-center justify-center flex-shrink-0 transition-all duration-300"
+                  >
+                    <span class="material-symbols-outlined text-sm check-icon"
+                      >check</span
+                    >
+                  </div>
+                  <span
+                    class="commitment-text text-xs text-on-surface-variant leading-relaxed"
+                    >Tôi cam kết chia sẻ tri thức số rộng rãi cho tập thể, tích
+                    cực tham gia phụng sự xã hội.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Union Tree Card (lg:col-span-5) -->
+          <div
+            class="lg:col-span-5 lg:sticky lg:top-24 flex flex-col gap-6 reveal"
+          >
+            <div
+              class="tree-container-card rounded-3xl p-6 border border-outline-variant/40 relative overflow-hidden flex flex-col items-center"
+            >
+              <!-- Badge -->
+              <span
+                class="hero-badge mb-3 inline-flex bg-primary/10 text-primary text-[11px] font-bold"
+                >Vườn ươm cống hiến</span
+              >
+              <h3
+                class="font-headline-md text-base text-on-surface font-bold mb-4"
+              >
+                Cây Đại Đoàn Kết Tuổi Trẻ Số
+              </h3>
+
+              <!-- Live Counter -->
+              <div
+                class="text-xs font-semibold text-outline mb-4 flex items-center gap-1.5 bg-surface-container-low px-4 py-1.5 rounded-full border border-primary/5 select-none"
+              >
+                <span class="flex items-center"
+                  ><span
+                    id="leaf-counter"
+                    class="text-primary font-bold text-sm"
+                    >0</span
+                  >&nbsp;/ 10</span
+                >
+                <span class="text-outline-variant">|</span>
+                <span>Lá vàng sao đỏ đã đơm mầm</span>
+              </div>
+
+              <!-- Custom SVG Tree Drawing -->
+              <div
+                class="relative w-full aspect-square max-w-[280px] sm:max-w-[320px] overflow-visible mb-4 flex items-center justify-center"
+              >
+                <svg
+                  id="svg-union-tree"
+                  viewBox="0 0 400 400"
+                  class="w-full h-full overflow-visible"
+                >
+                  <!-- Tree trunk and branches path (artistic, minimalist organic lines) -->
+                  <g id="tree-branches" class="transition-all duration-500">
+                    <!-- Main trunk -->
+                    <path
+                      d="M 200 370 Q 200 310 200 250"
+                      stroke="#5d403b"
+                      stroke-width="14"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+                    <!-- Root flare -->
+                    <path
+                      d="M 185 370 Q 200 366 215 370"
+                      stroke="#5d403b"
+                      stroke-width="10"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+
+                    <!-- Primary branches -->
+                    <!-- Left branch -->
+                    <path
+                      d="M 200 270 Q 150 230 140 190"
+                      stroke="#5d403b"
+                      stroke-width="8"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+                    <!-- Left sub-branches -->
+                    <path
+                      d="M 170 245 Q 130 200 120 140"
+                      stroke="#5d403b"
+                      stroke-width="6"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+                    <path
+                      d="M 148 198 Q 120 170 160 110"
+                      stroke="#5d403b"
+                      stroke-width="5"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+
+                    <!-- Center branch -->
+                    <path
+                      d="M 200 260 Q 200 180 180 150"
+                      stroke="#5d403b"
+                      stroke-width="8"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+                    <path
+                      d="M 195 200 Q 220 170 220 140"
+                      stroke="#5d403b"
+                      stroke-width="6"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+                    <path
+                      d="M 185 165 Q 170 130 200 90"
+                      stroke="#5d403b"
+                      stroke-width="4.5"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+                    <path
+                      d="M 194 125 Q 200 90 200 60"
+                      stroke="#5d403b"
+                      stroke-width="3.5"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+
+                    <!-- Right branch -->
+                    <path
+                      d="M 200 270 Q 250 230 260 170"
+                      stroke="#5d403b"
+                      stroke-width="8"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+                    <!-- Right sub-branches -->
+                    <path
+                      d="M 230 245 Q 270 200 280 120"
+                      stroke="#5d403b"
+                      stroke-width="6"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+                    <path
+                      d="M 252 198 Q 280 170 240 100"
+                      stroke="#5d403b"
+                      stroke-width="5"
+                      stroke-linecap="round"
+                      fill="none"
+                    />
+                  </g>
+
+                  <!-- Static Leaves (10 total, initially hidden with transform: scale(0), opacity: 0) -->
+                  <!-- Leaf 0: connected to Branch 1 (140, 190) -->
+                  <g
+                    id="tree-leaf-0"
+                    class="tree-leaf"
+                    transform="translate(140, 190) rotate(-45)"
+                    style="--leaf-rotate: -45deg"
+                  >
+                    <path
+                      d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z"
+                      fill="#da251d"
+                    />
+                    <path
+                      d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z"
+                      fill="#ffe16d"
+                      transform="translate(0, -3) scale(0.6)"
+                    />
+                  </g>
+
+                  <!-- Leaf 1: connected to Branch 2 (120, 140) -->
+                  <g
+                    id="tree-leaf-1"
+                    class="tree-leaf"
+                    transform="translate(120, 140) rotate(-80)"
+                    style="--leaf-rotate: -80deg"
+                  >
+                    <path
+                      d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z"
+                      fill="#da251d"
+                    />
+                    <path
+                      d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z"
+                      fill="#ffe16d"
+                      transform="translate(0, -3) scale(0.6)"
+                    />
+                  </g>
+
+                  <!-- Leaf 2: connected to Branch 3 (160, 110) -->
+                  <g
+                    id="tree-leaf-2"
+                    class="tree-leaf"
+                    transform="translate(160, 110) rotate(-15)"
+                    style="--leaf-rotate: -15deg"
+                  >
+                    <path
+                      d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z"
+                      fill="#da251d"
+                    />
+                    <path
+                      d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z"
+                      fill="#ffe16d"
+                      transform="translate(0, -3) scale(0.6)"
+                    />
+                  </g>
+
+                  <!-- Leaf 3: connected to Branch 4 (180, 150) -->
+                  <g
+                    id="tree-leaf-3"
+                    class="tree-leaf"
+                    transform="translate(180, 150) rotate(-30)"
+                    style="--leaf-rotate: -30deg"
+                  >
+                    <path
+                      d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z"
+                      fill="#da251d"
+                    />
+                    <path
+                      d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z"
+                      fill="#ffe16d"
+                      transform="translate(0, -3) scale(0.6)"
+                    />
+                  </g>
+
+                  <!-- Leaf 4: connected to Branch 5 (220, 140) -->
+                  <g
+                    id="tree-leaf-4"
+                    class="tree-leaf"
+                    transform="translate(220, 140) rotate(30)"
+                    style="--leaf-rotate: 30deg"
+                  >
+                    <path
+                      d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z"
+                      fill="#da251d"
+                    />
+                    <path
+                      d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z"
+                      fill="#ffe16d"
+                      transform="translate(0, -3) scale(0.6)"
+                    />
+                  </g>
+
+                  <!-- Leaf 5: connected to Branch 6 (200, 90) -->
+                  <g
+                    id="tree-leaf-5"
+                    class="tree-leaf"
+                    transform="translate(200, 90) rotate(-5)"
+                    style="--leaf-rotate: -5deg"
+                  >
+                    <path
+                      d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z"
+                      fill="#da251d"
+                    />
+                    <path
+                      d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z"
+                      fill="#ffe16d"
+                      transform="translate(0, -3) scale(0.6)"
+                    />
+                  </g>
+
+                  <!-- Leaf 6: connected to Branch 7 (200, 60) -->
+                  <g
+                    id="tree-leaf-6"
+                    class="tree-leaf"
+                    transform="translate(200, 60) rotate(15)"
+                    style="--leaf-rotate: 15deg"
+                  >
+                    <path
+                      d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z"
+                      fill="#da251d"
+                    />
+                    <path
+                      d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z"
+                      fill="#ffe16d"
+                      transform="translate(0, -3) scale(0.6)"
+                    />
+                  </g>
+
+                  <!-- Leaf 7: connected to Branch 8 (260, 170) -->
+                  <g
+                    id="tree-leaf-7"
+                    class="tree-leaf"
+                    transform="translate(260, 170) rotate(45)"
+                    style="--leaf-rotate: 45deg"
+                  >
+                    <path
+                      d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z"
+                      fill="#da251d"
+                    />
+                    <path
+                      d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z"
+                      fill="#ffe16d"
+                      transform="translate(0, -3) scale(0.6)"
+                    />
+                  </g>
+
+                  <!-- Leaf 8: connected to Branch 9 (240, 100) -->
+                  <g
+                    id="tree-leaf-8"
+                    class="tree-leaf"
+                    transform="translate(240, 100) rotate(60)"
+                    style="--leaf-rotate: 60deg"
+                  >
+                    <path
+                      d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z"
+                      fill="#da251d"
+                    />
+                    <path
+                      d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z"
+                      fill="#ffe16d"
+                      transform="translate(0, -3) scale(0.6)"
+                    />
+                  </g>
+
+                  <!-- Leaf 9: connected to Branch 10 (280, 120) -->
+                  <g
+                    id="tree-leaf-9"
+                    class="tree-leaf"
+                    transform="translate(280, 120) rotate(80)"
+                    style="--leaf-rotate: 80deg"
+                  >
+                    <path
+                      d="M 0 0 C 12 -12, 24 -12, 24 0 C 24 12, 12 12, 0 0 Z"
+                      fill="#da251d"
+                    />
+                    <path
+                      d="M 12 0 L 13 3 L 16 3 L 14 5 L 15 8 L 12 6 L 9 8 L 10 5 L 8 3 L 11 3 Z"
+                      fill="#ffe16d"
+                      transform="translate(0, -3) scale(0.6)"
+                    />
+                  </g>
+                </svg>
+              </div>
+
+              <!-- Digital Progress Bar -->
+              <div
+                class="w-full bg-surface-container rounded-full h-2 mb-6 border border-primary/5 relative overflow-hidden select-none"
+              >
+                <div
+                  id="tree-progress"
+                  class="bg-gradient-to-r from-primary to-primary-container h-full w-0 transition-all duration-500 rounded-full"
+                ></div>
+              </div>
+
+              <!-- Celebration Card (congrats-card) -->
+              <div
+                id="tree-congrats-card"
+                class="w-full bg-primary/5 border border-primary/20 rounded-2xl p-5 text-center transition-all duration-500 transform scale-95 opacity-0 hidden"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-3xl mb-2 fill-icon"
+                  >military_tech</span
+                >
+                <h4
+                  class="font-headline-md text-sm text-primary font-bold mb-2"
+                >
+                  Thế Hệ Số Vừa Hồng Vừa Chuyên!
+                </h4>
+                <p
+                  class="text-xs text-on-surface-variant leading-relaxed italic mb-3 font-quote"
+                >
+                  "Nhiệm vụ của thanh niên không phải là hỏi nước nhà đã cho
+                  mình những gì, mà phải tự hỏi mình đã làm gì cho nước nhà?"
+                </p>
+                <p
+                  class="text-[10px] text-primary/70 uppercase tracking-widest font-bold"
+                >
+                  — Chủ tịch Hồ Chí Minh
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Manifesto Section (Glassmorphism inspired, highly tactile) -->
+      <section
+        class="relative rounded-[2rem] overflow-hidden p-10 md:p-16 border border-primary/20 reveal"
+        style="
+          background: linear-gradient(
+            135deg,
+            rgba(253, 249, 235, 0.97) 0%,
+            rgba(236, 232, 218, 0.95) 100%
+          );
+          box-shadow: 0 20px 40px rgba(218, 37, 29, 0.05);
+        "
+      >
+        <!-- Decorative corner brackets -->
+        <div
+          class="absolute top-8 left-8 w-8 h-8 border-t-2 border-l-2 border-primary"
+        ></div>
+        <div
+          class="absolute top-8 right-8 w-8 h-8 border-t-2 border-r-2 border-primary"
+        ></div>
+        <div
+          class="absolute bottom-8 left-8 w-8 h-8 border-b-2 border-l-2 border-primary"
+        ></div>
+        <div
+          class="absolute bottom-8 right-8 w-8 h-8 border-b-2 border-r-2 border-primary"
+        ></div>
+        <div
+          class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 relative z-10"
+        >
+          <div class="lg:w-1/2 text-center lg:text-left">
+            <h2 class="text-headline-lg font-headline-lg text-on-surface mb-8">
+              Tuyên Ngôn Thế Hệ Trẻ
+            </h2>
+            <div
+              class="text-quote font-quote italic text-on-surface-variant space-y-6 mb-12"
+            >
+              <p>
+                Chúng tôi, thế hệ sinh viên trong thời đại số, nhận thức rõ
+                trách nhiệm của mình.
+              </p>
+              <p>
+                Chúng tôi cam kết biến những giá trị đạo đức truyền thống thành
+                hành động hiện đại.
+              </p>
+              <p>
+                Sống không chỉ để tồn tại, mà để cống hiến, sáng tạo và tự hào
+                mang bản sắc Việt Nam bước ra thế giới.
+              </p>
+            </div>
+            <!-- <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
 <button class="bg-primary-container text-on-primary-container text-label-md font-label-md px-8 py-4 rounded-full hover:bg-primary transition-colors flex items-center gap-2 shadow-lg w-full sm:w-auto justify-center">
 <span class="material-symbols-outlined">edit_square</span>
                 Cam Kết Ngay
@@ -664,154 +1333,182 @@
 <span class="material-symbols-outlined">share</span>
                 Chia sẻ Tuyên Ngôn
             </button>
-</div>
-</div>
-<div class="lg:w-1/2 w-full flex justify-center">
-<div class="relative">
-<img alt="Sinh viên Việt Nam tài năng và thanh lịch" class="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-full object-cover border border-primary/10" src="images/modern_vietnamese_heritage_illustration_a_group_of_diverse_gen_z_students.png"/>
-<div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl -z-10"></div>
-<div class="absolute -top-4 -left-4 w-24 h-24 bg-tertiary-container/10 rounded-full blur-2xl -z-10"></div>
-</div>
-</div>
-</div></section>
-</main>
-<!-- Footer -->
-<footer class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-high dark:bg-surface-dim border-t border-outline-variant flat no shadows transition-opacity duration-300">
-<div class="flex flex-col gap-2">
-<span class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim">Sống Đẹp</span>
-<p class="text-body-md font-body-md text-on-surface dark:text-on-surface-variant">© 2024 Sống Đẹp – Gương Bác Trong Thời Đại Số. Dự án Đại học Chính quy.</p>
-</div>
+</div> -->
+          </div>
+          <div class="lg:w-1/2 w-full flex justify-center">
+            <div class="relative">
+              <img
+                alt="Sinh viên Việt Nam tài năng và thanh lịch"
+                class="rounded-2xl shadow-2xl w-full max-w-md lg:max-w-full object-cover border border-primary/10"
+                src="images/modern_vietnamese_heritage_illustration_a_group_of_diverse_gen_z_students.png"
+              />
+              <div
+                class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl -z-10"
+              ></div>
+              <div
+                class="absolute -top-4 -left-4 w-24 h-24 bg-tertiary-container/10 rounded-full blur-2xl -z-10"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="w-full py-12 px-margin-desktop flex flex-col md:flex-row justify-between items-center gap-gutter bg-surface-container-high dark:bg-surface-dim border-t border-outline-variant flat no shadows transition-opacity duration-300"
+    >
+      <div class="flex flex-col gap-2">
+        <span
+          class="text-headline-md font-headline-md text-primary dark:text-primary-fixed-dim"
+          >Sống Đẹp</span
+        >
+        <p
+          class="text-body-md font-body-md text-on-surface dark:text-on-surface-variant"
+        >
+          © 2024 Sống Đẹp – Gương Bác Trong Thời Đại Số. Dự án Đại học Chính
+          quy.
+        </p>
+      </div>
+    </footer>
+    <script>
+      window.addEventListener("scroll", () => {
+        const n = document.querySelector("header");
+        n?.classList.toggle("nav-scrolled", window.scrollY > 20);
+        const pct =
+          (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
+          100;
+        document.getElementById("scroll-progress").style.width = pct + "%";
+      });
 
-</footer>
-<script>
-  window.addEventListener('scroll', () => {
-    const n = document.querySelector('header');
-    n?.classList.toggle('nav-scrolled', window.scrollY > 20);
-    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-    document.getElementById('scroll-progress').style.width = pct + '%';
-  });
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenuClose = document.getElementById("mobile-menu-close");
+      const mobileDrawer = document.getElementById("mobile-drawer");
+      const mobileDrawerContent = document.getElementById(
+        "mobile-drawer-content",
+      );
 
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenuClose = document.getElementById('mobile-menu-close');
-  const mobileDrawer = document.getElementById('mobile-drawer');
-  const mobileDrawerContent = document.getElementById('mobile-drawer-content');
-
-  if (mobileMenuBtn && mobileDrawer && mobileDrawerContent) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileDrawer.classList.remove('hidden');
-      setTimeout(() => {
-        mobileDrawerContent.classList.remove('translate-x-full');
-      }, 10);
-    });
-  }
-
-  if (mobileMenuClose && mobileDrawer && mobileDrawerContent) {
-    mobileMenuClose.addEventListener('click', () => {
-      mobileDrawerContent.classList.add('translate-x-full');
-      setTimeout(() => {
-        mobileDrawer.classList.add('hidden');
-      }, 300);
-    });
-
-    mobileDrawer.addEventListener('click', (e) => {
-      if (e.target === mobileDrawer) {
-        mobileDrawerContent.classList.add('translate-x-full');
-        setTimeout(() => {
-          mobileDrawer.classList.add('hidden');
-        }, 300);
-      }
-    });
-  }
-
-  // ── Vườn Ươm Cống Hiến Số Logic ──
-  const committedIndices = new Set();
-  
-  window.commitAction = function(index, element) {
-    if (committedIndices.has(index)) return; // Prevent double commit
-    
-    committedIndices.add(index);
-    element.classList.add('committed');
-    
-    // Create the floating leaf element
-    const leaf = document.createElement('div');
-    leaf.className = 'floating-leaf';
-    
-    // Get button and target branch leaf coordinates
-    const btnRect = element.getBoundingClientRect();
-    const targetLeaf = document.getElementById(`tree-leaf-${index}`);
-    
-    if (!targetLeaf) return;
-    
-    const targetRect = targetLeaf.getBoundingClientRect();
-    
-    const startX = btnRect.left + btnRect.width / 2;
-    const startY = btnRect.top + btnRect.height / 2;
-    const destX = targetRect.left + targetRect.width / 2;
-    const destY = targetRect.top + targetRect.height / 2;
-    
-    // Position initial leaf
-    leaf.style.left = (startX - 12) + 'px';
-    leaf.style.top = (startY - 8) + 'px';
-    document.body.appendChild(leaf);
-    
-    // Trigger transition on next frame
-    requestAnimationFrame(() => {
-      const diffX = destX - startX;
-      const diffY = destY - startY;
-      leaf.style.transform = `translate(${diffX}px, ${diffY}px) scale(1) rotate(720deg)`;
-      leaf.style.opacity = '0.95';
-    });
-    
-    // On transition end
-    setTimeout(() => {
-      // Remove temporary leaf
-      leaf.remove();
-      
-      // Activate static leaf on the tree with beautiful spring bounce!
-      targetLeaf.classList.add('active');
-      
-      // Update counters
-      const count = committedIndices.size;
-      const counterEl = document.getElementById('leaf-counter');
-      if (counterEl) {
-        counterEl.textContent = count;
-      }
-      
-      // Update progress bar
-      const progressEl = document.getElementById('tree-progress');
-      if (progressEl) {
-        progressEl.style.width = (count * 10) + '%';
-      }
-      
-      // Trigger temporary branch pulse glow
-      const branches = document.getElementById('tree-branches');
-      if (branches) {
-        branches.classList.add('branch-glow');
-        setTimeout(() => branches.classList.remove('branch-glow'), 800);
-      }
-      
-      // If all 10 are committed, show the celebration quote card!
-      if (count === 10) {
-        const congratsCard = document.getElementById('tree-congrats-card');
-        if (congratsCard) {
-          congratsCard.classList.remove('hidden');
+      if (mobileMenuBtn && mobileDrawer && mobileDrawerContent) {
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileDrawer.classList.remove("hidden");
           setTimeout(() => {
-            congratsCard.classList.remove('scale-95', 'opacity-0');
-            congratsCard.classList.add('scale-100', 'opacity-100');
-          }, 100);
-        }
+            mobileDrawerContent.classList.remove("translate-x-full");
+          }, 10);
+        });
       }
-    }, 1200);
-  };
 
-  const revealObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revealObserver.unobserve(e.target);
+      if (mobileMenuClose && mobileDrawer && mobileDrawerContent) {
+        mobileMenuClose.addEventListener("click", () => {
+          mobileDrawerContent.classList.add("translate-x-full");
+          setTimeout(() => {
+            mobileDrawer.classList.add("hidden");
+          }, 300);
+        });
+
+        mobileDrawer.addEventListener("click", (e) => {
+          if (e.target === mobileDrawer) {
+            mobileDrawerContent.classList.add("translate-x-full");
+            setTimeout(() => {
+              mobileDrawer.classList.add("hidden");
+            }, 300);
+          }
+        });
       }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
-</script>
-</body></html>
+
+      // ── Vườn Ươm Cống Hiến Số Logic ──
+      const committedIndices = new Set();
+
+      window.commitAction = function (index, element) {
+        if (committedIndices.has(index)) return; // Prevent double commit
+
+        committedIndices.add(index);
+        element.classList.add("committed");
+
+        // Create the floating leaf element
+        const leaf = document.createElement("div");
+        leaf.className = "floating-leaf";
+
+        // Get button and target branch leaf coordinates
+        const btnRect = element.getBoundingClientRect();
+        const targetLeaf = document.getElementById(`tree-leaf-${index}`);
+
+        if (!targetLeaf) return;
+
+        const targetRect = targetLeaf.getBoundingClientRect();
+
+        const startX = btnRect.left + btnRect.width / 2;
+        const startY = btnRect.top + btnRect.height / 2;
+        const destX = targetRect.left + targetRect.width / 2;
+        const destY = targetRect.top + targetRect.height / 2;
+
+        // Position initial leaf
+        leaf.style.left = startX - 12 + "px";
+        leaf.style.top = startY - 8 + "px";
+        document.body.appendChild(leaf);
+
+        // Trigger transition on next frame
+        requestAnimationFrame(() => {
+          const diffX = destX - startX;
+          const diffY = destY - startY;
+          leaf.style.transform = `translate(${diffX}px, ${diffY}px) scale(1) rotate(720deg)`;
+          leaf.style.opacity = "0.95";
+        });
+
+        // On transition end
+        setTimeout(() => {
+          // Remove temporary leaf
+          leaf.remove();
+
+          // Activate static leaf on the tree with beautiful spring bounce!
+          targetLeaf.classList.add("active");
+
+          // Update counters
+          const count = committedIndices.size;
+          const counterEl = document.getElementById("leaf-counter");
+          if (counterEl) {
+            counterEl.textContent = count;
+          }
+
+          // Update progress bar
+          const progressEl = document.getElementById("tree-progress");
+          if (progressEl) {
+            progressEl.style.width = count * 10 + "%";
+          }
+
+          // Trigger temporary branch pulse glow
+          const branches = document.getElementById("tree-branches");
+          if (branches) {
+            branches.classList.add("branch-glow");
+            setTimeout(() => branches.classList.remove("branch-glow"), 800);
+          }
+
+          // If all 10 are committed, show the celebration quote card!
+          if (count === 10) {
+            const congratsCard = document.getElementById("tree-congrats-card");
+            if (congratsCard) {
+              congratsCard.classList.remove("hidden");
+              setTimeout(() => {
+                congratsCard.classList.remove("scale-95", "opacity-0");
+                congratsCard.classList.add("scale-100", "opacity-100");
+              }, 100);
+            }
+          }
+        }, 1200);
+      };
+
+      const revealObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              revealObserver.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        revealObserver.observe(el);
+      });
+    </script>
+  </body>
+</html>
