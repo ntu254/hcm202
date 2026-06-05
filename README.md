@@ -1,6 +1,7 @@
 # Sống Đẹp — Gương Bác Trong Thời Đại Số
 
 Dự án HCM202 — Khám phá triết lý sống đẹp của Hồ Chí Minh dành cho thế hệ Gen Z trong kỷ nguyên số.
+https://hcm202-vyvy.vercel.app/
 
 ## Cấu Trúc Trang
 
